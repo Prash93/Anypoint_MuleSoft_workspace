@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<users>
+	<user firstname="Max">
+		<lastname>Mule</lastname>
+	</user>
+	<user firstname="Molly">
+		<lastname>Mule</lastname>
+	</user>
+</users>

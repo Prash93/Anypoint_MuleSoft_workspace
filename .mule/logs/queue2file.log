@@ -1,0 +1,214 @@
+2017-05-26 12:07:41,949 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'queue2file'                            +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-05-26 12:07:42,639 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2017-05-26 12:07:43,281 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2017-05-26 12:07:43,898 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2017-05-26 12:07:43,899 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2017-05-26 12:07:44,320 [main] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@6e46d9f4: startup date [Fri May 26 12:07:44 BST 2017]; root of context hierarchy
+2017-05-26 12:07:48,211 [main] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-05-26 12:07:50,905 [main] WARN  org.mule.module.ognl.expression.OgnlExpressionEvaluator - OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+2017-05-26 12:07:51,683 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\Sa\AnypointStudio\workspace\.mule\.\.mule\queue2file\queue-tx-log\tx1.log and C:\Users\Sa\AnypointStudio\workspace\.mule\.\.mule\queue2file\queue-tx-log\tx2.log
+2017-05-26 12:07:51,730 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\Sa\AnypointStudio\workspace\.mule\.\.mule\queue2file\queue-xa-tx-log\tx1.log and C:\Users\Sa\AnypointStudio\workspace\.mule\.\.mule\queue2file\queue-xa-tx-log\tx2.log
+2017-05-26 12:07:51,737 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising connector: Active_MQ
+2017-05-26 12:07:51,846 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising connector: connector.file.mule.default
+2017-05-26 12:07:52,178 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2017-05-26 12:07:52,182 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: queue2fileFlow
+2017-05-26 12:07:52,182 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@56382bc9
+2017-05-26 12:07:52,221 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: queue2fileFlow.stage1
+2017-05-26 12:07:53,606 [main] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\Sa\AnypointStudio\workspace\.mule\apps\queue2file\queue2file.xml'}]"
+2017-05-26 12:07:53,606 [main] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\Sa\AnypointStudio\workspace\.mule\apps\queue2file\queue2file.xml'}]"
+2017-05-26 12:07:56,801 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'queue2file'                                +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-05-26 12:07:56,807 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Starting ResourceManager
+2017-05-26 12:07:56,807 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Started ResourceManager
+2017-05-26 12:07:58,238 [main] INFO  org.mule.transport.jms.activemq.ActiveMQJmsConnector - Connected: ActiveMQJmsConnector
+{
+  name=Active_MQ
+  lifecycle=initialise
+  this=22c75c01
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[jms]
+  serviceOverrides=<none>
+}
+
+2017-05-26 12:07:58,239 [main] INFO  org.mule.transport.jms.activemq.ActiveMQJmsConnector - Starting: ActiveMQJmsConnector
+{
+  name=Active_MQ
+  lifecycle=initialise
+  this=22c75c01
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[jms]
+  serviceOverrides=<none>
+}
+
+2017-05-26 12:07:58,240 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting connector: Active_MQ
+2017-05-26 12:07:58,242 [main] INFO  org.mule.transport.file.FileConnector - Connected: FileConnector
+{
+  name=connector.file.mule.default
+  lifecycle=initialise
+  this=4462efe1
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[file]
+  serviceOverrides=<none>
+}
+
+2017-05-26 12:07:58,242 [main] INFO  org.mule.transport.file.FileConnector - Starting: FileConnector
+{
+  name=connector.file.mule.default
+  lifecycle=initialise
+  this=4462efe1
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[file]
+  serviceOverrides=<none>
+}
+
+2017-05-26 12:07:58,242 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting connector: connector.file.mule.default
+2017-05-26 12:07:58,277 [main] INFO  org.mule.modules.oauth2.provider.agents.DefaultSplashScreenAgent - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-05-26 12:07:58,278 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting model: _muleSystemModel
+2017-05-26 12:07:58,283 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: queue2fileFlow
+2017-05-26 12:07:58,283 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: queue2fileFlow.stage1
+2017-05-26 12:07:58,446 [main] INFO  org.mule.transport.jms.activemq.ActiveMQJmsConnector - Registering listener: queue2fileFlow on endpointUri: jms://file
+2017-05-26 12:07:58,471 [main] INFO  org.mule.transport.service.DefaultTransportServiceDescriptor - Loading default inbound transformer: org.mule.transport.jms.transformers.JMSMessageToObject
+2017-05-26 12:07:58,471 [main] INFO  org.mule.transport.service.DefaultTransportServiceDescriptor - Loading default response transformer: org.mule.transport.jms.transformers.ObjectToJMSMessage
+2017-05-26 12:07:58,475 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising: 'null'. Object is: MultiConsumerJmsMessageReceiver
+2017-05-26 12:07:58,477 [main] INFO  org.mule.transport.jms.MultiConsumerJmsMessageReceiver - Connecting clusterizable message receiver
+2017-05-26 12:07:58,670 [main] INFO  org.mule.transport.jms.MultiConsumerJmsMessageReceiver - Endpoint jms://file has been successfully reconnected.
+2017-05-26 12:07:58,672 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting: 'null'. Object is: MultiConsumerJmsMessageReceiver
+2017-05-26 12:07:58,672 [main] INFO  org.mule.transport.jms.MultiConsumerJmsMessageReceiver - Starting clusterizable message receiver
+2017-05-26 12:07:58,703 [main] INFO  org.mule.module.management.agent.WrapperManagerAgent - This JVM hasn't been launched by the wrapper, the agent will not run.
+2017-05-26 12:07:58,806 [main] INFO  org.mule.module.management.agent.AbstractJmxAgent - Attempting to register service with name: Mule.queue2file:type=Endpoint,service="queue2fileFlow",connector=Active_MQ,name="endpoint.jms.file"
+2017-05-26 12:07:58,807 [main] INFO  org.mule.module.management.agent.AbstractJmxAgent - Registered Endpoint Service with name: Mule.queue2file:type=Endpoint,service="queue2fileFlow",connector=Active_MQ,name="endpoint.jms.file"
+2017-05-26 12:07:58,810 [main] INFO  org.mule.module.management.agent.AbstractJmxAgent - Registered Connector Service with name Mule.queue2file:type=Connector,name="Active.MQ"
+2017-05-26 12:07:58,812 [main] INFO  org.mule.module.management.agent.AbstractJmxAgent - Registered Connector Service with name Mule.queue2file:type=Connector,name="connector.file.mule.default.1"
+2017-05-26 12:07:58,821 [main] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application: queue2file                                            *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   JMX Agent                                                        *
+*   DevKit Extension Information                                     *
+*   Batch module default engine                                      *
+*   Wrapper Manager                                                  *
+**********************************************************************
+2017-05-26 12:07:58,992 [[queue2file].connector.file.mule.default.dispatcher.01] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising: 'connector.file.mule.default.dispatcher.1807842396'. Object is: FileMessageDispatcher
+2017-05-26 12:07:59,054 [[queue2file].connector.file.mule.default.dispatcher.01] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting: 'connector.file.mule.default.dispatcher.1807842396'. Object is: FileMessageDispatcher
+2017-05-26 12:07:59,063 [[queue2file].connector.file.mule.default.dispatcher.01] INFO  org.mule.transport.file.FileConnector - Writing file to: C:\Users\Sa\Desktop\Mule_Output\93d4a050-4203-11e7-9898-e8039ab9d98d.dat
+2017-05-26 12:09:14,237 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@62892] ERROR org.mule.exception.DefaultSystemExceptionStrategy - 
+********************************************************************************
+Message               : Connection reset (javax.jms.JMSException)
+JMS Code              : null
+Element               : /Active_MQ @ app:queue2file.xml:10 (Active MQ)
+--------------------------------------------------------------------------------
+Root Exception stack trace:
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at org.apache.activemq.transport.tcp.TcpBufferedInputStream.fill(TcpBufferedInputStream.java:50)
+	at org.apache.activemq.transport.tcp.TcpTransport$2.fill(TcpTransport.java:634)
+	at org.apache.activemq.transport.tcp.TcpBufferedInputStream.read(TcpBufferedInputStream.java:59)
+	at org.apache.activemq.transport.tcp.TcpTransport$2.read(TcpTransport.java:619)
+	at java.io.DataInputStream.readInt(Unknown Source)
+	at org.apache.activemq.openwire.OpenWireFormat.unmarshal(OpenWireFormat.java:268)
+	at org.apache.activemq.transport.tcp.TcpTransport.readCommand(TcpTransport.java:240)
+	at org.apache.activemq.transport.tcp.TcpTransport.doRun(TcpTransport.java:232)
+	at org.apache.activemq.transport.tcp.TcpTransport.run(TcpTransport.java:215)
+	at java.lang.Thread.run(Unknown Source)
+
+********************************************************************************
+
+2017-05-26 12:09:14,269 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@62892] INFO  org.mule.exception.DefaultSystemExceptionStrategy - Exception caught is a ConnectException, attempting to reconnect...
+2017-05-26 12:09:14,269 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@62892] INFO  org.mule.lifecycle.AbstractLifecycleManager - Stopping connector: Active_MQ
+2017-05-26 12:09:14,271 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@62892] INFO  org.mule.lifecycle.AbstractLifecycleManager - Stopping: 'null'. Object is: MultiConsumerJmsMessageReceiver
+2017-05-26 12:09:14,274 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@62892] WARN  org.mule.transport.jms.activemq.ActiveMQJmsConnector - Failed to close jms message consumer: Cannot send, channel has already failed: tcp://127.0.0.1:61616
+2017-05-26 12:09:14,274 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@62892] WARN  org.mule.transport.jms.activemq.ActiveMQJmsConnector - Failed to close jms session consumer: Cannot send, channel has already failed: tcp://127.0.0.1:61616
+2017-05-26 12:09:14,274 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@62892] WARN  org.mule.transport.jms.activemq.ActiveMQJmsConnector - Failed to close jms message consumer: Cannot send, channel has already failed: tcp://127.0.0.1:61616
+2017-05-26 12:09:14,274 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@62892] WARN  org.mule.transport.jms.activemq.ActiveMQJmsConnector - Failed to close jms session consumer: Cannot send, channel has already failed: tcp://127.0.0.1:61616
+2017-05-26 12:09:14,274 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@62892] WARN  org.mule.transport.jms.activemq.ActiveMQJmsConnector - Failed to close jms message consumer: Cannot send, channel has already failed: tcp://127.0.0.1:61616
+2017-05-26 12:09:14,274 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@62892] WARN  org.mule.transport.jms.activemq.ActiveMQJmsConnector - Failed to close jms session consumer: Cannot send, channel has already failed: tcp://127.0.0.1:61616
+2017-05-26 12:09:14,274 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@62892] WARN  org.mule.transport.jms.activemq.ActiveMQJmsConnector - Failed to close jms message consumer: Cannot send, channel has already failed: tcp://127.0.0.1:61616
+2017-05-26 12:09:14,274 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@62892] WARN  org.mule.transport.jms.activemq.ActiveMQJmsConnector - Failed to close jms session consumer: Cannot send, channel has already failed: tcp://127.0.0.1:61616
+2017-05-26 12:09:14,285 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@62892] WARN  org.mule.transport.jms.activemq.ActiveMQJmsConnector - Exception closing JMS connection: Disposed due to prior exception
+2017-05-26 12:09:14,285 [ActiveMQ Connection Executor: tcp://localhost/127.0.0.1:61616@62892] INFO  org.mule.transport.jms.activemq.ActiveMQJmsConnector - Disconnected: ActiveMQJmsConnector
+{
+  name=Active_MQ
+  lifecycle=stop
+  this=22c75c01
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[jms]
+  serviceOverrides=<none>
+}
+
+2017-05-26 12:09:15,296 [[queue2file].Mule.02] ERROR org.mule.retry.notifiers.ConnectNotifier - Failed to connect/reconnect: ActiveMQJmsConnector
+{
+  name=Active_MQ
+  lifecycle=stop
+  this=22c75c01
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=false
+  supportedProtocols=[jms]
+  serviceOverrides=<none>
+}
+. Root Exception was: Connection refused: connect. Type: class java.net.ConnectException
+2017-05-26 12:09:15,298 [[queue2file].Mule.02] ERROR org.mule.exception.DefaultSystemExceptionStrategy - Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused: connect
+2017-05-26 12:10:09,128 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Stopping app 'queue2file'                                +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-05-26 12:10:09,128 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.construct.FlowConstructLifecycleManager - Stopping flow: queue2fileFlow
+2017-05-26 12:10:09,128 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.transport.jms.activemq.ActiveMQJmsConnector - Removing listener on endpointUri: jms://file
+2017-05-26 12:10:09,128 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing: 'null'. Object is: MultiConsumerJmsMessageReceiver
+2017-05-26 12:10:09,128 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.processor.SedaStageLifecycleManager - Stopping service: queue2fileFlow.stage1
+2017-05-26 12:10:09,175 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Stopping model: _muleSystemModel
+2017-05-26 12:10:09,175 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Stopping connector: connector.file.mule.default
+2017-05-26 12:10:09,175 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Stopping: 'connector.file.mule.default.dispatcher.1807842396'. Object is: FileMessageDispatcher
+2017-05-26 12:10:09,175 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing: 'connector.file.mule.default.dispatcher.1807842396'. Object is: FileMessageDispatcher
+2017-05-26 12:10:09,175 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.util.queue.QueueXaResourceManager - Stopping ResourceManager
+2017-05-26 12:10:09,175 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.util.queue.QueueXaResourceManager - Stopped ResourceManager
+2017-05-26 12:10:09,191 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Disposing app 'queue2file'                               +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-05-26 12:10:09,191 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing RegistryBroker
+2017-05-26 12:10:09,206 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.construct.FlowConstructLifecycleManager - Disposing flow: queue2fileFlow
+2017-05-26 12:10:09,206 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.processor.SedaStageLifecycleManager - Disposing service: queue2fileFlow.stage1
+2017-05-26 12:10:09,206 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing model: _muleSystemModel
+2017-05-26 12:10:09,206 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing connector: Active_MQ
+2017-05-26 12:10:09,206 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.transport.file.FileConnector - Disconnected: FileConnector
+{
+  name=connector.file.mule.default
+  lifecycle=stop
+  this=4462efe1
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[file]
+  serviceOverrides=<none>
+}
+
+2017-05-26 12:10:09,206 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing connector: connector.file.mule.default
+2017-05-26 12:10:09,488 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.spring.MuleArtifactContext - Closing org.mule.config.spring.MuleArtifactContext@6e46d9f4: startup date [Fri May 26 12:07:44 BST 2017]; root of context hierarchy
+2017-05-26 12:10:09,648 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application "queue2file" shut down normally on: 26/05/17 12:10     *
+* Up for: 0 days, 0 hours, 2 mins, 12.827 sec                        *
+**********************************************************************

@@ -1,0 +1,24 @@
+#%RAML 1.0
+title: QA Cinemas
+version: 1.0
+#baseUri: http://apps.qacinemas.com/api/
+baseUri: https://mocksvc.mulesoft.com/mocks/a01d0323-2abb-4898-a397-8890ea2940b8/api/
+            
+/addFilm:
+  post:
+    body: 
+      application/json:
+        example: |
+          {
+            "film": "Wonder Woman",
+            "genre": "Action"
+          }
+    responses: 
+      200:
+        body: 
+          application/json:
+            example: |
+              {
+                "message": "film successfully added"
+              }
+    

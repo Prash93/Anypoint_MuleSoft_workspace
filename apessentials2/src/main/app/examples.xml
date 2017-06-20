@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw"
+	xmlns:jms="http://www.mulesoft.org/schema/mule/jms"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd
+http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd">
+    <http:request-config name="HTTP_Request_Configuration" host="localhost" port="8082" doc:name="HTTP Request Configuration"/>
+
+
+
+
+	<flow name="apessentialsFlow">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/hello" allowedMethods="GET" doc:name="HTTPListener"/>
+        <flow-ref name="subflow1" doc:name="subflow1"/>
+        <flow-ref name="subflow2" doc:name="subflow2"/>
+        <http:request config-ref="HTTP_Request_Configuration" path="/flow2" method="GET" doc:name="Invoke Flow2 via HTTP"/>
+        <async doc:name="Async">
+            <flow-ref name="flow2" doc:name="flow2"/>
+        </async>
+        <logger message="#['Payload: ' + payload + '; Name: ' + flowVars.qpname + '; Type: ' + sessionVars.qptype + '; Color: ' + message.outboundProperties.qpcolor]" level="INFO" doc:name="Logger"/>
+        <logger level="INFO" doc:name="Logger"/>
+        <logger level="INFO" doc:name="Logger"/>
+    </flow>
+    <flow name="flow2">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/flow2" allowedMethods="GET" doc:name="HTTP"/>
+        <set-payload value="In Flow2" doc:name="Set Payload"/>
+        <logger message="#[payload]" level="INFO" doc:name="Logger"/>
+        <logger level="INFO" doc:name="Logger"/>
+        <logger level="INFO" doc:name="Logger"/>
+    </flow>
+    <sub-flow name="subflow1">
+        <set-payload value="#['Hello World!'.toUpperCase()]" doc:name="Set Payload"/>
+        <set-variable variableName="qpname" value="#[message.inboundProperties.'http.query.params'.name]" doc:name="Variable"/>
+    </sub-flow>
+    <sub-flow name="subflow2">
+        <set-session-variable variableName="qptype" value="#[message.inboundProperties.'http.query.params'.type]" doc:name="Session Variable"/>
+        <set-property propertyName="qpcolor" value="#[message.inboundProperties.'http.query.params'.color]" doc:name="Property"/>
+    </sub-flow>
+    
+
+    
+    <flow name="publishToTopicMsgFlow">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/jms" allowedMethods="GET" doc:name="HTTP"/>
+        <set-payload value="#[message.inboundProperties.'http.query.params'.msg]" doc:name="Set Payload"/>
+        <set-property propertyName="name" value="Prash" doc:name="Property"/>
+        <jms:outbound-endpoint topic="apessentials" connector-ref="Active_MQ" doc:name="SendMsgToJMS"/>
+        <logger message="#[payload]" level="INFO" doc:name="Logger"/>
+    </flow>
+    <flow name="subscribeToMsgTopicFlow">
+        <jms:inbound-endpoint topic="apessentials" connector-ref="Active_MQ" doc:name="RecieveMsgFromJMS"/>
+        <logger message="#[message.inboundProperties.name + ': ' + payload]" level="INFO" doc:name="Logger"/>
+    </flow>
+    <flow name="transformStaticFlightsFlow">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/static" allowedMethods="GET" doc:name="HTTP"/>
+        <set-payload value="&lt;ns2:listAllFlightsResponse xmlns:ns2=&quot;http://soap.training.mulesoft.com/&quot;&gt;&lt;return airlineName=&quot;United&quot;&gt;&lt;code&gt;A1B2C3&lt;/code&gt;&lt;departureDate&gt;2015/10/20&lt;/departureDate&gt;&lt;destination&gt;SFO&lt;/destination&gt;&lt;emptySeats&gt;40&lt;/emptySeats&gt;&lt;origin&gt;MUA&lt;/origin&gt;&lt;planeType&gt;Boing 737&lt;/planeType&gt;&lt;price&gt;400.0&lt;/price&gt;&lt;/return&gt;&lt;return airlineName=&quot;Delta&quot;&gt;&lt;code&gt;A1B2C4&lt;/code&gt;&lt;departureDate&gt;2015/10/21&lt;/departureDate&gt;&lt;destination&gt;LAX&lt;/destination&gt;&lt;emptySeats&gt;10&lt;/emptySeats&gt;&lt;origin&gt;MUA&lt;/origin&gt;&lt;planeType&gt;Boing 737&lt;/planeType&gt;&lt;price&gt;199.99&lt;/price&gt;&lt;/return&gt;&lt;return airlineName=&quot;Delta&quot;&gt;&lt;code&gt;AFFFC5&lt;/code&gt;&lt;departureDate&gt;2015/10/21&lt;/departureDate&gt;&lt;destination&gt;PDX&lt;/destination&gt;&lt;emptySeats&gt;30&lt;/emptySeats&gt;&lt;origin&gt;MUA&lt;/origin&gt;&lt;planeType&gt;Boing 777&lt;/planeType&gt;&lt;price&gt;283.0&lt;/price&gt;&lt;/return&gt;&lt;return airlineName=&quot;Delta&quot;&gt;&lt;code&gt;AFFFC4&lt;/code&gt;&lt;departureDate&gt;2015/10/20&lt;/departureDate&gt;&lt;destination&gt;PDX&lt;/destination&gt;&lt;emptySeats&gt;0&lt;/emptySeats&gt;&lt;origin&gt;MUA&lt;/origin&gt;&lt;planeType&gt;Boing 777&lt;/planeType&gt;&lt;price&gt;283.0&lt;/price&gt;&lt;/return&gt;&lt;return airlineName=&quot;Delta&quot;&gt;&lt;code&gt;AFFFC3&lt;/code&gt;&lt;departureDate&gt;2015/10/20&lt;/departureDate&gt;&lt;destination&gt;PDX&lt;/destination&gt;&lt;emptySeats&gt;23&lt;/emptySeats&gt;&lt;origin&gt;MUA&lt;/origin&gt;&lt;planeType&gt;Boing 777&lt;/planeType&gt;&lt;price&gt;283.0&lt;/price&gt;&lt;/return&gt;&lt;/ns2:listAllFlightsResponse&gt;" mimeType="application/xml" doc:name="Set Payload"/>
+        <dw:transform-message doc:name="Transform Message">
+            <dw:input-payload doc:sample="sample_data\empty.xml"/>
+            <dw:set-payload><![CDATA[%dw 1.0
+%output application/java
+%type currency = :number {format: "###.##"}
+%type flight = :object {class: "com.mulesoft.training.Flight"}
+---
+payload.listAllFlightsResponse.*return map {
+	airlineName: $.@airlineName,
+	destination: $.destination,
+	price: $.price as :currency,
+	flightCode: $.code,
+	departureDate: $.departureDate as :date {format: "yyyy/MM/dd"} as :string {format: "MMM dd, yyyy"},
+	planeType: $.planeType replace 'Boing' with upper 'Boeing',
+	availableSeats: $.emptySeats as :number
+} as :flight orderBy $.price orderBy $.departureDate distinctBy $]]></dw:set-payload>
+        </dw:transform-message>
+        <logger message="#[payload]" level="INFO" doc:name="Logger"/>
+    </flow>
+
+
+
+
+
+</mule>

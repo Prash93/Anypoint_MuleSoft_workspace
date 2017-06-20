@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:mock="http://www.mulesoft.org/schema/mule/mock" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:spring="http://www.springframework.org/schema/beans" xmlns:core="http://www.mulesoft.org/schema/mule/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/mock http://www.mulesoft.org/schema/mule/mock/current/mule-mock.xsd">
+    <munit:config name="munit" doc:name="MUnit configuration"/>
+    <spring:beans>
+        <spring:import resource="classpath:munitdemo.xml"/>
+    </spring:beans>
+    <munit:test name="decision-flow-test-mock-call-1-decisionFlowTest" description="Test">
+        <set-payload doc:name="Set Payload" value="#['value1']"/>
+        <flow-ref name="decisionFlow" doc:name="decisionFlow"/>
+        <mock:verify-call doc:name="Verify Call" messageProcessor="mule:sub-flow" times="1">
+            <mock:with-attributes>
+                <mock:with-attribute name="name" whereValue="#[matchContains('decision1SubFlow')]"/>
+            </mock:with-attributes>
+        </mock:verify-call>
+    </munit:test>
+    <munit:test name="decision-flow-flow-var-1-suiteTest" description="Test">
+        <set-payload value="#['value1']" doc:name="Set Payload"/>
+        <flow-ref name="decisionFlow" doc:name="decisionFlow"/>
+        <munit:assert-on-equals message="Sorry did not get expected value i.e. decision 1 but instead we got #[flowVars.decisionVariable]" expectedValue="#['decision1']" actualValue="#[flowVars.decisionVariable]" doc:name="Assert Equals"/>
+    </munit:test>
+</mule>

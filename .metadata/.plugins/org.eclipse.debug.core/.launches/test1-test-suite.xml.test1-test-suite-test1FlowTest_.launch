@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.munit.launchconfig">
+<listAttribute key="Mpath">
+<listEntry value="C:\Users\Sa\AnypointStudio\workspace\test1\src\test\munit\test1-test-suite.xml"/>
+</listAttribute>
+<stringAttribute key="Ppath" value="C:\Users\Sa\AnypointStudio\workspace\test1"/>
+<stringAttribute key="clear_data" value="NEVER"/>
+<stringAttribute key="launch_mule_server_version" value="org.mule.tooling.server.3.8.4.ee"/>
+<listAttribute key="mule-project-names">
+<listEntry value="test1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="src/test/munit/test1-test-suite.xml"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="test1"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Djava.library.path=&#13;&#10;-DmunitProjectName=test1&#13;&#10;-Dlog4j.skipJansi=true"/>
+<intAttribute key="remote-debug-port" value="6666"/>
+<booleanAttribute key="remote-debug-suspend" value="true"/>
+<stringAttribute key="resource" value="test1-test-suite.xml"/>
+<booleanAttribute key="runCoverage" value="true"/>
+<stringAttribute key="test_name" value="test1-test-suite-test1FlowTest&lt;"/>
+</launchConfiguration>

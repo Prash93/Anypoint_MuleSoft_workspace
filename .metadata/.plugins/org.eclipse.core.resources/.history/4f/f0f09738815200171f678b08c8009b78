@@ -1,0 +1,23 @@
+#%RAML 1.0
+title: QA Cinemas
+version: 1.0
+baseUri: http://apps.qacinemas.com/api/
+/films:
+  get:
+    queryParameters: 
+      genre:
+        default: all
+        enum: [all, action, drama]
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              [{
+                "film": "Wonder Woman",
+                "genre": "Action"
+              },
+              {
+                "film": "Despicable Me 3",
+                "genre": "Family"
+              }]

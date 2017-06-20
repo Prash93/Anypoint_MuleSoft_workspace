@@ -1,0 +1,23 @@
+#%RAML 1.0
+title: QA Cinemas
+version: 1.0
+baseUri: http://apps.qacinemas.com/api/
+            
+/addFilm:
+  post:
+    body: 
+      application/json:
+        example: |
+          {
+            "film": "Wonder Woman",
+            "genre": "Action"
+          }
+    responses: 
+      200:
+        body: 
+          application/json:
+            example: |
+              {
+                "message": "film successfully added"
+              }
+    

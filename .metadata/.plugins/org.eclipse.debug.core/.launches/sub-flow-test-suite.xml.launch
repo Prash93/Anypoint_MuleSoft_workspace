@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.munit.launchconfig">
+<listAttribute key="Mpath">
+<listEntry value="C:\Users\Sa\AnypointStudio\workspace\munitdemo\src\test\munit\sub-flow-test-suite.xml"/>
+</listAttribute>
+<stringAttribute key="Ppath" value="C:\Users\Sa\AnypointStudio\workspace\munitdemo"/>
+<stringAttribute key="launch_mule_server_version" value="org.mule.tooling.server.3.8.4.ee"/>
+<listAttribute key="mule-project-names">
+<listEntry value="munitdemo"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="sub-flow-test-suite.xml"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="munitdemo"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Djava.library.path=&#13;&#10;-DmunitProjectName=munitdemo&#13;&#10;-Dlog4j.skipJansi=true"/>
+<stringAttribute key="resource" value="sub-flow-test-suite.xml"/>
+</launchConfiguration>

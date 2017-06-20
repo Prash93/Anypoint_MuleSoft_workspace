@@ -1,0 +1,28 @@
+#%RAML 1.0
+title: QA Cinemas
+version: 1.0
+#baseUri: http://apps.qacinemas.com/api/
+baseUri: https://mocksvc.mulesoft.com/mocks/eaab96de-c43d-4864-a383-4085adf489d9/api/
+              
+/addFilm:
+  post:
+    body:
+      application/json:
+        type: object
+        properties: 
+          film: string
+          genre: string
+        example: |
+          {
+            "film": "Gifted",
+            "genre": "Drama"
+          }
+    responses: 
+      200:
+        body: 
+          application/json:
+            example: |
+              {
+                "message": "film successfully added"
+              }
+  

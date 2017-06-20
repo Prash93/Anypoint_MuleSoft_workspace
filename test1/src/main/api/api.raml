@@ -1,0 +1,26 @@
+#%RAML 0.8
+title: Amazon simple stroage API
+version: 1.0
+baseUri: https://{destinationBucket}.s3.amazonsaws.com
+/:
+  post:
+    description: The POST operation adds an object to a specified bucket using HTML forms.
+    body: 
+      application/x-www-form-urlencoded:
+        formParameters: 
+          AWSAccessKeyId:
+            description: The AWS Access Key ID of the owner.
+            type: string
+          acl:
+            description: Specifies an Amazon S3 access control list.
+            type: string
+          file:
+            - type: string
+              description: Text content. The text content must be the last field in the form.
+            - type: file
+              description: File to upload. The file must be the last field in the form.
+  get:
+    description: The GET operation returns all s3 buckets in a list
+  /{bucket-id}:
+    get:
+      description: The bucket-id GET operation returns the meta data of a specific bucket

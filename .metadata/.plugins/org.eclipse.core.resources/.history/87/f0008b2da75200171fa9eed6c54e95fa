@@ -1,0 +1,27 @@
+#%RAML 1.0
+title: QA Cinemas
+version: 1.0
+baseUri: http://apps.qacinemas.com/api/
+            
+/addFilm:
+  post:
+    body: 
+      application/x-www-form-urlencoded:
+        formParameters:
+          film:
+            description: Name of the new film
+            type: string
+            example: Baby Driver
+          genre:
+            description: Genre of the new film
+            type: string
+            example: Action
+    responses: 
+      200:
+        body: 
+          application/json:
+            example: |
+              {
+                "message": "film successfully added"
+              }
+    
