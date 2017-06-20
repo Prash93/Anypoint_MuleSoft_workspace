@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:ns2="http://www.mulesoft.org/schema/mule/devkit" xmlns:mule="http://www.mulesoft.org/schema/mule/core" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.mulesoft.org/schema/mule/signature" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace"></xs:import>
+  <xs:import namespace="http://www.springframework.org/schema/beans" schemaLocation="http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"></xs:import>
+  <xs:import namespace="http://www.mulesoft.org/schema/mule/core" schemaLocation="http://www.mulesoft.org/schema/mule/core/current/mule.xsd"></xs:import>
+  <xs:element xmlns:mule="http://www.mulesoft.org/schema/mule/core" substitutionGroup="mule:abstract-extension" name="config" ns2:javaClass="org.mule.module.signature.adapters.SignatureModuleLicenseChecker">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="mule:abstractExtensionType">
+          <xs:annotation>
+            <xs:documentation>&lt;p&gt;Module to create Signatures and verify them &lt;/p&gt;</xs:documentation>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="jce-signer-config">
+              <xs:annotation>
+                <xs:documentation></xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:complexContent>
+                  <xs:extension xmlns="http://www.mulesoft.org/schema/mule/signature" base="JCESignerConfigurationObjectType"></xs:extension>
+                </xs:complexContent>
+              </xs:complexType>
+            </xs:element>
+            <xs:element minOccurs="0" maxOccurs="1" name="xml-signer-config">
+              <xs:annotation>
+                <xs:documentation></xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:complexContent>
+                  <xs:extension xmlns="http://www.mulesoft.org/schema/mule/signature" base="XmlSignerConfigurationObjectType"></xs:extension>
+                </xs:complexContent>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute type="xs:string" use="optional" name="name">
+            <xs:annotation>
+              <xs:documentation>Give a name to this configuration so it can be later referenced by config-ref.</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attribute xmlns="http://www.mulesoft.org/schema/mule/signature" type="booleanType" use="optional" default="false" name="enableLanguage">
+            <xs:annotation>
+              <xs:documentation>&lt;p&gt;Enable the usage of the module in MEL&lt;/p&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attribute xmlns="http://www.mulesoft.org/schema/mule/signature" type="SignatureModuleTypeEnumType" use="optional" default="JCE_SIGNER" name="defaultSigner">
+            <xs:annotation>
+              <xs:documentation>&lt;p&gt;Default signature type&lt;/p&gt;</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="JCESignerConfigurationObjectType">
+    <xs:sequence></xs:sequence>
+    <xs:attribute xmlns="http://www.mulesoft.org/schema/mule/signature" type="DataSignatureAlgorithmEnumType" use="optional" default="HmacSHA1" name="algorithm">
+      <xs:annotation>
+        <xs:documentation>&lt;p&gt;Signature Method Algorithm for binary signature&lt;/p&gt;
+&lt;p&gt;Accepted Values:&lt;/p&gt;
+&lt;p&gt;MD2WithRSAEncryption&lt;/p&gt;
+&lt;p&gt;MD4WithRSAEncryption&lt;/p&gt;
+&lt;p&gt;MD5WithRSAEncryption&lt;/p&gt;
+&lt;p&gt;RIPEMD128WithRSAEncryption&lt;/p&gt;
+&lt;p&gt;RIPEMD160WithRSAEncryption&lt;/p&gt;
+&lt;p&gt;RIPEMD256WithRSAEncryption&lt;/p&gt;
+&lt;p&gt;SHA1WithRSAEncryption&lt;/p&gt;
+&lt;p&gt;SHA224WithRSAEncryption&lt;/p&gt;
+&lt;p&gt;SHA256WithRSAEncryption&lt;/p&gt;
+&lt;p&gt;SHA512WithRSAEncryption&lt;/p&gt;
+&lt;p&gt;HmacSHA1&lt;/p&gt;
+&lt;p&gt;HmacSHA256&lt;/p&gt;
+&lt;p&gt;HmacSHA384&lt;/p&gt;
+&lt;p&gt;HmacSHA512&lt;/p&gt;
+&lt;p&gt;HmacMD5&lt;/p&gt;
+&lt;p&gt;Default: HmacSHA1&lt;/p&gt;</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute type="xs:string" use="optional" name="key">
+      <xs:annotation>
+        <xs:documentation>&lt;p&gt;
+Key used for encryption or decryption.
+&lt;/p&gt;
+&lt;p&gt;
+If the keystore is defined then this value is the key stored in the keystore.
+&lt;/p&gt;
+&lt;p&gt;
+If the keystore is not defined then this is taken as plain key for encryption and has to be Base64 encrypted.
+&lt;/p&gt;</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute type="xs:string" use="optional" name="keystorePath">
+      <xs:annotation>
+        <xs:documentation>&lt;p&gt;
+Keystore path. Two types of keystore are supported JCEKS and JKS
+&lt;/p&gt;</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute type="xs:string" use="optional" name="keystorePassword">
+      <xs:annotation>
+        <xs:documentation>&lt;p&gt;The keystore password.&lt;/p&gt;</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute type="xs:string" use="optional" name="keyPassword">
+      <xs:annotation>
+        <xs:documentation>&lt;p&gt;The key password to read the key stored in the keystore. If the keystore is not specified then this value &lt;/p&gt;
+&lt;p&gt;is not considered.&lt;/p&gt;</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute type="xs:string" use="optional" name="ref">
+      <xs:annotation>
+        <xs:documentation>The reference object for this parameter</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="XmlSignerConfigurationObjectType">
+    <xs:sequence></xs:sequence>
+    <xs:attribute xmlns="http://www.mulesoft.org/schema/mule/signature" type="DigestMethodAlgorithmEnumType" use="optional" default="SHA256" name="digestMethodAlgorithm">
+      <xs:annotation>
+        <xs:documentation>&lt;p&gt;Digest Method Algorithm&lt;/p&gt;
+&lt;p&gt;For a reference on the Digest Method Algorithms see @see{http://www.w3.org/TR/2009/WD-xmlsec-algorithms-20090226/#digest-method-uris&lt;/p&gt;
+&lt;p&gt;ACCEPTED VALUES:  RIPEMD160, SHA1, SHA256, SHA512&lt;/p&gt;</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute xmlns="http://www.mulesoft.org/schema/mule/signature" type="CanonicalizationAlgorithmEnumType" use="optional" default="EXCLUSIVE" name="canonicalizationAlgorithm">
+      <xs:annotation>
+        <xs:documentation>&lt;p&gt;Canonicalization Method&lt;/p&gt;
+&lt;p&gt;For a canonicalization specification see @see{http://www.w3.org/TR/2009/WD-xmlsec-algorithms-20090226/#canonicalization-uris&lt;/p&gt;
+&lt;p&gt;Accepted Values: EXCLUSIVE, EXCLUSIVE_WITH_COMMENTS, INCLUSIVE, INCLUSE_WITH_COMMENTS&lt;/p&gt;</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute xmlns="http://www.mulesoft.org/schema/mule/signature" type="SignatureMethodAlgorithmEnumType" use="optional" default="RSA_SHA1" name="signatureMethodAlgorithm">
+      <xs:annotation>
+        <xs:documentation>&lt;p&gt;Signature Method Algorithm&lt;/p&gt;
+&lt;p&gt;For Signature Method Algorithms specification see @see{http://www.w3.org/TR/2009/WD-xmlsec-algorithms-20090226/#encryption-method-uris&lt;/p&gt;
+&lt;p&gt;Accepted Values: RSA_SHA1, DSA_SHA1, HMAC_SHA1&lt;/p&gt;</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute xmlns="http://www.mulesoft.org/schema/mule/signature" type="SignatureTypeEnumType" use="optional" default="ENVELOPED" name="signatureType">
+      <xs:annotation>
+        <xs:documentation>&lt;p&gt;The encryption type&lt;/p&gt;
+&lt;p&gt;ACCEPTED VALUES: DETACHED, ENVELOPED, ENVELOPING&lt;/p&gt;</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute type="xs:string" use="optional" name="referenceUri">
+      <xs:annotation>
+        <xs:documentation>&lt;p&gt;Reference URI, if you wish to use an external reference URI for Detached signatures.&lt;/p&gt;</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute type="xs:string" use="optional" name="key">
+      <xs:annotation>
+        <xs:documentation>&lt;p&gt;
+Key used for encryption or decryption.
+&lt;/p&gt;
+&lt;p&gt;
+If the keystore is defined then this value is the key stored in the keystore.
+&lt;/p&gt;
+&lt;p&gt;
+If the keystore is not defined then this is taken as plain key for encryption and has to be Base64 encrypted.
+&lt;/p&gt;</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute type="xs:string" use="optional" name="keystorePath">
+      <xs:annotation>
+        <xs:documentation>&lt;p&gt;
+Keystore path. Two types of keystore are supported JCEKS and JKS
+&lt;/p&gt;</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute type="xs:string" use="optional" name="keystorePassword">
+      <xs:annotation>
+        <xs:documentation>&lt;p&gt;The keystore password.&lt;/p&gt;</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute type="xs:string" use="optional" name="keyPassword">
+      <xs:annotation>
+        <xs:documentation>&lt;p&gt;The key password to read the key stored in the keystore. If the keystore is not specified then this value &lt;/p&gt;
+&lt;p&gt;is not considered.&lt;/p&gt;</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute type="xs:string" use="optional" name="ref">
+      <xs:annotation>
+        <xs:documentation>The reference object for this parameter</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:element xmlns="http://www.mulesoft.org/schema/mule/signature" xmlns:mule="http://www.mulesoft.org/schema/mule/core" type="SignType" substitutionGroup="mule:abstract-message-processor" name="sign">
+    <xs:annotation>
+      <xs:documentation>&lt;p&gt;Signs payloads&lt;/p&gt;
+&lt;p/&gt;</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="JCESignerOverrideConfigurationObjectType">
+    <xs:sequence></xs:sequence>
+    <xs:attribute xmlns="http://www.mulesoft.org/schema/mule/signature" type="DataSignatureAlgorithmEnumType" use="optional" name="algorithm">
+      <xs:annotation>
+        <xs:documentation>&lt;p&gt;Signature Method Algorithm for binary signature&lt;/p&gt;
+&lt;p&gt;Accepted Values:&lt;/p&gt;
+&lt;p&gt;MD2WithRSAEncryption&lt;/p&gt;
+&lt;p&gt;MD4WithRSAEncryption&lt;/p&gt;
+&lt;p&gt;MD5WithRSAEncryption&lt;/p&gt;
+&lt;p&gt;RIPEMD128WithRSAEncryption&lt;/p&gt;
+&lt;p&gt;RIPEMD160WithRSAEncryption&lt;/p&gt;
+&lt;p&gt;RIPEMD256WithRSAEncryption&lt;/p&gt;
+&lt;p&gt;SHA1WithRSAEncryption&lt;/p&gt;
+&lt;p&gt;SHA224WithRSAEncryption&lt;/p&gt;
+&lt;p&gt;SHA256WithRSAEncryption&lt;/p&gt;
+&lt;p&gt;SHA512WithRSAEncryption&lt;/p&gt;
+&lt;p&gt;HmacSHA1&lt;/p&gt;
+&lt;p&gt;HmacSHA256&lt;/p&gt;
+&lt;p&gt;HmacSHA384&lt;/p&gt;
+&lt;p&gt;HmacSHA512&lt;/p&gt;
+&lt;p&gt;HmacMD5&lt;/p&gt;
+&lt;p&gt;Default: HmacSHA1&lt;/p&gt;</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute type="xs:string" use="optional" name="key">
+      <xs:annotation>
+        <xs:documentation>&lt;p&gt;
+Key used for encryption or decryption.
+&lt;/p&gt;
+&lt;p&gt;
+If the keystore is defined then this value is the key stored in the keystore.
+&lt;/p&gt;
+&lt;p&gt;
+If the keystore is not defined then this is taken as plain key for encryption and has to be Base64 encrypted.
+&lt;/p&gt;</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute type="xs:string" use="optional" name="keyPassword">
+      <xs:annotation>
+        <xs:documentation>&lt;p&gt;The key password to read the key stored in the keystore. If the keystore is not specified then this value &lt;/p&gt;
+&lt;p&gt;is not considered.&lt;/p&gt;</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute type="xs:string" use="optional" name="ref">
+      <xs:annotation>
+        <xs:documentation>The reference object for this parameter</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="SignType">
+    <xs:complexContent>
+      <xs:extension xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:abstractMessageProcessorType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="jce-signer">
+            <xs:annotation>
+              <xs:documentation>Overrides the binary configuration of the module</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:complexContent>
+                <xs:extension xmlns="http://www.mulesoft.org/schema/mule/signature" base="JCESignerOverrideConfigurationObjectType"></xs:extension>
+              </xs:complexContent>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute type="xs:string" use="optional" name="config-ref">
+          <xs:annotation>
+            <xs:documentation>Specify which configuration to use for this invocation.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute type="xs:string" use="optional" default="#[payload]" name="input-ref">
+          <xs:annotation>
+            <xs:documentation>Payload that has to be signed, needs to be a byte array</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute type="xs:string" use="optional" name="variable">
+          <xs:annotation>
+            <xs:documentation>The enricher target to store the signature</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns="http://www.mulesoft.org/schema/mule/signature" xmlns:mule="http://www.mulesoft.org/schema/mule/core" type="SignXmlType" substitutionGroup="mule:abstract-message-processor" name="sign-xml">
+    <xs:annotation>
+      <xs:documentation>&lt;p&gt;Signs payloads&lt;/p&gt;
+&lt;p/&gt;</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="SignXmlType">
+    <xs:complexContent>
+      <xs:extension xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:abstractMessageProcessorType">
+        <xs:attribute type="xs:string" use="optional" name="config-ref">
+          <xs:annotation>
+            <xs:documentation>Specify which configuration to use for this invocation.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute type="xs:string" use="optional" default="#[payload]" name="input">
+          <xs:annotation>
+            <xs:documentation>Payload that has to be signed, needs to be a byte array</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute xmlns="http://www.mulesoft.org/schema/mule/signature" type="DigestMethodAlgorithmEnumType" use="optional" name="digestMethodAlgorithm">
+          <xs:annotation>
+            <xs:documentation>&lt;p&gt;Digest Method Algorithm&lt;/p&gt; &lt;p&gt;For a reference on the Digest Method Algorithms see @see{http://www.w3.org/TR/2009/WD-xmlsec-algorithms-20090226/#digest-method-uris&lt;/p&gt; &lt;p&gt;ACCEPTED VALUES: RIPEMD160, SHA1, SHA256, SHA512&lt;/p&gt;</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute xmlns="http://www.mulesoft.org/schema/mule/signature" type="CanonicalizationAlgorithmEnumType" use="optional" name="canonicalizationAlgorithm">
+          <xs:annotation>
+            <xs:documentation>&lt;p&gt;Canonicalization Method&lt;/p&gt; &lt;p&gt;For a canonicalization specification see @see{http://www.w3.org/TR/2009/WD-xmlsec-algorithms-20090226/#canonicalization-uris&lt;/p&gt; &lt;p&gt;Accepted Values: EXCLUSIVE, EXCLUSIVE_WITH_COMMENTS, INCLUSIVE, INCLUSE_WITH_COMMENTS&lt;/p&gt;</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute xmlns="http://www.mulesoft.org/schema/mule/signature" type="SignatureMethodAlgorithmEnumType" use="optional" name="signatureMethodAlgorithm">
+          <xs:annotation>
+            <xs:documentation>&lt;p&gt;Signature Method Algorithm&lt;/p&gt; &lt;p&gt;For Signature Method Algorithms specification see @see{http://www.w3.org/TR/2009/WD-xmlsec-algorithms-20090226/#encryption-method-uris&lt;/p&gt; &lt;p&gt;Accepted Values: RSA_SHA1, DSA_SHA1, HMAC_SHA1&lt;/p&gt;</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute xmlns="http://www.mulesoft.org/schema/mule/signature" type="SignatureTypeEnumType" use="optional" name="signatureType">
+          <xs:annotation>
+            <xs:documentation>&lt;p&gt;The encryption type&lt;/p&gt; &lt;p&gt;ACCEPTED VALUES: DETACHED, ENVELOPED, ENVELOPING&lt;/p&gt;</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute type="xs:string" use="optional" name="referenceUri">
+          <xs:annotation>
+            <xs:documentation>&lt;p&gt;Reference URI, if you wish to use an external reference URI for Detached signatures.&lt;/p&gt;</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute type="xs:string" use="optional" name="key">
+          <xs:annotation>
+            <xs:documentation>&lt;p&gt; Key used for encryption or decryption. &lt;/p&gt; &lt;p&gt; If the keystore is defined then this value is the key stored in the keystore. &lt;/p&gt; &lt;p&gt; If the keystore is not defined then this is taken as plain key for encryption and has to be Base64 encrypted. &lt;/p&gt;</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute type="xs:string" use="optional" name="keyPassword">
+          <xs:annotation>
+            <xs:documentation>&lt;p&gt;The key password to read the key stored in the keystore. If the keystore is not specified then this value &lt;/p&gt; &lt;p&gt;is not considered.&lt;/p&gt;</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns="http://www.mulesoft.org/schema/mule/signature" xmlns:mule="http://www.mulesoft.org/schema/mule/core" type="VerifySignatureType" substitutionGroup="mule:abstract-intercepting-message-processor" name="verify-signature">
+    <xs:annotation>
+      <xs:documentation>&lt;p&gt;Validates a Signature for an input&lt;/p&gt;</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="XmlSignerOverrideConfigurationObjectType">
+    <xs:sequence></xs:sequence>
+    <xs:attribute xmlns="http://www.mulesoft.org/schema/mule/signature" type="DigestMethodAlgorithmEnumType" use="optional" name="digestMethodAlgorithm">
+      <xs:annotation>
+        <xs:documentation>&lt;p&gt;Digest Method Algorithm&lt;/p&gt;
+&lt;p&gt;For a reference on the Digest Method Algorithms see @see{http://www.w3.org/TR/2009/WD-xmlsec-algorithms-20090226/#digest-method-uris&lt;/p&gt;
+&lt;p&gt;ACCEPTED VALUES:  RIPEMD160, SHA1, SHA256, SHA512&lt;/p&gt;</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute xmlns="http://www.mulesoft.org/schema/mule/signature" type="CanonicalizationAlgorithmEnumType" use="optional" name="canonicalizationAlgorithm">
+      <xs:annotation>
+        <xs:documentation>&lt;p&gt;Canonicalization Method&lt;/p&gt;
+&lt;p&gt;For a canonicalization specification see @see{http://www.w3.org/TR/2009/WD-xmlsec-algorithms-20090226/#canonicalization-uris&lt;/p&gt;
+&lt;p&gt;Accepted Values: EXCLUSIVE, EXCLUSIVE_WITH_COMMENTS, INCLUSIVE, INCLUSE_WITH_COMMENTS&lt;/p&gt;</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute xmlns="http://www.mulesoft.org/schema/mule/signature" type="SignatureMethodAlgorithmEnumType" use="optional" name="signatureMethodAlgorithm">
+      <xs:annotation>
+        <xs:documentation>&lt;p&gt;Signature Method Algorithm&lt;/p&gt;
+&lt;p&gt;For Signature Method Algorithms specification see @see{http://www.w3.org/TR/2009/WD-xmlsec-algorithms-20090226/#encryption-method-uris&lt;/p&gt;
+&lt;p&gt;Accepted Values: RSA_SHA1, DSA_SHA1, HMAC_SHA1&lt;/p&gt;</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute xmlns="http://www.mulesoft.org/schema/mule/signature" type="SignatureTypeEnumType" use="optional" name="signatureType">
+      <xs:annotation>
+        <xs:documentation>&lt;p&gt;The encryption type&lt;/p&gt;
+&lt;p&gt;ACCEPTED VALUES: DETACHED, ENVELOPED, ENVELOPING&lt;/p&gt;</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute type="xs:string" use="optional" name="referenceUri">
+      <xs:annotation>
+        <xs:documentation>&lt;p&gt;Reference URI, if you wish to use an external reference URI for Detached signatures.&lt;/p&gt;</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute type="xs:string" use="optional" name="key">
+      <xs:annotation>
+        <xs:documentation>&lt;p&gt;
+Key used for encryption or decryption.
+&lt;/p&gt;
+&lt;p&gt;
+If the keystore is defined then this value is the key stored in the keystore.
+&lt;/p&gt;
+&lt;p&gt;
+If the keystore is not defined then this is taken as plain key for encryption and has to be Base64 encrypted.
+&lt;/p&gt;</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute type="xs:string" use="optional" name="keyPassword">
+      <xs:annotation>
+        <xs:documentation>&lt;p&gt;The key password to read the key stored in the keystore. If the keystore is not specified then this value &lt;/p&gt;
+&lt;p&gt;is not considered.&lt;/p&gt;</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute type="xs:string" use="optional" name="ref">
+      <xs:annotation>
+        <xs:documentation>The reference object for this parameter</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="VerifySignatureType">
+    <xs:complexContent>
+      <xs:extension xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:abstractInterceptingMessageProcessorType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="jce-signer">
+            <xs:annotation>
+              <xs:documentation>The binary config</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:complexContent>
+                <xs:extension xmlns="http://www.mulesoft.org/schema/mule/signature" base="JCESignerOverrideConfigurationObjectType"></xs:extension>
+              </xs:complexContent>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="1" name="xml-signer">
+            <xs:annotation>
+              <xs:documentation>xmlconfig</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:complexContent>
+                <xs:extension xmlns="http://www.mulesoft.org/schema/mule/signature" base="XmlSignerOverrideConfigurationObjectType"></xs:extension>
+              </xs:complexContent>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute type="xs:string" use="optional" name="config-ref">
+          <xs:annotation>
+            <xs:documentation>Specify which configuration to use for this invocation.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute type="xs:string" use="optional" default="#[payload]" name="input-ref">
+          <xs:annotation>
+            <xs:documentation>Payload that has to be signed, needs to be a byte array</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute xmlns="http://www.mulesoft.org/schema/mule/signature" type="SignatureModuleTypeEnumType" use="optional" name="using">
+          <xs:annotation>
+            <xs:documentation>The signature configuration that is wanted</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute type="xs:string" use="optional" name="expectedSignature">
+          <xs:annotation>
+            <xs:documentation>The expected encryption for that payload</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="CanonicalizationAlgorithmEnumType">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+    </xs:annotation>
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="EXCLUSIVE">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="EXCLUSIVE_WITH_COMMENTS">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="INCLUSIVE">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="INCLUSE_WITH_COMMENTS">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="SignatureMethodAlgorithmEnumType">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+    </xs:annotation>
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="RSA_SHA1">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="DSA_SHA1">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="HMAC_SHA1">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="DataSignatureAlgorithmEnumType">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+    </xs:annotation>
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MD2WithRSAEncryption">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="MD4WithRSAEncryption">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="MD5WithRSAEncryption">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="RIPEMD128WithRSAEncryption">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="RIPEMD160WithRSAEncryption">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="RIPEMD256WithRSAEncryption">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="SHA1WithRSAEncryption">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="SHA224WithRSAEncryption">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="SHA256WithRSAEncryption">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="SHA512WithRSAEncryption">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="HmacSHA1">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="HmacSHA256">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="HmacSHA384">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="HmacSHA512">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="HmacMD5">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="SignatureModuleTypeEnumType">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+    </xs:annotation>
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="XML_SIGNER">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="JCE_SIGNER">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="SignatureTypeEnumType">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+    </xs:annotation>
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="DETACHED">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ENVELOPED">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ENVELOPING">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="DigestMethodAlgorithmEnumType">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+    </xs:annotation>
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="RIPEMD160">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="SHA1">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="SHA256">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="SHA512">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="OnNoTokenPolicyEnumType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="EXCEPTION"></xs:enumeration>
+          <xs:enumeration value="STOP_FLOW"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="integerType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:integer"></xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="decimalType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:decimal"></xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="floatType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:float"></xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="doubleType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:double"></xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="dateTimeType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:dateTime"></xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="longType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:long"></xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="byteType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:byte"></xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="booleanType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:boolean"></xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="anyUriType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:anyURI"></xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="charType">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="1"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction xmlns:mule="http://www.mulesoft.org/schema/mule/core" base="mule:propertyPlaceholderType"></xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+</xs:schema>

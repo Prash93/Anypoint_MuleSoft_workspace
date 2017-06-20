@@ -16567,3 +16567,280 @@ org.mule.module.apikit.exception.NotFoundException: /getfilms/4
     "genre": "Drama232"
   }
 ] and the ID that was captured is: 14
+2017-06-20 16:30:53,937 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'ramltests'                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-06-20 16:30:54,606 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2017-06-20 16:30:55,436 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2017-06-20 16:30:56,108 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2017-06-20 16:30:56,109 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2017-06-20 16:30:56,745 [main] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@79b84841: startup date [Tue Jun 20 16:30:56 BST 2017]; root of context hierarchy
+2017-06-20 16:31:01,172 [main] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-06-20 16:31:02,845 [main] WARN  org.mule.expression.DefaultExpressionManager - Expression string is not an expression.  Use isExpression(String) to validate first
+2017-06-20 16:31:02,845 [main] WARN  org.mule.expression.DefaultExpressionManager - Expression string is not an expression.  Use isExpression(String) to validate first
+2017-06-20 16:31:02,845 [main] WARN  org.mule.expression.DefaultExpressionManager - Expression string is not an expression.  Use isExpression(String) to validate first
+2017-06-20 16:31:02,845 [main] WARN  org.mule.expression.DefaultExpressionManager - Expression string is not an expression.  Use isExpression(String) to validate first
+2017-06-20 16:31:05,314 [main] WARN  org.mule.module.ognl.expression.OgnlExpressionEvaluator - OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+2017-06-20 16:31:07,247 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\Sa\AnypointStudio\workspace\.mule\.\.mule\ramltests\queue-tx-log\tx1.log and C:\Users\Sa\AnypointStudio\workspace\.mule\.\.mule\ramltests\queue-tx-log\tx2.log
+2017-06-20 16:31:07,288 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\Sa\AnypointStudio\workspace\.mule\.\.mule\ramltests\queue-xa-tx-log\tx1.log and C:\Users\Sa\AnypointStudio\workspace\.mule\.\.mule\ramltests\queue-xa-tx-log\tx2.log
+2017-06-20 16:31:07,941 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2017-06-20 16:31:07,951 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: qacinemas-getandgenre-main
+2017-06-20 16:31:07,952 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=404, exceptions=[org.mule.module.apikit.exception.NotFoundException]}
+2017-06-20 16:31:07,998 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=405, exceptions=[org.mule.module.apikit.exception.MethodNotAllowedException]}
+2017-06-20 16:31:07,999 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=415, exceptions=[org.mule.module.apikit.exception.UnsupportedMediaTypeException]}
+2017-06-20 16:31:07,999 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=406, exceptions=[org.mule.module.apikit.exception.NotAcceptableException]}
+2017-06-20 16:31:07,999 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=400, exceptions=[org.mule.module.apikit.exception.BadRequestException]}
+2017-06-20 16:31:08,089 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: qacinemas-getandgenre-main.stage1
+2017-06-20 16:31:08,108 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: qacinemas-getandgenre-console
+2017-06-20 16:31:08,108 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@77a4bac
+2017-06-20 16:31:08,125 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: qacinemas-getandgenre-console.stage1
+2017-06-20 16:31:08,134 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: get:/getFilms/byGenre:qacinemas-getandgenre-config
+2017-06-20 16:31:08,134 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@13714753
+2017-06-20 16:31:08,145 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: get:/getFilms/byGenre:qacinemas-getandgenre-config.stage1
+2017-06-20 16:31:08,149 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: get:/getFilms:qacinemas-getandgenre-config
+2017-06-20 16:31:08,149 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@52d59507
+2017-06-20 16:31:08,159 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: get:/getFilms:qacinemas-getandgenre-config.stage1
+2017-06-20 16:31:08,161 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: qacinemas-addfilm-main
+2017-06-20 16:31:08,161 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=404, exceptions=[org.mule.module.apikit.exception.NotFoundException]}
+2017-06-20 16:31:08,162 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=405, exceptions=[org.mule.module.apikit.exception.MethodNotAllowedException]}
+2017-06-20 16:31:08,162 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=415, exceptions=[org.mule.module.apikit.exception.UnsupportedMediaTypeException]}
+2017-06-20 16:31:08,163 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=406, exceptions=[org.mule.module.apikit.exception.NotAcceptableException]}
+2017-06-20 16:31:08,163 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=400, exceptions=[org.mule.module.apikit.exception.BadRequestException]}
+2017-06-20 16:31:08,175 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: qacinemas-addfilm-main.stage1
+2017-06-20 16:31:08,177 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: qacinemas-addfilm-console
+2017-06-20 16:31:08,178 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@2aa811f9
+2017-06-20 16:31:08,226 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: qacinemas-addfilm-console.stage1
+2017-06-20 16:31:08,228 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: post:/addFilm:application/json:qacinemas-addfilm-config
+2017-06-20 16:31:08,228 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@24ac6fef
+2017-06-20 16:31:08,238 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: post:/addFilm:application/json:qacinemas-addfilm-config.stage1
+2017-06-20 16:31:08,239 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: qacinemas-getfilmbyid-main
+2017-06-20 16:31:08,239 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=404, exceptions=[org.mule.module.apikit.exception.NotFoundException]}
+2017-06-20 16:31:08,240 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=405, exceptions=[org.mule.module.apikit.exception.MethodNotAllowedException]}
+2017-06-20 16:31:08,244 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=415, exceptions=[org.mule.module.apikit.exception.UnsupportedMediaTypeException]}
+2017-06-20 16:31:08,248 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=406, exceptions=[org.mule.module.apikit.exception.NotAcceptableException]}
+2017-06-20 16:31:08,249 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=400, exceptions=[org.mule.module.apikit.exception.BadRequestException]}
+2017-06-20 16:31:08,263 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: qacinemas-getfilmbyid-main.stage1
+2017-06-20 16:31:08,266 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: qacinemas-getfilmbyid-console
+2017-06-20 16:31:08,266 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@4d525897
+2017-06-20 16:31:08,277 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: qacinemas-getfilmbyid-console.stage1
+2017-06-20 16:31:08,278 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: get:/getFilms/{byFilmID}:qacinemas-getfilmbyid-config
+2017-06-20 16:31:08,278 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@5da3f32a
+2017-06-20 16:31:08,290 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: get:/getFilms/{byFilmID}:qacinemas-getfilmbyid-config.stage1
+2017-06-20 16:31:08,291 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: qacinemas-main
+2017-06-20 16:31:08,291 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=404, exceptions=[org.mule.module.apikit.exception.NotFoundException]}
+2017-06-20 16:31:08,291 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=405, exceptions=[org.mule.module.apikit.exception.MethodNotAllowedException]}
+2017-06-20 16:31:08,294 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=415, exceptions=[org.mule.module.apikit.exception.UnsupportedMediaTypeException]}
+2017-06-20 16:31:08,294 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=406, exceptions=[org.mule.module.apikit.exception.NotAcceptableException]}
+2017-06-20 16:31:08,295 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=400, exceptions=[org.mule.module.apikit.exception.BadRequestException]}
+2017-06-20 16:31:08,322 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: qacinemas-main.stage1
+2017-06-20 16:31:08,323 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: qacinemas-console
+2017-06-20 16:31:08,323 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@56b704ea
+2017-06-20 16:31:08,335 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: qacinemas-console.stage1
+2017-06-20 16:31:08,337 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: get:/films:qacinemas-config
+2017-06-20 16:31:08,337 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@3835d3fd
+2017-06-20 16:31:08,344 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: get:/films:qacinemas-config.stage1
+2017-06-20 16:31:08,366 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: ramltestsFlow
+2017-06-20 16:31:08,367 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@7a247711
+2017-06-20 16:31:08,376 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: ramltestsFlow.stage1
+2017-06-20 16:31:08,378 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: qacinemas-getgenere-main
+2017-06-20 16:31:08,378 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=404, exceptions=[org.mule.module.apikit.exception.NotFoundException]}
+2017-06-20 16:31:08,388 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=405, exceptions=[org.mule.module.apikit.exception.MethodNotAllowedException]}
+2017-06-20 16:31:08,389 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=415, exceptions=[org.mule.module.apikit.exception.UnsupportedMediaTypeException]}
+2017-06-20 16:31:08,389 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=406, exceptions=[org.mule.module.apikit.exception.NotAcceptableException]}
+2017-06-20 16:31:08,389 [main] INFO  org.mule.module.apikit.MappingExceptionListener - Initialising exception listener: MappingExceptionListener{statusCode=400, exceptions=[org.mule.module.apikit.exception.BadRequestException]}
+2017-06-20 16:31:08,403 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: qacinemas-getgenere-main.stage1
+2017-06-20 16:31:08,404 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: qacinemas-getgenere-console
+2017-06-20 16:31:08,405 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@14d18029
+2017-06-20 16:31:08,420 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: qacinemas-getgenere-console.stage1
+2017-06-20 16:31:08,421 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: get:/getfilmsbygenre:qacinemas-getgenere-config
+2017-06-20 16:31:08,422 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@71418a4a
+2017-06-20 16:31:08,439 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: get:/getfilmsbygenre:qacinemas-getgenere-config.stage1
+2017-06-20 16:31:10,324 [main] WARN  org.mule.module.apikit.Configuration - Flow named "get:/getFilms/{byFilmID}:qacinemas-getfilmbyid-config" does not match any RAML descriptor resource
+2017-06-20 16:31:10,325 [main] WARN  org.mule.module.apikit.Configuration - Flow named "get:/films:qacinemas-config" does not match any RAML descriptor resource
+2017-06-20 16:31:10,325 [main] WARN  org.mule.module.apikit.Configuration - Flow named "get:/getfilmsbygenre:qacinemas-getgenere-config" does not match any RAML descriptor resource
+2017-06-20 16:31:10,343 [main] INFO  org.mule.module.apikit.Configuration - Building resource URI cache...
+2017-06-20 16:31:11,068 [main] WARN  org.mule.module.apikit.Configuration - Flow named "get:/getFilms/byGenre:qacinemas-getandgenre-config" does not match any RAML descriptor resource
+2017-06-20 16:31:11,068 [main] WARN  org.mule.module.apikit.Configuration - Flow named "get:/getFilms:qacinemas-getandgenre-config" does not match any RAML descriptor resource
+2017-06-20 16:31:11,160 [main] WARN  org.mule.module.apikit.Configuration - Flow named "get:/getFilms/{byFilmID}:qacinemas-getfilmbyid-config" does not match any RAML descriptor resource
+2017-06-20 16:31:11,160 [main] WARN  org.mule.module.apikit.Configuration - Flow named "get:/films:qacinemas-config" does not match any RAML descriptor resource
+2017-06-20 16:31:11,160 [main] WARN  org.mule.module.apikit.Configuration - Flow named "get:/getfilmsbygenre:qacinemas-getgenere-config" does not match any RAML descriptor resource
+2017-06-20 16:31:11,170 [main] INFO  org.mule.module.apikit.Configuration - Building resource URI cache...
+2017-06-20 16:31:11,251 [main] WARN  org.mule.module.apikit.Configuration - Flow named "get:/getFilms/byGenre:qacinemas-getandgenre-config" does not match any RAML descriptor resource
+2017-06-20 16:31:11,251 [main] WARN  org.mule.module.apikit.Configuration - Flow named "get:/getFilms:qacinemas-getandgenre-config" does not match any RAML descriptor resource
+2017-06-20 16:31:11,252 [main] WARN  org.mule.module.apikit.Configuration - Flow named "get:/films:qacinemas-config" does not match any RAML descriptor resource
+2017-06-20 16:31:11,252 [main] WARN  org.mule.module.apikit.Configuration - Flow named "get:/getfilmsbygenre:qacinemas-getgenere-config" does not match any RAML descriptor resource
+2017-06-20 16:31:11,276 [main] INFO  org.mule.module.apikit.Configuration - Building resource URI cache...
+2017-06-20 16:31:11,324 [main] WARN  org.mule.module.apikit.Configuration - Flow named "get:/getFilms/byGenre:qacinemas-getandgenre-config" does not match any RAML descriptor resource
+2017-06-20 16:31:11,327 [main] WARN  org.mule.module.apikit.Configuration - Flow named "get:/getFilms:qacinemas-getandgenre-config" does not match any RAML descriptor resource
+2017-06-20 16:31:11,327 [main] WARN  org.mule.module.apikit.Configuration - Flow named "get:/getFilms/{byFilmID}:qacinemas-getfilmbyid-config" does not match any RAML descriptor resource
+2017-06-20 16:31:11,329 [main] WARN  org.mule.module.apikit.Configuration - Flow named "get:/getfilmsbygenre:qacinemas-getgenere-config" does not match any RAML descriptor resource
+2017-06-20 16:31:11,333 [main] INFO  org.mule.module.apikit.Configuration - Building resource URI cache...
+2017-06-20 16:31:11,461 [main] WARN  org.mule.module.apikit.Configuration - Flow named "get:/getFilms/byGenre:qacinemas-getandgenre-config" does not match any RAML descriptor resource
+2017-06-20 16:31:11,461 [main] WARN  org.mule.module.apikit.Configuration - Flow named "get:/getFilms:qacinemas-getandgenre-config" does not match any RAML descriptor resource
+2017-06-20 16:31:11,461 [main] WARN  org.mule.module.apikit.Configuration - Flow named "get:/getFilms/{byFilmID}:qacinemas-getfilmbyid-config" does not match any RAML descriptor resource
+2017-06-20 16:31:11,461 [main] WARN  org.mule.module.apikit.Configuration - Flow named "get:/films:qacinemas-config" does not match any RAML descriptor resource
+2017-06-20 16:31:11,465 [main] INFO  org.mule.module.apikit.Configuration - Building resource URI cache...
+2017-06-20 16:31:11,913 [main] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\Sa\AnypointStudio\workspace\.mule\apps\ramltests\qacinemas-getandgenre.xml'}, ConfigResource{resourceName='C:\Users\Sa\AnypointStudio\workspace\.mule\apps\ramltests\qacinemas-addfilm.xml'}, ConfigResource{resourceName='C:\Users\Sa\AnypointStudio\workspace\.mule\apps\ramltests\global.xml'}, ConfigResource{resourceName='C:\Users\Sa\AnypointStudio\workspace\.mule\apps\ramltests\qacinemas-getfilmbyid.xml'}, ConfigResource{resourceName='C:\Users\Sa\AnypointStudio\workspace\.mule\apps\ramltests\qacinemas.xml'}, ConfigResource{resourceName='C:\Users\Sa\AnypointStudio\workspace\.mule\apps\ramltests\ramltests.xml'}, ConfigResource{resourceName='C:\Users\Sa\AnypointStudio\workspace\.mule\apps\ramltests\qacinemas-getgenere.xml'}]"
+2017-06-20 16:31:11,913 [main] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\Sa\AnypointStudio\workspace\.mule\apps\ramltests\qacinemas-getandgenre.xml'}, ConfigResource{resourceName='C:\Users\Sa\AnypointStudio\workspace\.mule\apps\ramltests\qacinemas-addfilm.xml'}, ConfigResource{resourceName='C:\Users\Sa\AnypointStudio\workspace\.mule\apps\ramltests\global.xml'}, ConfigResource{resourceName='C:\Users\Sa\AnypointStudio\workspace\.mule\apps\ramltests\qacinemas-getfilmbyid.xml'}, ConfigResource{resourceName='C:\Users\Sa\AnypointStudio\workspace\.mule\apps\ramltests\qacinemas.xml'}, ConfigResource{resourceName='C:\Users\Sa\AnypointStudio\workspace\.mule\apps\ramltests\ramltests.xml'}, ConfigResource{resourceName='C:\Users\Sa\AnypointStudio\workspace\.mule\apps\ramltests\qacinemas-getgenere.xml'}]"
+2017-06-20 16:31:15,074 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'ramltests'                                 +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-06-20 16:31:15,088 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Starting ResourceManager
+2017-06-20 16:31:15,088 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Started ResourceManager
+2017-06-20 16:31:15,301 [main] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://0.0.0.0:8081
+2017-06-20 16:31:15,312 [main] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://0.0.0.0:8082
+2017-06-20 16:31:15,320 [main] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://0.0.0.0:8083
+2017-06-20 16:31:15,331 [main] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://0.0.0.0:8084
+2017-06-20 16:31:15,339 [main] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://0.0.0.0:8085
+2017-06-20 16:31:15,358 [main] INFO  org.mule.modules.mongo.generated.agents.DefaultSplashScreenAgent - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-06-20 16:31:15,361 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting model: _muleSystemModel
+2017-06-20 16:31:15,367 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: qacinemas-getandgenre-main
+2017-06-20 16:31:15,368 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: qacinemas-getandgenre-main.stage1
+2017-06-20 16:31:15,402 [main] INFO  org.mule.module.apikit.Configuration - 
+********************************************************************************
+* APIKit Console URL: http://127.0.0.1:8083/console                            *
+********************************************************************************
+2017-06-20 16:31:15,402 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: qacinemas-getandgenre-console
+2017-06-20 16:31:15,403 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: qacinemas-getandgenre-console.stage1
+2017-06-20 16:31:15,417 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: get:/getFilms/byGenre:qacinemas-getandgenre-config
+2017-06-20 16:31:15,417 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: get:/getFilms/byGenre:qacinemas-getandgenre-config.stage1
+2017-06-20 16:31:15,425 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: get:/getFilms:qacinemas-getandgenre-config
+2017-06-20 16:31:15,425 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: get:/getFilms:qacinemas-getandgenre-config.stage1
+2017-06-20 16:31:15,429 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: qacinemas-addfilm-main
+2017-06-20 16:31:15,429 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: qacinemas-addfilm-main.stage1
+2017-06-20 16:31:15,443 [main] INFO  org.mule.module.apikit.Configuration - 
+********************************************************************************
+* APIKit Console URL: http://127.0.0.1:8084/console                            *
+********************************************************************************
+2017-06-20 16:31:15,443 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: qacinemas-addfilm-console
+2017-06-20 16:31:15,443 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: qacinemas-addfilm-console.stage1
+2017-06-20 16:31:15,448 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: post:/addFilm:application/json:qacinemas-addfilm-config
+2017-06-20 16:31:15,448 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: post:/addFilm:application/json:qacinemas-addfilm-config.stage1
+2017-06-20 16:31:15,451 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: qacinemas-getfilmbyid-main
+2017-06-20 16:31:15,451 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: qacinemas-getfilmbyid-main.stage1
+2017-06-20 16:31:15,464 [main] INFO  org.mule.module.apikit.Configuration - 
+********************************************************************************
+* APIKit Console URL: http://127.0.0.1:8085/console                            *
+********************************************************************************
+2017-06-20 16:31:15,464 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: qacinemas-getfilmbyid-console
+2017-06-20 16:31:15,465 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: qacinemas-getfilmbyid-console.stage1
+2017-06-20 16:31:15,468 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: get:/getFilms/{byFilmID}:qacinemas-getfilmbyid-config
+2017-06-20 16:31:15,469 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: get:/getFilms/{byFilmID}:qacinemas-getfilmbyid-config.stage1
+2017-06-20 16:31:15,480 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: qacinemas-main
+2017-06-20 16:31:15,480 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: qacinemas-main.stage1
+2017-06-20 16:31:15,498 [main] INFO  org.mule.module.apikit.Configuration - 
+********************************************************************************
+* APIKit Console URL: http://127.0.0.1:8081/console                            *
+********************************************************************************
+2017-06-20 16:31:15,498 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: qacinemas-console
+2017-06-20 16:31:15,498 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: qacinemas-console.stage1
+2017-06-20 16:31:15,506 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: get:/films:qacinemas-config
+2017-06-20 16:31:15,506 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: get:/films:qacinemas-config.stage1
+2017-06-20 16:31:15,512 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: ramltestsFlow
+2017-06-20 16:31:15,512 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: ramltestsFlow.stage1
+2017-06-20 16:31:15,528 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: qacinemas-getgenere-main
+2017-06-20 16:31:15,528 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: qacinemas-getgenere-main.stage1
+2017-06-20 16:31:15,575 [main] INFO  org.mule.module.apikit.Configuration - 
+********************************************************************************
+* APIKit Console URL: http://127.0.0.1:8082/console                            *
+********************************************************************************
+2017-06-20 16:31:15,575 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: qacinemas-getgenere-console
+2017-06-20 16:31:15,576 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: qacinemas-getgenere-console.stage1
+2017-06-20 16:31:15,585 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: get:/getfilmsbygenre:qacinemas-getgenere-config
+2017-06-20 16:31:15,586 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: get:/getfilmsbygenre:qacinemas-getgenere-config.stage1
+2017-06-20 16:31:19,857 [main] INFO  org.mule.module.management.agent.WrapperManagerAgent - This JVM hasn't been launched by the wrapper, the agent will not run.
+2017-06-20 16:31:20,430 [main] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application: ramltests                                             *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   JMX Agent                                                        *
+*   DevKit Extension Information                                     *
+*   Batch module default engine                                      *
+*   Wrapper Manager                                                  *
+**********************************************************************
+2017-06-20 16:32:27,735 [[ramltests].HTTP_Listener_Configuration_getNgenre.worker.01] INFO  com.mulesoft.weave.mule.utils.MuleWeaveFactory$ - MimeType was not resolved '*/*' delegating to Java.
+2017-06-20 16:32:29,518 [[ramltests].HTTP_Listener_Configuration_getNgenre.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - [
+  {
+    "film": "Wonder Woman",
+    "genre": "Action"
+  },
+  {
+    "film": "The Mummy",
+    "genre": "Action"
+  },
+  {
+    "film": "Despicable Me 3",
+    "genre": "Family"
+  },
+  {
+    "film": "Gifted",
+    "genre": "Drama"
+  },
+  {
+    "film": "War for the Planet of the Apes",
+    "genre": "Sci-Fi"
+  },
+  {
+    "film": "Churchill",
+    "genre": "Drama"
+  },
+  {
+    "film": "Transformers: The Last Knight",
+    "genre": "Sci-Fi"
+  },
+  {
+    "film": "My Cousin Rachel",
+    "genre": "Drama"
+  },
+  {
+    "film": "Baywatch",
+    "genre": "Action"
+  }
+] and no genre was selected was so value should be nothing like this :----> null
+2017-06-20 17:22:01,907 [[ramltests].HTTP_Listener_Configuration_getNgenre.worker.01] INFO  com.mulesoft.weave.mule.utils.MuleWeaveFactory$ - MimeType was not resolved '*/*' delegating to Java.
+2017-06-20 17:22:02,017 [[ramltests].HTTP_Listener_Configuration_getNgenre.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - [
+  {
+    "film": "Wonder Woman",
+    "genre": "Action"
+  },
+  {
+    "film": "The Mummy",
+    "genre": "Action"
+  },
+  {
+    "film": "Despicable Me 3",
+    "genre": "Family"
+  },
+  {
+    "film": "Gifted",
+    "genre": "Drama"
+  },
+  {
+    "film": "War for the Planet of the Apes",
+    "genre": "Sci-Fi"
+  },
+  {
+    "film": "Churchill",
+    "genre": "Drama"
+  },
+  {
+    "film": "Transformers: The Last Knight",
+    "genre": "Sci-Fi"
+  },
+  {
+    "film": "My Cousin Rachel",
+    "genre": "Drama"
+  },
+  {
+    "film": "Baywatch",
+    "genre": "Action"
+  }
+] and no genre was selected was so value should be nothing like this :----> null

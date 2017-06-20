@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<namespace xmlns="http://www.mulesoft.org/schema/mule/tooling.attributes" xmlns:mule="http://www.mulesoft.org/schema/mule/core" url="http://www.mulesoft.org/schema/mule/signature" prefix="signature">
+  <global-cloud-connector versions="[3.8.1,8.0.0]" caption="Signature" description="" icon="" localId="parentConfig" image="" abstract="true" extends="http://www.mulesoft.org/schema/mule/signature/abstractSignatureConnectorGeneric"></global-cloud-connector>
+  <global-cloud-connector versions="[3.8.1,8.0.0]" caption="Signature" description="Global Signature configuration information." icon="icons/small/signature-connector-24x16.png" localId="config" image="icons/large/signature-connector-48x32.png" abstract="false" extends="http://www.mulesoft.org/schema/mule/signature/parentConfig" connectivityTesting="off">
+    <attribute-category caption="General" description="Signature configuration properties.">
+      <group id="signatureGenericProperties" caption="Basic Settings">
+        <name name="name" caption="Name" description="Give a name to this configuration so it can be later referenced by config-ref." required="true"></name>
+      </group>
+      <group id="general" caption="General">
+        <boolean defaultValue="false" name="enableLanguage" caption="Enable Language" description="Enable the usage of the module in MEL." supportsExpressions="true" required="false" javaType="boolean"></boolean>
+        <enum defaultValue="JCE_SIGNER" allowsCustom="true" name="defaultSigner" caption="Default Signer" description="Default signature type." supportsExpressions="true" required="false" javaType="org.mule.module.signature.SignatureModuleType">
+          <option value="JCE_SIGNER"></option>
+          <option value="XML_SIGNER"></option>
+        </enum>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Jce Signer" description="JCE Signer.">
+      <group id="jCE Signer Configuration" caption="JCE Signer Configuration">
+        <childElement inplace="true" allowMultiple="false" name="http://www.mulesoft.org/schema/mule/signature/jce-signer-config" caption="Jce Signer Config Reference" required="false" javaType="org.mule.module.signature.signers.JCESignerConfiguration"></childElement>
+      </group>
+    </attribute-category>
+    <attribute-category caption="Xml Signer" description="XML Signer.">
+      <group id="xML Signer Configuration" caption="XML Signer Configuration">
+        <childElement inplace="true" allowMultiple="false" name="http://www.mulesoft.org/schema/mule/signature/xml-signer-config" caption="Xml Signer Config Reference" required="false" javaType="org.mule.module.signature.signers.XmlSignerConfiguration"></childElement>
+      </group>
+    </attribute-category>
+  </global-cloud-connector>
+  <cloud-connector caption="Abstractsignatureconnectorgeneric" description="Interact with Signature." icon="icons/small/signature-connector-24x16.png" localId="abstractSignatureConnectorGeneric" image="icons/large/signature-connector-48x32.png" category="org.mule.tooling.category.security" abstract="true">
+    <attribute-category caption="General" description="General.">
+      <group id="abstractSignatureConnectorGeneric" caption="Basic Settings">
+        <globalRef requiredType="http://www.mulesoft.org/schema/mule/signature/config" name="config-ref" caption="Connector Configuration" description="Specify which configuration to use for this invocation." required="true"></globalRef>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector versions="[3.8.1,8.0.0]" aliasId="org.mule.tooling.ui.modules.core.pattern.signature" caption="Signature" description="Module to create Signatures and verify them ." icon="icons/small/signature-connector-24x16.png" localId="signature-connector" image="icons/large/signature-connector-48x32.png" category="org.mule.tooling.category.security" extends="http://www.mulesoft.org/schema/mule/signature/abstractSignatureConnectorGeneric">
+    <attribute-category caption="General" description="General.">
+      <group id="signatureConnectorGeneric" caption="Basic Settings">
+        <modeSwitch alwaysCombo="true" name="Signature operations to execute" caption="Operation" description="Operation.">
+          <no-operation abstractElement="http://www.mulesoft.org/schema/mule/signature/abstractSignatureConnectorGeneric" versions="[3.8.1,8.0.0]" connector-name="processor"></no-operation>
+          <mode modeId="http://www.mulesoft.org/schema/mule/signature/sign" modeLabel="Sign"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/signature/sign-xml" modeLabel="Sign xml"></mode>
+          <mode modeId="http://www.mulesoft.org/schema/mule/signature/verify-signature" modeLabel="Verify signature"></mode>
+        </modeSwitch>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.lang.Object" caption="Sign" icon="icons/small/signature-connector-24x16.png" localId="sign" image="icons/large/signature-connector-48x32.png" category="org.mule.tooling.category.security" abstract="true" extends="http://www.mulesoft.org/schema/mule/signature/abstractSignatureConnectorGeneric">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <string defaultValue="#[payload]" name="input-ref" caption="Input Reference" description="Payload that has to be signed, needs to be a byte array." required="false" javaType="java.lang.Object"></string>
+        <string name="variable" caption="Variable" description="The enricher target to store the signature." required="false" javaType="java.lang.String"></string>
+      </group>
+      <group id="jCE Signer" caption="JCE Signer">
+        <childElement inplace="true" allowMultiple="false" name="http://www.mulesoft.org/schema/mule/signature/jce-signer" caption="Jce Signer Reference" required="false" javaType="org.mule.module.signature.signers.JCESignerOverrideConfiguration"></childElement>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="java.lang.String" caption="Sign Xml" icon="icons/small/signature-connector-24x16.png" localId="sign-xml" image="icons/large/signature-connector-48x32.png" category="org.mule.tooling.category.security" abstract="true" extends="http://www.mulesoft.org/schema/mule/signature/abstractSignatureConnectorGeneric">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <string defaultValue="#[payload]" name="input" caption="Input" description="Payload that has to be signed, needs to be a byte array." required="false" javaType="java.lang.String"></string>
+        <string name="key" caption="Key" description=" Key used for encryption or decryption.   If the keystore is defined then this value is the key stored in the keystore.   If the keystore is not defined then this is taken as plain key for encryption and has to be Base64 encrypted. ." required="false" javaType="java.lang.String"></string>
+        <string name="keyPassword" caption="Key Password" description="The key password to read the key stored in the keystore. If the keystore is not specified then this value  is not considered.." required="false" javaType="java.lang.String"></string>
+        <string name="referenceUri" caption="Reference Uri" description="Reference URI, if you wish to use an external reference URI for Detached signatures.." required="false" javaType="java.lang.String"></string>
+        <enum allowsCustom="true" name="canonicalizationAlgorithm" caption="Canonicalization Algorithm" description="Canonicalization Method For a canonicalization specification see @see{http://www.w3.org/TR/2009/WD-xmlsec-algorithms-20090226/#canonicalization-uris Accepted Values: EXCLUSIVE, EXCLUSIVE_WITH_COMMENTS, INCLUSIVE, INCLUSE_WITH_COMMENTS." supportsExpressions="true" required="false" javaType="org.mule.security.signature.xml.algorithms.CanonicalizationAlgorithm">
+          <option value="EXCLUSIVE"></option>
+          <option value="EXCLUSIVE_WITH_COMMENTS"></option>
+          <option value="INCLUSE_WITH_COMMENTS"></option>
+          <option value="INCLUSIVE"></option>
+        </enum>
+        <enum allowsCustom="true" name="digestMethodAlgorithm" caption="Digest Method Algorithm" description="Digest Method Algorithm For a reference on the Digest Method Algorithms see @see{http://www.w3.org/TR/2009/WD-xmlsec-algorithms-20090226/#digest-method-uris ACCEPTED VALUES: RIPEMD160, SHA1, SHA256, SHA512." supportsExpressions="true" required="false" javaType="org.mule.security.signature.xml.algorithms.DigestMethodAlgorithm">
+          <option value="RIPEMD160"></option>
+          <option value="SHA1"></option>
+          <option value="SHA256"></option>
+          <option value="SHA512"></option>
+        </enum>
+        <enum allowsCustom="true" name="signatureMethodAlgorithm" caption="Signature Method Algorithm" description="Signature Method Algorithm For Signature Method Algorithms specification see @see{http://www.w3.org/TR/2009/WD-xmlsec-algorithms-20090226/#encryption-method-uris Accepted Values: RSA_SHA1, DSA_SHA1, HMAC_SHA1." supportsExpressions="true" required="false" javaType="org.mule.security.signature.xml.algorithms.SignatureMethodAlgorithm">
+          <option value="DSA_SHA1"></option>
+          <option value="HMAC_SHA1"></option>
+          <option value="RSA_SHA1"></option>
+        </enum>
+        <enum allowsCustom="true" name="signatureType" caption="Signature Type" description="The encryption type ACCEPTED VALUES: DETACHED, ENVELOPED, ENVELOPING." supportsExpressions="true" required="false" javaType="org.mule.security.signature.xml.SignatureType">
+          <option value="DETACHED"></option>
+          <option value="ENVELOPED"></option>
+          <option value="ENVELOPING"></option>
+        </enum>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector returnType="org.mule.api.MuleEvent" caption="Verify Signature" icon="icons/small/signature-connector-24x16.png" localId="verify-signature" image="icons/large/signature-connector-48x32.png" category="org.mule.tooling.category.security" abstract="true" extends="http://www.mulesoft.org/schema/mule/signature/abstractSignatureConnectorGeneric">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <string defaultValue="#[payload]" name="input-ref" caption="Input Reference" description="Payload that has to be signed, needs to be a byte array." required="false" javaType="java.lang.Object"></string>
+        <enum allowsCustom="true" name="using" caption="Using" description="The signature configuration that is wanted." supportsExpressions="true" required="false" javaType="org.mule.module.signature.SignatureModuleType">
+          <option value="JCE_SIGNER"></option>
+          <option value="XML_SIGNER"></option>
+        </enum>
+        <string name="expectedSignature" caption="Expected Signature" description="The expected encryption for that payload." required="false" javaType="java.lang.String"></string>
+      </group>
+      <group id="jCE Signer" caption="JCE Signer">
+        <childElement inplace="true" allowMultiple="false" name="http://www.mulesoft.org/schema/mule/signature/jce-signer" caption="Jce Signer Reference" required="false" javaType="org.mule.module.signature.signers.JCESignerOverrideConfiguration"></childElement>
+      </group>
+      <group id="xML Signer" caption="XML Signer">
+        <childElement inplace="true" allowMultiple="false" name="http://www.mulesoft.org/schema/mule/signature/xml-signer" caption="Xml Signer Reference" required="false" javaType="org.mule.module.signature.signers.XmlSignerOverrideConfiguration"></childElement>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <nested xmlname="jce-signer" caption="" description="" localId="jce-signer" abstract="false">
+    <radioBoolean name="useReference" caption="Reference or expression" description="Provide a reference to a bean or use an expression" fillLine="true"></radioBoolean>
+    <string name="ref" caption="Jce Signer Reference" description="" controlled="useReference"></string>
+    <radioBoolean name="complex" caption="Define attributes" description="Define this element's attributes" fillLine="true"></radioBoolean>
+    <enum allowsCustom="true" name="algorithm" caption="Algorithm" description="Signature Method Algorithm for binary signature
+Accepted Values:
+MD2WithRSAEncryption
+MD4WithRSAEncryption
+MD5WithRSAEncryption
+RIPEMD128WithRSAEncryption
+RIPEMD160WithRSAEncryption
+RIPEMD256WithRSAEncryption
+SHA1WithRSAEncryption
+SHA224WithRSAEncryption
+SHA256WithRSAEncryption
+SHA512WithRSAEncryption
+HmacSHA1
+HmacSHA256
+HmacSHA384
+HmacSHA512
+HmacMD5
+Default: HmacSHA1." supportsExpressions="true" required="false" controlled="complex" javaType="org.mule.security.signature.data.algorithms.DataSignatureAlgorithm">
+      <option value="HmacMD5"></option>
+      <option value="HmacSHA1"></option>
+      <option value="HmacSHA256"></option>
+      <option value="HmacSHA384"></option>
+      <option value="HmacSHA512"></option>
+      <option value="MD2WithRSAEncryption"></option>
+      <option value="MD4WithRSAEncryption"></option>
+      <option value="MD5WithRSAEncryption"></option>
+      <option value="RIPEMD128WithRSAEncryption"></option>
+      <option value="RIPEMD160WithRSAEncryption"></option>
+      <option value="RIPEMD256WithRSAEncryption"></option>
+      <option value="SHA1WithRSAEncryption"></option>
+      <option value="SHA224WithRSAEncryption"></option>
+      <option value="SHA256WithRSAEncryption"></option>
+      <option value="SHA512WithRSAEncryption"></option>
+    </enum>
+    <string name="key" caption="Key" description="
+Key used for encryption or decryption.
+
+
+If the keystore is defined then this value is the key stored in the keystore.
+
+
+If the keystore is not defined then this is taken as plain key for encryption and has to be Base64 encrypted.
+." required="false" controlled="complex" javaType="java.lang.String"></string>
+    <password name="keyPassword" caption="Key Password" description="The key password to read the key stored in the keystore. If the keystore is not specified then this value 
+is not considered.." required="false" controlled="complex" javaType="java.lang.String"></password>
+  </nested>
+  <nested xmlname="jce-signer-config" caption="" description="" localId="jce-signer-config" abstract="false">
+    <radioBoolean name="useReference" caption="Reference or expression" description="Provide a reference to a bean or use an expression" fillLine="true"></radioBoolean>
+    <string name="ref" caption="Jce Signer Config Reference" description="" controlled="useReference"></string>
+    <radioBoolean name="complex" caption="Define attributes" description="Define this element's attributes" fillLine="true"></radioBoolean>
+    <enum defaultValue="HmacSHA1" allowsCustom="true" name="algorithm" caption="Algorithm" description="Signature Method Algorithm for binary signature
+Accepted Values:
+MD2WithRSAEncryption
+MD4WithRSAEncryption
+MD5WithRSAEncryption
+RIPEMD128WithRSAEncryption
+RIPEMD160WithRSAEncryption
+RIPEMD256WithRSAEncryption
+SHA1WithRSAEncryption
+SHA224WithRSAEncryption
+SHA256WithRSAEncryption
+SHA512WithRSAEncryption
+HmacSHA1
+HmacSHA256
+HmacSHA384
+HmacSHA512
+HmacMD5
+Default: HmacSHA1." supportsExpressions="true" required="false" controlled="complex" javaType="org.mule.security.signature.data.algorithms.DataSignatureAlgorithm">
+      <option value="HmacMD5"></option>
+      <option value="HmacSHA1"></option>
+      <option value="HmacSHA256"></option>
+      <option value="HmacSHA384"></option>
+      <option value="HmacSHA512"></option>
+      <option value="MD2WithRSAEncryption"></option>
+      <option value="MD4WithRSAEncryption"></option>
+      <option value="MD5WithRSAEncryption"></option>
+      <option value="RIPEMD128WithRSAEncryption"></option>
+      <option value="RIPEMD160WithRSAEncryption"></option>
+      <option value="RIPEMD256WithRSAEncryption"></option>
+      <option value="SHA1WithRSAEncryption"></option>
+      <option value="SHA224WithRSAEncryption"></option>
+      <option value="SHA256WithRSAEncryption"></option>
+      <option value="SHA512WithRSAEncryption"></option>
+    </enum>
+    <string name="key" caption="Key" description="
+Key used for encryption or decryption.
+
+
+If the keystore is defined then this value is the key stored in the keystore.
+
+
+If the keystore is not defined then this is taken as plain key for encryption and has to be Base64 encrypted.
+." required="false" controlled="complex" javaType="java.lang.String"></string>
+    <file name="keystorePath" caption="Keystore Path" description="
+Keystore path. Two types of keystore are supported JCEKS and JKS
+." required="false" controlled="complex" javaType="java.lang.String"></file>
+    <password name="keystorePassword" caption="Keystore Password" description="The keystore password.." required="false" controlled="complex" javaType="java.lang.String"></password>
+    <password name="keyPassword" caption="Key Password" description="The key password to read the key stored in the keystore. If the keystore is not specified then this value 
+is not considered.." required="false" controlled="complex" javaType="java.lang.String"></password>
+  </nested>
+  <nested xmlname="xml-signer" caption="" description="" localId="xml-signer" abstract="false">
+    <radioBoolean name="useReference" caption="Reference or expression" description="Provide a reference to a bean or use an expression" fillLine="true"></radioBoolean>
+    <string name="ref" caption="Xml Signer Reference" description="" controlled="useReference"></string>
+    <radioBoolean name="complex" caption="Define attributes" description="Define this element's attributes" fillLine="true"></radioBoolean>
+    <enum allowsCustom="true" name="digestMethodAlgorithm" caption="Digest Method Algorithm" description="Digest Method Algorithm
+For a reference on the Digest Method Algorithms see @see{http://www.w3.org/TR/2009/WD-xmlsec-algorithms-20090226/#digest-method-uris
+ACCEPTED VALUES:  RIPEMD160, SHA1, SHA256, SHA512." supportsExpressions="true" required="false" controlled="complex" javaType="org.mule.security.signature.xml.algorithms.DigestMethodAlgorithm">
+      <option value="RIPEMD160"></option>
+      <option value="SHA1"></option>
+      <option value="SHA256"></option>
+      <option value="SHA512"></option>
+    </enum>
+    <enum allowsCustom="true" name="canonicalizationAlgorithm" caption="Canonicalization Algorithm" description="Canonicalization Method
+For a canonicalization specification see @see{http://www.w3.org/TR/2009/WD-xmlsec-algorithms-20090226/#canonicalization-uris
+Accepted Values: EXCLUSIVE, EXCLUSIVE_WITH_COMMENTS, INCLUSIVE, INCLUSE_WITH_COMMENTS." supportsExpressions="true" required="false" controlled="complex" javaType="org.mule.security.signature.xml.algorithms.CanonicalizationAlgorithm">
+      <option value="EXCLUSIVE"></option>
+      <option value="EXCLUSIVE_WITH_COMMENTS"></option>
+      <option value="INCLUSE_WITH_COMMENTS"></option>
+      <option value="INCLUSIVE"></option>
+    </enum>
+    <enum allowsCustom="true" name="signatureMethodAlgorithm" caption="Signature Method Algorithm" description="Signature Method Algorithm
+For Signature Method Algorithms specification see @see{http://www.w3.org/TR/2009/WD-xmlsec-algorithms-20090226/#encryption-method-uris
+Accepted Values: RSA_SHA1, DSA_SHA1, HMAC_SHA1." supportsExpressions="true" required="false" controlled="complex" javaType="org.mule.security.signature.xml.algorithms.SignatureMethodAlgorithm">
+      <option value="DSA_SHA1"></option>
+      <option value="HMAC_SHA1"></option>
+      <option value="RSA_SHA1"></option>
+    </enum>
+    <enum allowsCustom="true" name="signatureType" caption="Signature Type" description="The encryption type
+ACCEPTED VALUES: DETACHED, ENVELOPED, ENVELOPING." supportsExpressions="true" required="false" controlled="complex" javaType="org.mule.security.signature.xml.SignatureType">
+      <option value="DETACHED"></option>
+      <option value="ENVELOPED"></option>
+      <option value="ENVELOPING"></option>
+    </enum>
+    <string name="referenceUri" caption="Reference Uri" description="Reference URI, if you wish to use an external reference URI for Detached signatures.." required="false" controlled="complex" javaType="java.lang.String"></string>
+    <string name="key" caption="Key" description="
+Key used for encryption or decryption.
+
+
+If the keystore is defined then this value is the key stored in the keystore.
+
+
+If the keystore is not defined then this is taken as plain key for encryption and has to be Base64 encrypted.
+." required="false" controlled="complex" javaType="java.lang.String"></string>
+    <string name="keyPassword" caption="Key Password" description="The key password to read the key stored in the keystore. If the keystore is not specified then this value 
+is not considered.." required="false" controlled="complex" javaType="java.lang.String"></string>
+  </nested>
+  <nested xmlname="xml-signer-config" caption="" description="" localId="xml-signer-config" abstract="false">
+    <radioBoolean name="useReference" caption="Reference or expression" description="Provide a reference to a bean or use an expression" fillLine="true"></radioBoolean>
+    <string name="ref" caption="Xml Signer Config Reference" description="" controlled="useReference"></string>
+    <radioBoolean name="complex" caption="Define attributes" description="Define this element's attributes" fillLine="true"></radioBoolean>
+    <enum defaultValue="SHA256" allowsCustom="true" name="digestMethodAlgorithm" caption="Digest Method Algorithm" description="Digest Method Algorithm
+For a reference on the Digest Method Algorithms see @see{http://www.w3.org/TR/2009/WD-xmlsec-algorithms-20090226/#digest-method-uris
+ACCEPTED VALUES:  RIPEMD160, SHA1, SHA256, SHA512." supportsExpressions="true" required="false" controlled="complex" javaType="org.mule.security.signature.xml.algorithms.DigestMethodAlgorithm">
+      <option value="RIPEMD160"></option>
+      <option value="SHA1"></option>
+      <option value="SHA256"></option>
+      <option value="SHA512"></option>
+    </enum>
+    <enum defaultValue="EXCLUSIVE" allowsCustom="true" name="canonicalizationAlgorithm" caption="Canonicalization Algorithm" description="Canonicalization Method
+For a canonicalization specification see @see{http://www.w3.org/TR/2009/WD-xmlsec-algorithms-20090226/#canonicalization-uris
+Accepted Values: EXCLUSIVE, EXCLUSIVE_WITH_COMMENTS, INCLUSIVE, INCLUSE_WITH_COMMENTS." supportsExpressions="true" required="false" controlled="complex" javaType="org.mule.security.signature.xml.algorithms.CanonicalizationAlgorithm">
+      <option value="EXCLUSIVE"></option>
+      <option value="EXCLUSIVE_WITH_COMMENTS"></option>
+      <option value="INCLUSE_WITH_COMMENTS"></option>
+      <option value="INCLUSIVE"></option>
+    </enum>
+    <enum defaultValue="RSA_SHA1" allowsCustom="true" name="signatureMethodAlgorithm" caption="Signature Method Algorithm" description="Signature Method Algorithm
+For Signature Method Algorithms specification see @see{http://www.w3.org/TR/2009/WD-xmlsec-algorithms-20090226/#encryption-method-uris
+Accepted Values: RSA_SHA1, DSA_SHA1, HMAC_SHA1." supportsExpressions="true" required="false" controlled="complex" javaType="org.mule.security.signature.xml.algorithms.SignatureMethodAlgorithm">
+      <option value="DSA_SHA1"></option>
+      <option value="HMAC_SHA1"></option>
+      <option value="RSA_SHA1"></option>
+    </enum>
+    <enum defaultValue="ENVELOPED" allowsCustom="true" name="signatureType" caption="Signature Type" description="The encryption type
+ACCEPTED VALUES: DETACHED, ENVELOPED, ENVELOPING." supportsExpressions="true" required="false" controlled="complex" javaType="org.mule.security.signature.xml.SignatureType">
+      <option value="DETACHED"></option>
+      <option value="ENVELOPED"></option>
+      <option value="ENVELOPING"></option>
+    </enum>
+    <string name="referenceUri" caption="Reference Uri" description="Reference URI, if you wish to use an external reference URI for Detached signatures.." required="false" controlled="complex" javaType="java.lang.String"></string>
+    <string name="key" caption="Key" description="
+Key used for encryption or decryption.
+
+
+If the keystore is defined then this value is the key stored in the keystore.
+
+
+If the keystore is not defined then this is taken as plain key for encryption and has to be Base64 encrypted.
+." required="false" controlled="complex" javaType="java.lang.String"></string>
+    <file name="keystorePath" caption="Keystore Path" description="
+Keystore path. Two types of keystore are supported JCEKS and JKS
+." required="false" controlled="complex" javaType="java.lang.String"></file>
+    <password name="keystorePassword" caption="Keystore Password" description="The keystore password.." required="false" controlled="complex" javaType="java.lang.String"></password>
+    <password name="keyPassword" caption="Key Password" description="The key password to read the key stored in the keystore. If the keystore is not specified then this value 
+is not considered.." required="false" controlled="complex" javaType="java.lang.String"></password>
+  </nested>
+</namespace>

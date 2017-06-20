@@ -3,4 +3,8 @@
     <name>ramltests</name>
     <description></description>
     <muleExtension name="Mongo DB" qualifier="org.mule.tooling.ui.contribution.mongo.3.6.0"/>
+    <muleExtension name="OAuth provider module" qualifier="org.mule.tooling.ui.contribution.oauth2-provider.3.8.1"/>
+    <muleExtension name="Secure Property Placeholder" qualifier="org.mule.tooling.ui.contribution.secure-property-placeholder.3.8.1"/>
+    <muleExtension name="Signature" qualifier="org.mule.tooling.ui.contribution.signature.3.8.1"/>
+    <muleExtension name="Encryption" qualifier="org.mule.tooling.ui.contribution.encryption.3.8.1"/>
 </mule-project>

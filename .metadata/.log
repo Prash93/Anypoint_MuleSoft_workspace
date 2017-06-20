@@ -2744,3 +2744,517 @@ Binding(F2,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+!SESSION 2017-06-20 16:14:33.484 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_131
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data file:/C:/Users/Sa/AnypointStudio/workspace/
+
+!ENTRY org.eclipse.equinox.ds 2 0 2017-06-20 16:15:08.140
+!MESSAGE [SCR - WorkThread] Timeout occurred! Thread was blocked on processing [QueuedJob] WorkPerformer: org.eclipse.equinox.internal.ds.SCRManager@30471d96; actionType 1
+
+!ENTRY org.eclipse.equinox.ds 2 0 2017-06-20 16:15:08.156
+!MESSAGE [SCR] Enabling components of bundle org.eclipse.ui.trace did not complete in 30000 ms 
+
+!ENTRY org.eclipse.core.runtime 4 0 2017-06-20 16:15:13.196
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; osgi.identity="org.eclipse.core.runtime"; type="osgi.bundle"; version:Version="3.11.1.v20150903-1804"; singleton:="true" [id=94] STARTED [STARTED]
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:329)
+	at org.eclipse.osgi.container.Module.start(Module.java:389)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1562)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.osgi 2 0 2017-06-20 16:15:18.235
+!MESSAGE While loading class "org.eclipse.ui.plugin.AbstractUIPlugin", thread "Thread[Start Level: Equinox Container: b082462c-cb55-0017-1fcf-acfb93d9b405,5,main]" timed out waiting (5002ms) for thread "Thread[Component Resolve Thread,5,main]" to finish starting bundle "org.eclipse.core.runtime_3.11.1.v20150903-1804 [94]". To avoid deadlock, thread "Thread[Start Level: Equinox Container: b082462c-cb55-0017-1fcf-acfb93d9b405,5,main]" is proceeding but "org.eclipse.ui.plugin.AbstractUIPlugin" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; osgi.identity="org.eclipse.core.runtime"; type="osgi.bundle"; version:Version="3.11.1.v20150903-1804"; singleton:="true" [id=94] STARTED [STARTED]
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:329)
+	at org.eclipse.osgi.container.Module.start(Module.java:389)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(Unknown Source)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.defineClass(ModuleClassLoader.java:272)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.defineClass(ClasspathManager.java:632)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findClassImpl(ClasspathManager.java:588)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClassImpl(ClasspathManager.java:540)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:527)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:402)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:754)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:706)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:941)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:318)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1562)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.core 1 0 2017-06-20 16:15:47.976
+!MESSAGE Forcing the usage of 'current' in the schemaLocation of  [version 3.3, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/apple-push/3.3/mule-apple-push.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/apple-push/current/mule-apple-push.xsd
+Forcing the usage of 'current' in the schemaLocation of Avalara [version 2.0, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/avalara/2.0/mule-avalara.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/avalara/current/mule-avalara.xsd
+Forcing the usage of 'current' in the schemaLocation of Clarizen [version 1.0, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/clarizen/1.0/mule-clarizen.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/clarizen/current/mule-clarizen.xsd
+Forcing the usage of 'current' in the schemaLocation of Concur [version 1.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/concur/1.0/mule-concur.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/concur/current/mule-concur.xsd
+Forcing the usage of 'current' in the schemaLocation of Documentum [version 1.0, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/documentum/1.0/mule-documentum.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/documentum/current/mule-documentum.xsd
+Forcing the usage of 'current' in the schemaLocation of DotNet Connector [version 1.0-SNAPSHOT, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/dotnet/1.0-SNAPSHOT/mule-dotnet.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/dotnet/current/mule-dotnet.xsd
+Forcing the usage of 'current' in the schemaLocation of Drupal [version 1.0, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/drupal/1.0/mule-drupal.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/drupal/current/mule-drupal.xsd
+Forcing the usage of 'current' in the schemaLocation of MS Dynamics CRM [version 1.4, ESB version 3.3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/dynamicscrm/1.4/mule-dynamicscrm.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/dynamicscrm/current/mule-dynamicscrm.xsd
+Forcing the usage of 'current' in the schemaLocation of MS Dynamics CRM Onpremise [version 1.7.0, ESB version 3.4.0+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/dynamicscrm-onpremise/1.7.0/mule-dynamicscrm-onpremise.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/dynamicscrm-onpremise/current/mule-dynamicscrm-onpremise.xsd
+Forcing the usage of 'current' in the schemaLocation of FreshBooks [version 1.0, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/freshbooks/1.0/mule-freshbooks.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/freshbooks/current/mule-freshbooks.xsd
+Forcing the usage of 'current' in the schemaLocation of Handshake [version 1.0-SNAPSHOT, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/handshake/1.0-SNAPSHOT/mule-handshake.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/handshake/current/mule-handshake.xsd
+Forcing the usage of 'current' in the schemaLocation of HubSpot [version 2.6.9, ESB version 3.3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/hubspot/2.6.9/mule-hubspot.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/hubspot/current/mule-hubspot.xsd
+Forcing the usage of 'current' in the schemaLocation of Kindling [version 2.2, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/kindling/2.2/mule-kindling.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/kindling/current/mule-kindling.xsd
+Forcing the usage of 'current' in the schemaLocation of Marketo [version 1.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/marketo/1.0/mule-marketo.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/marketo/current/mule-marketo.xsd
+Forcing the usage of 'current' in the schemaLocation of MSMQ [version 1.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/msmq/1.0/mule-msmq.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/msmq/current/mule-msmq.xsd
+Forcing the usage of 'current' in the schemaLocation of Netsuite [version 3.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/netsuite/3.0/mule-netsuite.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/netsuite/current/mule-netsuite.xsd
+Forcing the usage of 'current' in the schemaLocation of ServiceNow [version 1.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/servicenow/1.0/mule-servicenow.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/servicenow/current/mule-servicenow.xsd
+Forcing the usage of 'current' in the schemaLocation of ServiceSource [version 1.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/servicesource/1.0/mule-servicesource.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/servicesource/current/mule-servicesource.xsd
+Forcing the usage of 'current' in the schemaLocation of MS Sharepoint [version 2.0.0, ESB version 3.3.0+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/sharepoint/2.0.0/mule-sharepoint.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/sharepoint/current/mule-sharepoint.xsd
+Forcing the usage of 'current' in the schemaLocation of Amazon SNS [version 1.0, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/sns/1.0/mule-sns.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/sns/current/mule-sns.xsd
+Forcing the usage of 'current' in the schemaLocation of Success Factors [version 1.0, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/successfactors/1.0/mule-successfactors.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/successfactors/current/mule-successfactors.xsd
+Forcing the usage of 'current' in the schemaLocation of Sugar [version 1.0, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/sugar/1.0/mule-sugar.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/sugar/current/mule-sugar.xsd
+Forcing the usage of 'current' in the schemaLocation of Taleo [version 1.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/taleo/1.0/mule-taleo.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/taleo/current/mule-taleo.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Absence [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-absence/2.0/mule-wd-absence.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-absence/current/mule-wd-absence.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Academic Foundation [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-academic/2.0/mule-wd-academic.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-academic/current/mule-wd-academic.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Benefits Administration [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-benefits/2.0/mule-wd-benefits.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-benefits/current/mule-wd-benefits.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Campus Engagement [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-campus/2.0/mule-wd-campus.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-campus/current/mule-wd-campus.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Cash Management [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-cash/2.0/mule-wd-cash.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-cash/current/mule-wd-cash.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Compensation [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-compensation/2.0/mule-wd-compensation.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-compensation/current/mule-wd-compensation.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday External Integrations [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-external/2.0/mule-wd-external.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-external/current/mule-wd-external.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Financial Management [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-financial/2.0/mule-wd-financial.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-financial/current/mule-wd-financial.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Human Resource [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-hr/2.0/mule-wd-hr.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-hr/current/mule-wd-hr.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Identity [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-identity/2.0/mule-wd-identity.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-identity/current/mule-wd-identity.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Integrations [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-integration/2.0/mule-wd-integration.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-integration/current/mule-wd-integration.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Notifications [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-notification/2.0/mule-wd-notification.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-notification/current/mule-wd-notification.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Payroll [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-payroll/2.0/mule-wd-payroll.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-payroll/current/mule-wd-payroll.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Payroll Interface [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-payroll-interface/2.0/mule-wd-payroll-interface.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-payroll-interface/current/mule-wd-payroll-interface.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Performance Management [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-performance/2.0/mule-wd-performance.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-performance/current/mule-wd-performance.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Professional Services Automation [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-professional/2.0/mule-wd-professional.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-professional/current/mule-wd-professional.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Recruiting [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-recruiting/2.0/mule-wd-recruiting.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-recruiting/current/mule-wd-recruiting.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Resource Management [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-resource/2.0/mule-wd-resource.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-resource/current/mule-wd-resource.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Revenue Management [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-revenue/2.0/mule-wd-revenue.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-revenue/current/mule-wd-revenue.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Staffing [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-staffing/2.0/mule-wd-staffing.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-staffing/current/mule-wd-staffing.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Student Recruiting [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-student/2.0/mule-wd-student.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-student/current/mule-wd-student.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Talent [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-talent/2.0/mule-wd-talent.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-talent/current/mule-wd-talent.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Tenant Data Translation [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-tenant-data/2.0/mule-wd-tenant-data.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-tenant-data/current/mule-wd-tenant-data.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Time Tracking [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-timetracking/2.0/mule-wd-timetracking.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-timetracking/current/mule-wd-timetracking.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Workforce Planning [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-workforce/2.0/mule-wd-workforce.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-workforce/current/mule-wd-workforce.xsd
+Forcing the usage of 'current' in the schemaLocation of  [version 2.0, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/yammer/2.0/mule-yammer.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/yammer/current/mule-yammer.xsd
+Forcing the usage of 'current' in the schemaLocation of Zendesk [version 1.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/zendesk/1.0/mule-zendesk.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/zendesk/current/mule-zendesk.xsd
+Forcing the usage of 'current' in the schemaLocation of Zuora [version 1.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/zuora/1.0/mule-zuora.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/zuora/current/mule-zuora.xsd
+Forcing the usage of 'current' in the schemaLocation of GetSatisfaction [version 1.0, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/getsatisfaction/1.0/mule-getsatisfaction.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/getsatisfaction/current/mule-getsatisfaction.xsd
+Forcing the usage of 'current' in the schemaLocation of Janrain [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/janrain/2.0/mule-janrain.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/janrain/current/mule-janrain.xsd
+Forcing the usage of 'current' in the schemaLocation of Quickbooks Online [version 5.0, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/quickbooks/5.0/mule-quickbooks.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/quickbooks/current/mule-quickbooks.xsd
+Forcing the usage of 'current' in the schemaLocation of Quickbooks Windows [version 4.0, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/quickbooks-windows/4.0/mule-quickbooks-windows.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/quickbooks-windows/current/mule-quickbooks-windows.xsd
+
+!ENTRY org.mule.tooling.core 1 0 2017-06-20 16:15:48.014
+!MESSAGE Forcing the usage of 'current' in the schemaLocation of  [version 3.3, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/apple-push/3.3/mule-apple-push.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/apple-push/current/mule-apple-push.xsd
+Forcing the usage of 'current' in the schemaLocation of Avalara [version 2.0, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/avalara/2.0/mule-avalara.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/avalara/current/mule-avalara.xsd
+Forcing the usage of 'current' in the schemaLocation of Clarizen [version 1.0, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/clarizen/1.0/mule-clarizen.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/clarizen/current/mule-clarizen.xsd
+Forcing the usage of 'current' in the schemaLocation of Concur [version 1.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/concur/1.0/mule-concur.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/concur/current/mule-concur.xsd
+Forcing the usage of 'current' in the schemaLocation of Documentum [version 1.0, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/documentum/1.0/mule-documentum.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/documentum/current/mule-documentum.xsd
+Forcing the usage of 'current' in the schemaLocation of DotNet Connector [version 1.0-SNAPSHOT, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/dotnet/1.0-SNAPSHOT/mule-dotnet.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/dotnet/current/mule-dotnet.xsd
+Forcing the usage of 'current' in the schemaLocation of Drupal [version 1.0, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/drupal/1.0/mule-drupal.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/drupal/current/mule-drupal.xsd
+Forcing the usage of 'current' in the schemaLocation of MS Dynamics CRM [version 1.4, ESB version 3.3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/dynamicscrm/1.4/mule-dynamicscrm.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/dynamicscrm/current/mule-dynamicscrm.xsd
+Forcing the usage of 'current' in the schemaLocation of MS Dynamics CRM Onpremise [version 1.7.0, ESB version 3.4.0+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/dynamicscrm-onpremise/1.7.0/mule-dynamicscrm-onpremise.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/dynamicscrm-onpremise/current/mule-dynamicscrm-onpremise.xsd
+Forcing the usage of 'current' in the schemaLocation of FreshBooks [version 1.0, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/freshbooks/1.0/mule-freshbooks.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/freshbooks/current/mule-freshbooks.xsd
+Forcing the usage of 'current' in the schemaLocation of Handshake [version 1.0-SNAPSHOT, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/handshake/1.0-SNAPSHOT/mule-handshake.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/handshake/current/mule-handshake.xsd
+Forcing the usage of 'current' in the schemaLocation of HubSpot [version 2.6.9, ESB version 3.3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/hubspot/2.6.9/mule-hubspot.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/hubspot/current/mule-hubspot.xsd
+Forcing the usage of 'current' in the schemaLocation of Kindling [version 2.2, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/kindling/2.2/mule-kindling.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/kindling/current/mule-kindling.xsd
+Forcing the usage of 'current' in the schemaLocation of Marketo [version 1.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/marketo/1.0/mule-marketo.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/marketo/current/mule-marketo.xsd
+Forcing the usage of 'current' in the schemaLocation of MSMQ [version 1.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/msmq/1.0/mule-msmq.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/msmq/current/mule-msmq.xsd
+Forcing the usage of 'current' in the schemaLocation of Netsuite [version 3.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/netsuite/3.0/mule-netsuite.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/netsuite/current/mule-netsuite.xsd
+Forcing the usage of 'current' in the schemaLocation of ServiceNow [version 1.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/servicenow/1.0/mule-servicenow.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/servicenow/current/mule-servicenow.xsd
+Forcing the usage of 'current' in the schemaLocation of ServiceSource [version 1.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/servicesource/1.0/mule-servicesource.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/servicesource/current/mule-servicesource.xsd
+Forcing the usage of 'current' in the schemaLocation of MS Sharepoint [version 2.0.0, ESB version 3.3.0+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/sharepoint/2.0.0/mule-sharepoint.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/sharepoint/current/mule-sharepoint.xsd
+Forcing the usage of 'current' in the schemaLocation of Amazon SNS [version 1.0, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/sns/1.0/mule-sns.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/sns/current/mule-sns.xsd
+Forcing the usage of 'current' in the schemaLocation of Success Factors [version 1.0, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/successfactors/1.0/mule-successfactors.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/successfactors/current/mule-successfactors.xsd
+Forcing the usage of 'current' in the schemaLocation of Sugar [version 1.0, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/sugar/1.0/mule-sugar.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/sugar/current/mule-sugar.xsd
+Forcing the usage of 'current' in the schemaLocation of Taleo [version 1.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/taleo/1.0/mule-taleo.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/taleo/current/mule-taleo.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Absence [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-absence/2.0/mule-wd-absence.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-absence/current/mule-wd-absence.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Academic Foundation [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-academic/2.0/mule-wd-academic.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-academic/current/mule-wd-academic.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Benefits Administration [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-benefits/2.0/mule-wd-benefits.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-benefits/current/mule-wd-benefits.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Campus Engagement [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-campus/2.0/mule-wd-campus.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-campus/current/mule-wd-campus.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Cash Management [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-cash/2.0/mule-wd-cash.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-cash/current/mule-wd-cash.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Compensation [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-compensation/2.0/mule-wd-compensation.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-compensation/current/mule-wd-compensation.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday External Integrations [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-external/2.0/mule-wd-external.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-external/current/mule-wd-external.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Financial Management [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-financial/2.0/mule-wd-financial.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-financial/current/mule-wd-financial.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Human Resource [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-hr/2.0/mule-wd-hr.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-hr/current/mule-wd-hr.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Identity [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-identity/2.0/mule-wd-identity.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-identity/current/mule-wd-identity.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Integrations [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-integration/2.0/mule-wd-integration.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-integration/current/mule-wd-integration.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Notifications [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-notification/2.0/mule-wd-notification.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-notification/current/mule-wd-notification.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Payroll [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-payroll/2.0/mule-wd-payroll.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-payroll/current/mule-wd-payroll.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Payroll Interface [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-payroll-interface/2.0/mule-wd-payroll-interface.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-payroll-interface/current/mule-wd-payroll-interface.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Performance Management [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-performance/2.0/mule-wd-performance.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-performance/current/mule-wd-performance.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Professional Services Automation [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-professional/2.0/mule-wd-professional.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-professional/current/mule-wd-professional.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Recruiting [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-recruiting/2.0/mule-wd-recruiting.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-recruiting/current/mule-wd-recruiting.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Resource Management [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-resource/2.0/mule-wd-resource.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-resource/current/mule-wd-resource.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Revenue Management [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-revenue/2.0/mule-wd-revenue.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-revenue/current/mule-wd-revenue.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Staffing [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-staffing/2.0/mule-wd-staffing.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-staffing/current/mule-wd-staffing.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Student Recruiting [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-student/2.0/mule-wd-student.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-student/current/mule-wd-student.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Talent [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-talent/2.0/mule-wd-talent.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-talent/current/mule-wd-talent.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Tenant Data Translation [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-tenant-data/2.0/mule-wd-tenant-data.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-tenant-data/current/mule-wd-tenant-data.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Time Tracking [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-timetracking/2.0/mule-wd-timetracking.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-timetracking/current/mule-wd-timetracking.xsd
+Forcing the usage of 'current' in the schemaLocation of Workday Workforce Planning [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/wd-workforce/2.0/mule-wd-workforce.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/wd-workforce/current/mule-wd-workforce.xsd
+Forcing the usage of 'current' in the schemaLocation of  [version 2.0, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/yammer/2.0/mule-yammer.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/yammer/current/mule-yammer.xsd
+Forcing the usage of 'current' in the schemaLocation of Zendesk [version 1.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/zendesk/1.0/mule-zendesk.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/zendesk/current/mule-zendesk.xsd
+Forcing the usage of 'current' in the schemaLocation of Zuora [version 1.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/zuora/1.0/mule-zuora.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/zuora/current/mule-zuora.xsd
+Forcing the usage of 'current' in the schemaLocation of GetSatisfaction [version 1.0, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/getsatisfaction/1.0/mule-getsatisfaction.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/getsatisfaction/current/mule-getsatisfaction.xsd
+Forcing the usage of 'current' in the schemaLocation of Janrain [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/janrain/2.0/mule-janrain.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/janrain/current/mule-janrain.xsd
+Forcing the usage of 'current' in the schemaLocation of Quickbooks Online [version 5.0, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/quickbooks/5.0/mule-quickbooks.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/quickbooks/current/mule-quickbooks.xsd
+Forcing the usage of 'current' in the schemaLocation of Quickbooks Windows [version 4.0, ESB version 3.2+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/quickbooks-windows/4.0/mule-quickbooks-windows.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/quickbooks-windows/current/mule-quickbooks-windows.xsd
+
+!ENTRY org.eclipse.jface 2 0 2017-06-20 16:24:10.397
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-06-20 16:24:10.397
+!MESSAGE A conflict occurred for CTRL+SHIFT+I:
+Binding(CTRL+SHIFT+I,
+	ParameterizedCommand(Command(org.eclipse.jdt.debug.ui.commands.Inspect,Inspect,
+		Inspect result of evaluating selected text,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3abc4498,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,,system)
+Binding(CTRL+SHIFT+I,
+	ParameterizedCommand(Command(org.mule.tooling.debugger.commands.openevaluatepopup,(Mule) Open Evaluate Popup,
+		,
+		Category(org.mule.tooling.debugger.commands.category,org.mule.tooling.debugger.commands.category,Category for debugger commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@61ce4af8,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.mule.tooling.contexts.openEvaluatePopup,,,system)
+Binding(CTRL+SHIFT+I,
+	ParameterizedCommand(Command(org.mule.tooling.ui.dfl.contribution.commands.inputSearchCommand,Input Search,
+		Input Search,
+		Category(org.mule.tooling.ui.commandcategory,org.mule.tooling.ui.commandcategory,Category for menu commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5a22eec0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.mule.tooling.contexts.mulePropertiesEditor,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-06-20 16:24:10.397
+!MESSAGE A conflict occurred for CTRL+F:
+Binding(CTRL+F,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.findReplace,Find and Replace,
+		Find and replace text,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4a49919c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+F,
+	ParameterizedCommand(Command(org.mule.tooling.ui.dfl.contribution.commands.searchCommand,Find/Replace,
+		Find/Replace,
+		Category(org.mule.tooling.ui.commandcategory,org.mule.tooling.ui.commandcategory,Category for menu commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@42d060f1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.mule.tooling.contexts.mulePropertiesEditor,,,system)
+Binding(CTRL+F,
+	ParameterizedCommand(Command(org.mule.tooling.commands.focusSearchCommand,Focus Search Command,
+		Focus Search in Palette,
+		Category(org.mule.tooling.ui.commandcategory,org.mule.tooling.ui.commandcategory,Category for menu commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1a9064b7,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.mule.tooling.contexts.mulePropertiesEditor,,,system)
+
+!ENTRY org.eclipse.jface 4 0 2017-06-20 17:25:52.509
+!MESSAGE Unhandled event loop exception during blocked modal context.
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.NullPointerException)
+	at org.eclipse.swt.SWT.error(SWT.java:4491)
+	at org.eclipse.swt.SWT.error(SWT.java:4406)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:138)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4155)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3772)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(ModalContext.java:172)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:387)
+	at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:500)
+	at org.eclipse.ui.internal.progress.ProgressMonitorJobsDialog.run(ProgressMonitorJobsDialog.java:284)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.disconnectFromWorkspace(IDEWorkbenchAdvisor.java:460)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.postShutdown(IDEWorkbenchAdvisor.java:306)
+	at org.eclipse.ui.internal.Workbench.shutdown(Workbench.java:3183)
+	at org.eclipse.ui.internal.Workbench.busyClose(Workbench.java:1201)
+	at org.eclipse.ui.internal.Workbench.access$22(Workbench.java:1113)
+	at org.eclipse.ui.internal.Workbench$19.run(Workbench.java:1454)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1451)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1424)
+	at org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:1596)
+	at org.eclipse.ui.internal.WorkbenchWindow.access$16(WorkbenchWindow.java:1542)
+	at org.eclipse.ui.internal.WorkbenchWindow$11.run(WorkbenchWindow.java:1628)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1625)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1639)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.close(WorkbenchWindow.java:527)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer$7.shellClosed(WBWRenderer.java:518)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:98)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4362)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1113)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1137)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1122)
+	at org.eclipse.swt.widgets.Decorations.closeWidget(Decorations.java:308)
+	at org.eclipse.swt.widgets.Decorations.WM_CLOSE(Decorations.java:1703)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4678)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:339)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1633)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2117)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5050)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2544)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:498)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4774)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:339)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1633)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2117)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5050)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2544)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:498)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4774)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:339)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1633)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2117)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5050)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2549)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3767)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:694)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:606)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+Caused by: java.lang.NullPointerException
+	at org.mule.tooling.messageflow.editor.MultiPageMessageFlowEditor.getAdapter(MultiPageMessageFlowEditor.java:306)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$ActivationListener.handleActivation(AbstractTextEditor.java:984)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$ActivationListener.access$0(AbstractTextEditor.java:980)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$10.run(AbstractTextEditor.java:1008)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	... 76 more
+
+!ENTRY org.eclipse.jface 4 0 2017-06-20 17:25:52.778
+!MESSAGE Unhandled event loop exception during blocked modal context.
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.NullPointerException)
+	at org.eclipse.swt.SWT.error(SWT.java:4491)
+	at org.eclipse.swt.SWT.error(SWT.java:4406)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:138)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4155)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3772)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(ModalContext.java:172)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:387)
+	at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:500)
+	at org.eclipse.ui.internal.progress.ProgressMonitorJobsDialog.run(ProgressMonitorJobsDialog.java:284)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.disconnectFromWorkspace(IDEWorkbenchAdvisor.java:460)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.postShutdown(IDEWorkbenchAdvisor.java:306)
+	at org.eclipse.ui.internal.Workbench.shutdown(Workbench.java:3183)
+	at org.eclipse.ui.internal.Workbench.busyClose(Workbench.java:1201)
+	at org.eclipse.ui.internal.Workbench.access$22(Workbench.java:1113)
+	at org.eclipse.ui.internal.Workbench$19.run(Workbench.java:1454)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1451)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1424)
+	at org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:1596)
+	at org.eclipse.ui.internal.WorkbenchWindow.access$16(WorkbenchWindow.java:1542)
+	at org.eclipse.ui.internal.WorkbenchWindow$11.run(WorkbenchWindow.java:1628)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1625)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1639)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.close(WorkbenchWindow.java:527)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer$7.shellClosed(WBWRenderer.java:518)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:98)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4362)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1113)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1137)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1122)
+	at org.eclipse.swt.widgets.Decorations.closeWidget(Decorations.java:308)
+	at org.eclipse.swt.widgets.Decorations.WM_CLOSE(Decorations.java:1703)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4678)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:339)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1633)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2117)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5050)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2544)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:498)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4774)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:339)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1633)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2117)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5050)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2544)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:498)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4774)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:339)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1633)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2117)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5050)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2549)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3767)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:694)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:606)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+Caused by: java.lang.NullPointerException
+	at org.mule.tooling.messageflow.editor.MultiPageMessageFlowEditor.getAdapter(MultiPageMessageFlowEditor.java:306)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$ActivationListener.handleActivation(AbstractTextEditor.java:984)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$ActivationListener.access$0(AbstractTextEditor.java:980)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$10.run(AbstractTextEditor.java:1008)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	... 76 more
+
+!ENTRY org.eclipse.jface 4 0 2017-06-20 17:25:52.794
+!MESSAGE Unhandled event loop exception during blocked modal context.
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.NullPointerException)
+	at org.eclipse.swt.SWT.error(SWT.java:4491)
+	at org.eclipse.swt.SWT.error(SWT.java:4406)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:138)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4155)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3772)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(ModalContext.java:172)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:387)
+	at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:500)
+	at org.eclipse.ui.internal.progress.ProgressMonitorJobsDialog.run(ProgressMonitorJobsDialog.java:284)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.disconnectFromWorkspace(IDEWorkbenchAdvisor.java:460)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.postShutdown(IDEWorkbenchAdvisor.java:306)
+	at org.eclipse.ui.internal.Workbench.shutdown(Workbench.java:3183)
+	at org.eclipse.ui.internal.Workbench.busyClose(Workbench.java:1201)
+	at org.eclipse.ui.internal.Workbench.access$22(Workbench.java:1113)
+	at org.eclipse.ui.internal.Workbench$19.run(Workbench.java:1454)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1451)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1424)
+	at org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:1596)
+	at org.eclipse.ui.internal.WorkbenchWindow.access$16(WorkbenchWindow.java:1542)
+	at org.eclipse.ui.internal.WorkbenchWindow$11.run(WorkbenchWindow.java:1628)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1625)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1639)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.close(WorkbenchWindow.java:527)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer$7.shellClosed(WBWRenderer.java:518)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:98)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4362)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1113)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1137)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1122)
+	at org.eclipse.swt.widgets.Decorations.closeWidget(Decorations.java:308)
+	at org.eclipse.swt.widgets.Decorations.WM_CLOSE(Decorations.java:1703)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4678)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:339)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1633)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2117)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5050)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2544)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:498)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4774)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:339)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1633)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2117)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5050)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2544)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:498)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4774)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:339)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1633)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2117)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5050)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2549)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3767)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:694)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:606)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+Caused by: java.lang.NullPointerException
+	at org.mule.tooling.messageflow.editor.MultiPageMessageFlowEditor.getAdapter(MultiPageMessageFlowEditor.java:306)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$ActivationListener.handleActivation(AbstractTextEditor.java:984)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$ActivationListener.access$0(AbstractTextEditor.java:980)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$10.run(AbstractTextEditor.java:1008)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	... 76 more
