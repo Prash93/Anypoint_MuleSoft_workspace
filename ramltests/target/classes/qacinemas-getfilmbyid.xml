@@ -10,7 +10,7 @@ http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee
     <flow name="qacinemas-getfilmbyid-main">
         <http:listener config-ref="HTTP_Listener_Configuration_filmid" path="/api/*" doc:name="HTTP"/>
         <apikit:router config-ref="qacinemas-getfilmbyid-config" doc:name="APIkit Router"/>
-        <exception-strategy ref="qacinemas-getfilmbyid-apiKitGlobalExceptionMapping" doc:name="Reference Exception Strategy"/>
+        <exception-strategy ref="qacinemas-getfilmbyidChoice_Exception_Strategy" doc:name="Reference Exception Strategy"/>
     </flow>
     <flow name="qacinemas-getfilmbyid-console">
         <http:listener config-ref="HTTP_Listener_Configuration_filmid" path="/console/*" doc:name="HTTP"/>
@@ -34,6 +34,24 @@ payload map {
         <logger message="#[payload + &quot; and the ID that was captured is: &quot; + message.inboundProperties.'http.uri.params'.byFilmID]" level="INFO" doc:name="Logger"/>
 
     </flow>
+    <choice-exception-strategy name="qacinemas-getfilmbyidChoice_Exception_Strategy">
+        <catch-exception-strategy when="#[exception.causeMatches(&quot;org.mule.module.apikit.exception.InvalidUriParameterException&quot;)]" doc:name="InvalidInputTypeException-NotInteger">
+            <set-payload value="NOT A VALID INPUT TYPE, IT SHOULD BE OF AN INTEGER TYPE AND ERROR IS: #[exception]" doc:name="Set Payload"/>
+            <set-property propertyName="http.status" value="400" doc:name="Property"/>
+            <logger message="#[&quot;INVALID INPUT TYPE AND PAYLOAD IS: &quot; + payload]" level="INFO" doc:name="Logger"/>
+        </catch-exception-strategy>
+        <catch-exception-strategy doc:name="Catch Exception Strategy" when="#[exception.causeMatches(&quot;org.mule.module.apikit.exception.MethodNotAllowedException&quot;)]">
+            <set-payload value="NO INPUT ENTERED AND ERROR IS: #[exception]" doc:name="Set Payload"/>
+            <set-property propertyName="http.status" value="405" doc:name="Property"/>
+            <logger message="#[&quot;NO INPUT and the payload is: &quot; + payload]" level="INFO" doc:name="Logger"/>
+        </catch-exception-strategy>
+        <catch-exception-strategy  doc:name="CatchAllException-OtherBadRequests">
+            <set-payload value="OTHER EXCEPTIONS AND ERROR IS: #[exception]" doc:name="Set Payload"/>
+            <set-property propertyName="http.status" value="500" doc:name="Property"/>
+            <logger message="#[&quot;OTHER BAD REQUESTS and the payload is: &quot; + payload]" level="INFO" doc:name="Logger"/>
+        </catch-exception-strategy>
+    </choice-exception-strategy>
+
     <apikit:mapping-exception-strategy name="qacinemas-getfilmbyid-apiKitGlobalExceptionMapping">
         <apikit:mapping statusCode="404">
             <apikit:exception value="org.mule.module.apikit.exception.NotFoundException" />
@@ -61,4 +79,5 @@ payload map {
             <set-payload value="{ &quot;message&quot;: &quot;Bad request&quot; }" doc:name="Set Payload"/>
         </apikit:mapping>
     </apikit:mapping-exception-strategy>
+
 </mule>

@@ -7,8 +7,6 @@ http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/cu
 http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd">
 
     <apikit:config name="qacinemas-config" raml="qacinemas.raml" consoleEnabled="false" doc:name="Router"/>
-    <db:mysql-config name="MySQL_Configuration" host="localhost" port="3306" user="root" password="Pr@shMysql" database="qacinemasdb" doc:name="MySQL Configuration"/>
-    <http:request-config name="HTTP_Request_Configuration" doc:name="HTTP Request Configuration"/>
     <flow name="qacinemas-main">
         <http:listener config-ref="HTTP_Listener_Configuration_get" path="/api/*" doc:name="HTTP"/>
         <apikit:router config-ref="qacinemas-config" doc:name="APIkit Router"/>
@@ -23,15 +21,14 @@ http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee
             <db:parameterized-query><![CDATA[select * from films]]></db:parameterized-query>
         </db:select>
         <dw:transform-message doc:name="Transform Message">
-            <dw:input-payload doc:sample="sample_data\list_map.dwl"/>
+            <dw:input-payload doc:sample="sample_data\list_map_7.dwl"/>
             <dw:set-payload><![CDATA[%dw 1.0
 %output application/json
 ---
 payload map {
 	film: $.film_name,
 	genre: $.film_genre
-}
-]]></dw:set-payload>
+}]]></dw:set-payload>
         </dw:transform-message>
         <logger message="#[payload]" level="INFO" doc:name="Logger"/>
 
