@@ -15,6 +15,8 @@ http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/cu
     <http:listener-config name="HTTP_Listener_Configuration_add" host="0.0.0.0" port="8084" doc:name="HTTP Listener Configuration"/>
     <http:listener-config name="HTTP_Listener_Configuration_filmid" host="0.0.0.0" port="8085" doc:name="HTTP Listener Configuration"/>
     <db:mysql-config name="MySQL_Configuration" host="localhost" port="3306" user="prash" password="prash" database="qacinemasdb" doc:name="MySQL Configuration"/>
+    <http:listener-config name="HTTP_Listener_Configuration_delete" host="0.0.0.0" port="8086" doc:name="HTTP Listener Configuration"/>
+    <http:listener-config name="HTTP_Listener_Configuration_update" host="0.0.0.0" port="8087" doc:name="HTTP Listener Configuration"/>
 
 
 

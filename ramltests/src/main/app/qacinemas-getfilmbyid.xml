@@ -8,7 +8,7 @@ http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee
 
     <apikit:config name="qacinemas-getfilmbyid-config" raml="qacinemas-getfilmbyid.raml" consoleEnabled="false" doc:name="Router"/>
     <flow name="qacinemas-getfilmbyid-main">
-        <http:listener config-ref="HTTP_Listener_Configuration_filmid" path="/api/*" doc:name="HTTP"/>
+        <http:listener config-ref="HTTP_Listener_Configuration_filmid" path="/qacinema/*" doc:name="HTTP"/>
         <apikit:router config-ref="qacinemas-getfilmbyid-config" doc:name="APIkit Router"/>
         <exception-strategy ref="qacinemas-getfilmbyidChoice_Exception_Strategy" doc:name="Reference Exception Strategy"/>
     </flow>
@@ -40,7 +40,7 @@ payload map {
             <set-property propertyName="http.status" value="400" doc:name="Property"/>
             <logger message="#[&quot;INVALID INPUT TYPE AND PAYLOAD IS: &quot; + payload]" level="INFO" doc:name="Logger"/>
         </catch-exception-strategy>
-        <catch-exception-strategy doc:name="Catch Exception Strategy" when="#[exception.causeMatches(&quot;org.mule.module.apikit.exception.MethodNotAllowedException&quot;)]">
+        <catch-exception-strategy doc:name="MethodNotAllowedException-NoInputGiven" when="#[exception.causeMatches(&quot;org.mule.module.apikit.exception.MethodNotAllowedException&quot;)]">
             <set-payload value="NO INPUT ENTERED AND ERROR IS: #[exception]" doc:name="Set Payload"/>
             <set-property propertyName="http.status" value="405" doc:name="Property"/>
             <logger message="#[&quot;NO INPUT and the payload is: &quot; + payload]" level="INFO" doc:name="Logger"/>

@@ -1,0 +1,31 @@
+#%RAML 1.0
+title: QA Cinemas
+version: 1.0
+baseUri: http://apps.qacinemas.com/api/
+
+/updatefilm:
+  
+  put:
+    body: 
+      application/json:
+        type: object
+        properties: 
+          filmID: integer
+          film: string
+          genre: string
+        example: |
+          {
+            "filmID": 1,
+            "film": "Wonder Woman",
+            "genre": "Action"
+          }
+    responses: 
+      200:
+        body: 
+          application/json:
+            example: |
+              {
+                "filmID": 1,
+                "film": "Wonder Woman",
+                "genre": "Fantasy"
+              }

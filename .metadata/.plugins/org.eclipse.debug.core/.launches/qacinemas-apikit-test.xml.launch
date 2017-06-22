@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.munit.launchconfig">
+<listAttribute key="Mpath">
+<listEntry value="C:\Users\Sa\AnypointStudio\workspace\ramltests\src\test\munit\qacinemas-apikit-test.xml"/>
+</listAttribute>
+<stringAttribute key="Ppath" value="C:\Users\Sa\AnypointStudio\workspace\ramltests"/>
+<stringAttribute key="launch_mule_server_version" value="org.mule.tooling.server.3.8.4.ee"/>
+<listAttribute key="mule-project-names">
+<listEntry value="ramltests"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="qacinemas-apikit-test.xml"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="ramltests"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Djava.library.path=C:\Users\Sa\AnypointStudio\workspace\ramltests\lib&#13;&#10;-DmunitProjectName=ramltests&#13;&#10;-Dlog4j.skipJansi=true"/>
+<stringAttribute key="resource" value="qacinemas-apikit-test.xml"/>
+</launchConfiguration>

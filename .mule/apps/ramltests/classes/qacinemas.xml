@@ -8,7 +8,7 @@ http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee
 
     <apikit:config name="qacinemas-config" raml="qacinemas.raml" consoleEnabled="false" doc:name="Router"/>
     <flow name="qacinemas-main">
-        <http:listener config-ref="HTTP_Listener_Configuration_get" path="/api/*" doc:name="HTTP"/>
+        <http:listener config-ref="HTTP_Listener_Configuration_get" path="/cinema/*" doc:name="HTTP"/>
         <apikit:router config-ref="qacinemas-config" doc:name="APIkit Router"/>
         <exception-strategy ref="qacinemas-apiKitGlobalExceptionMapping" doc:name="Reference Exception Strategy"/>
     </flow>
