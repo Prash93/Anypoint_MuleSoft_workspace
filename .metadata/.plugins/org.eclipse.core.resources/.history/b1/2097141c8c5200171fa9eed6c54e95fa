@@ -1,5 +1,0 @@
-#Fri Jun 16 12:43:31 BST 2017
-encoding=UTF-8
-domain=default
-redeployment.enabled=true
-config.resources=qacinemas-getandgenre.xml,qacinemas.xml,ramltests.xml,qacinemas-getgenere.xml

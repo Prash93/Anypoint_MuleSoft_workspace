@@ -30,13 +30,14 @@ http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee
 }]]></dw:set-payload>
         </dw:transform-message>
         <logger message="#[payload + &quot; and id taken was: &quot; + payload.filmID]" level="INFO" doc:name="Logger"/>
-        <db:insert config-ref="MySQL_Configuration" doc:name="Database">
-            <db:parameterized-query><![CDATA[INSERT INTO films (film_id, film_name, film_genre) VALUES (#[payload.filmID], #[payload.film], #[payload.genre]) 
-	ON DUPLICATE KEY 
-		UPDATE film_name = #[payload.film], film_genre = #[payload.genre];]]></db:parameterized-query>
-        </db:insert>
+        <db:update config-ref="MySQL_Configuration" doc:name="Database">
+            <db:parameterized-query><![CDATA[UPDATE films
+SET film_name = #[payload.film], film_genre = #[payload.genre]
+WHERE film_id = #[payload.filmID];]]></db:parameterized-query>
+        </db:update>
         <logger message="#[payload]" level="INFO" doc:name="Logger"/>
-        <set-payload value="#[payload == 1 ? &quot;message : film successfully upserted&quot; : &quot;message : film was not upserted&quot;]" doc:name="Set Payload"/>
+        <set-payload value="#[payload == 1 ? &quot;message : film successfully updated&quot; : &quot;message : film was not updated&quot;]" doc:name="Set Payload"/>
+
     </flow>
     <apikit:mapping-exception-strategy name="qacinemas-updatefilm-apiKitGlobalExceptionMapping">
         <apikit:mapping statusCode="404">

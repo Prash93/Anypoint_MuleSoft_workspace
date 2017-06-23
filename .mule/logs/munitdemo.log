@@ -259,3 +259,59 @@
 *   Batch module default engine                                      *
 *   Wrapper Manager                                                  *
 **********************************************************************
+2017-06-23 15:13:42,995 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'munitdemo'                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-06-23 15:13:43,172 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2017-06-23 15:13:43,276 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2017-06-23 15:13:43,428 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2017-06-23 15:13:43,428 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2017-06-23 15:13:43,504 [main] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@6e46d9f4: startup date [Fri Jun 23 15:13:43 BST 2017]; root of context hierarchy
+2017-06-23 15:13:45,300 [main] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-06-23 15:13:46,257 [main] WARN  org.mule.module.ognl.expression.OgnlExpressionEvaluator - OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+2017-06-23 15:13:46,829 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\Sa\AnypointStudio\workspace\.mule\.\.mule\munitdemo\queue-tx-log\tx1.log and C:\Users\Sa\AnypointStudio\workspace\.mule\.\.mule\munitdemo\queue-tx-log\tx2.log
+2017-06-23 15:13:46,861 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\Sa\AnypointStudio\workspace\.mule\.\.mule\munitdemo\queue-xa-tx-log\tx1.log and C:\Users\Sa\AnypointStudio\workspace\.mule\.\.mule\munitdemo\queue-xa-tx-log\tx2.log
+2017-06-23 15:13:46,966 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2017-06-23 15:13:46,970 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: munit-appFlow
+2017-06-23 15:13:46,970 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1d4fb213
+2017-06-23 15:13:46,982 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: munit-appFlow.stage1
+2017-06-23 15:13:46,990 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: munit-demoFlow
+2017-06-23 15:13:46,990 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@5a545b0f
+2017-06-23 15:13:47,006 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: munit-demoFlow.stage1
+2017-06-23 15:13:47,010 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: decisionFlow
+2017-06-23 15:13:47,010 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1163a27
+2017-06-23 15:13:47,022 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: decisionFlow.stage1
+2017-06-23 15:13:47,756 [main] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\Sa\AnypointStudio\workspace\.mule\apps\munitdemo\munit-app.xml'}, ConfigResource{resourceName='C:\Users\Sa\AnypointStudio\workspace\.mule\apps\munitdemo\munitdemo.xml'}]"
+2017-06-23 15:13:47,760 [main] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\Sa\AnypointStudio\workspace\.mule\apps\munitdemo\munit-app.xml'}, ConfigResource{resourceName='C:\Users\Sa\AnypointStudio\workspace\.mule\apps\munitdemo\munitdemo.xml'}]"
+2017-06-23 15:13:50,895 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'munitdemo'                                 +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-06-23 15:13:50,906 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Starting ResourceManager
+2017-06-23 15:13:50,906 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Started ResourceManager
+2017-06-23 15:13:51,093 [main] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://0.0.0.0:8081
+2017-06-23 15:13:51,101 [main] INFO  org.mule.modules.oauth2.provider.agents.DefaultSplashScreenAgent - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-06-23 15:13:51,105 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting model: _muleSystemModel
+2017-06-23 15:13:51,105 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: munit-appFlow
+2017-06-23 15:13:51,105 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: munit-appFlow.stage1
+2017-06-23 15:13:51,113 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: munit-demoFlow
+2017-06-23 15:13:51,113 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: munit-demoFlow.stage1
+2017-06-23 15:13:51,113 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: decisionFlow
+2017-06-23 15:13:51,117 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: decisionFlow.stage1
+2017-06-23 15:13:51,161 [main] INFO  org.mule.module.management.agent.WrapperManagerAgent - This JVM hasn't been launched by the wrapper, the agent will not run.
+2017-06-23 15:13:51,209 [main] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application: munitdemo                                             *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   JMX Agent                                                        *
+*   DevKit Extension Information                                     *
+*   Batch module default engine                                      *
+*   Wrapper Manager                                                  *
+**********************************************************************
