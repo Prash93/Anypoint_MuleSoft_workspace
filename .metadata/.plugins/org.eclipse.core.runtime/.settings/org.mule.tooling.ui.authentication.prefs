@@ -1,4 +1,5 @@
-authenticated.users=[{"token"\:"4acaf870-a94b-4c2c-8d5e-c45fe35c0884","userId"\:"prashgajendra","refreshToken"\:"","baseUrl"\:"https\://anypoint.mulesoft.com/"}]
-current.token=4acaf870-a94b-4c2c-8d5e-c45fe35c0884
+authenticated.users=[{"token"\:"1f66b2ae-c8a6-43fe-be7d-e8db2dd950f6","userId"\:"prashgajendra","refreshToken"\:"","baseUrl"\:"https\://anypoint.mulesoft.com/"}]
+current.token=1f66b2ae-c8a6-43fe-be7d-e8db2dd950f6
 current.user=prashgajendra
 eclipse.preferences.version=1
+org.mule.tooling.amc.apps={"userProjectMap"\:{"prashgajendra"\:{"qacinemasproject"\:"{\\"applicationName\\"\:\\"qacinemasproject\\",\\"muleRuntime\\"\:\\"3.8.4\\",\\"properties\\"\:{}}"}}}

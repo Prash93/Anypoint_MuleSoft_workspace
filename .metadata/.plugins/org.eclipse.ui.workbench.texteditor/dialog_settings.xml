@@ -2,12 +2,15 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="apessentialsFlow" key="selection"/>
+		<item value="Invalid" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Invalid"/>
+			<item value="syntax"/>
+			<item value="sq"/>
 			<item value="apessentialsFlow"/>
 			<item value="getCSVAccountsFlow"/>
 			<item value="&lt;dw:transform-message"/>

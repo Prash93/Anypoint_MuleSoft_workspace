@@ -1,0 +1,144 @@
+INFO  2017-06-27 13:05:37,063 [main] org.mule.lifecycle.AbstractLifecycleManager: Initialising RegistryBroker
+INFO  2017-06-27 13:05:37,206 [main] org.mule.module.extension.internal.manager.DefaultExtensionManager: Starting discovery of extensions
+INFO  2017-06-27 13:05:37,446 [main] org.mule.module.extension.internal.manager.DefaultExtensionManager: Discovered 1 extensions
+INFO  2017-06-27 13:05:37,446 [main] org.mule.module.extension.internal.manager.DefaultExtensionManager: Registering extension validation (version 3.8)
+INFO  2017-06-27 13:05:37,891 [main] org.mule.config.spring.MuleArtifactContext: Refreshing org.mule.config.spring.MuleArtifactContext@7a34f66a: startup date [Tue Jun 27 13:05:37 BST 2017]; root of context hierarchy
+INFO  2017-06-27 13:05:41,269 [main] org.mule.config.spring.processors.NoDevkitInjectorProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+WARN  2017-06-27 13:05:42,604 [main] org.mule.expression.DefaultExpressionManager: Expression string is not an expression.  Use isExpression(String) to validate first
+WARN  2017-06-27 13:05:42,604 [main] org.mule.expression.DefaultExpressionManager: Expression string is not an expression.  Use isExpression(String) to validate first
+WARN  2017-06-27 13:05:42,604 [main] org.mule.expression.DefaultExpressionManager: Expression string is not an expression.  Use isExpression(String) to validate first
+WARN  2017-06-27 13:05:42,604 [main] org.mule.expression.DefaultExpressionManager: Expression string is not an expression.  Use isExpression(String) to validate first
+WARN  2017-06-27 13:05:45,669 [main] org.mule.module.ognl.expression.OgnlExpressionEvaluator: OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+INFO  2017-06-27 13:05:47,197 [main] org.mule.util.journal.TransactionJournal: Using files for tx logs C:\Users\Sa\AnypointStudio\workspace\.mule\.\.mule\qacinemasproject\queue-tx-log\tx1.log and C:\Users\Sa\AnypointStudio\workspace\.mule\.\.mule\qacinemasproject\queue-tx-log\tx2.log
+INFO  2017-06-27 13:05:47,269 [main] org.mule.util.journal.TransactionJournal: Using files for tx logs C:\Users\Sa\AnypointStudio\workspace\.mule\.\.mule\qacinemasproject\queue-xa-tx-log\tx1.log and C:\Users\Sa\AnypointStudio\workspace\.mule\.\.mule\qacinemasproject\queue-xa-tx-log\tx2.log
+INFO  2017-06-27 13:05:47,621 [main] org.mule.lifecycle.AbstractLifecycleManager: Initialising model: _muleSystemModel
+INFO  2017-06-27 13:05:47,621 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: qacinemas-main
+INFO  2017-06-27 13:05:47,621 [main] org.mule.module.apikit.MappingExceptionListener: Initialising exception listener: MappingExceptionListener{statusCode=404, exceptions=[org.mule.module.apikit.exception.NotFoundException]}
+INFO  2017-06-27 13:05:47,647 [main] org.mule.module.apikit.MappingExceptionListener: Initialising exception listener: MappingExceptionListener{statusCode=405, exceptions=[org.mule.module.apikit.exception.MethodNotAllowedException]}
+INFO  2017-06-27 13:05:47,647 [main] org.mule.module.apikit.MappingExceptionListener: Initialising exception listener: MappingExceptionListener{statusCode=415, exceptions=[org.mule.module.apikit.exception.UnsupportedMediaTypeException]}
+INFO  2017-06-27 13:05:47,647 [main] org.mule.module.apikit.MappingExceptionListener: Initialising exception listener: MappingExceptionListener{statusCode=406, exceptions=[org.mule.module.apikit.exception.NotAcceptableException]}
+INFO  2017-06-27 13:05:47,648 [main] org.mule.module.apikit.MappingExceptionListener: Initialising exception listener: MappingExceptionListener{statusCode=400, exceptions=[org.mule.module.apikit.exception.BadRequestException]}
+INFO  2017-06-27 13:05:47,800 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: qacinemas-main.stage1
+INFO  2017-06-27 13:05:47,833 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: qacinemas-console
+INFO  2017-06-27 13:05:47,833 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@559e3f67
+INFO  2017-06-27 13:05:47,838 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: qacinemas-console.stage1
+INFO  2017-06-27 13:05:47,843 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: put:/Bookings/updateBooking:application/json:qacinemas-config
+INFO  2017-06-27 13:05:47,844 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@762da62b
+INFO  2017-06-27 13:05:47,852 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: put:/Bookings/updateBooking:application/json:qacinemas-config.stage1
+INFO  2017-06-27 13:05:47,853 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: put:/QACinemas/updateFilm:application/json:qacinemas-config
+INFO  2017-06-27 13:05:47,853 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@6ec3a4c2
+INFO  2017-06-27 13:05:47,860 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: put:/QACinemas/updateFilm:application/json:qacinemas-config.stage1
+INFO  2017-06-27 13:05:47,861 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: put:/UserAccounts/updateUser:application/json:qacinemas-config
+INFO  2017-06-27 13:05:47,861 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@4fafd27e
+INFO  2017-06-27 13:05:47,868 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: put:/UserAccounts/updateUser:application/json:qacinemas-config.stage1
+INFO  2017-06-27 13:05:47,868 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: delete:/Bookings/deleteBooking:qacinemas-config
+INFO  2017-06-27 13:05:47,868 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@4ede035e
+INFO  2017-06-27 13:05:47,873 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: delete:/Bookings/deleteBooking:qacinemas-config.stage1
+INFO  2017-06-27 13:05:47,875 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: delete:/QACinemas/removeFilm:qacinemas-config
+INFO  2017-06-27 13:05:47,875 [main] org.mule.exception.CatchMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.CatchMessagingExceptionStrategy@569a26ab
+INFO  2017-06-27 13:05:47,875 [main] org.mule.exception.CatchMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.CatchMessagingExceptionStrategy@c190cfc
+INFO  2017-06-27 13:05:47,875 [main] org.mule.exception.CatchMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.CatchMessagingExceptionStrategy@77ce8bc5
+INFO  2017-06-27 13:05:47,876 [main] org.mule.exception.CatchMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.CatchMessagingExceptionStrategy@2fcc5f49
+INFO  2017-06-27 13:05:47,876 [main] org.mule.exception.CatchMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.CatchMessagingExceptionStrategy@28e48b65
+INFO  2017-06-27 13:05:47,882 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: delete:/QACinemas/removeFilm:qacinemas-config.stage1
+INFO  2017-06-27 13:05:47,883 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: delete:/UserAccounts/removeUser:qacinemas-config
+INFO  2017-06-27 13:05:47,883 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@2619cb76
+INFO  2017-06-27 13:05:47,888 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: delete:/UserAccounts/removeUser:qacinemas-config.stage1
+INFO  2017-06-27 13:05:47,889 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: get:/Bookings/displayBookings:qacinemas-config
+INFO  2017-06-27 13:05:47,889 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@37caecda
+INFO  2017-06-27 13:05:47,895 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: get:/Bookings/displayBookings:qacinemas-config.stage1
+INFO  2017-06-27 13:05:47,895 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: get:/QACinemas/displayFilms:qacinemas-config
+INFO  2017-06-27 13:05:47,895 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@99c3cee
+INFO  2017-06-27 13:05:47,901 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: get:/QACinemas/displayFilms:qacinemas-config.stage1
+INFO  2017-06-27 13:05:47,901 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: get:/UserAccounts/displayUsers:qacinemas-config
+INFO  2017-06-27 13:05:47,901 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@1115be8c
+INFO  2017-06-27 13:05:47,908 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: get:/UserAccounts/displayUsers:qacinemas-config.stage1
+INFO  2017-06-27 13:05:47,913 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: post:/Bookings/addBooking:application/json:qacinemas-config
+INFO  2017-06-27 13:05:47,914 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@2b8cf049
+INFO  2017-06-27 13:05:47,922 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: post:/Bookings/addBooking:application/json:qacinemas-config.stage1
+INFO  2017-06-27 13:05:47,924 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: post:/QACinemas/addFilm:application/json:qacinemas-config
+INFO  2017-06-27 13:05:47,924 [main] org.mule.exception.CatchMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.CatchMessagingExceptionStrategy@46d148bd
+INFO  2017-06-27 13:05:47,924 [main] org.mule.exception.CatchMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.CatchMessagingExceptionStrategy@37f41a81
+INFO  2017-06-27 13:05:47,924 [main] org.mule.exception.CatchMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.CatchMessagingExceptionStrategy@47c81e89
+INFO  2017-06-27 13:05:47,924 [main] org.mule.exception.CatchMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.CatchMessagingExceptionStrategy@49bb808f
+INFO  2017-06-27 13:05:47,925 [main] org.mule.exception.CatchMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.CatchMessagingExceptionStrategy@563ada5
+INFO  2017-06-27 13:05:47,931 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: post:/QACinemas/addFilm:application/json:qacinemas-config.stage1
+INFO  2017-06-27 13:05:47,932 [main] org.mule.construct.FlowConstructLifecycleManager: Initialising flow: post:/UserAccounts/addUser:application/json:qacinemas-config
+INFO  2017-06-27 13:05:47,932 [main] org.mule.exception.DefaultMessagingExceptionStrategy: Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@4377ed24
+INFO  2017-06-27 13:05:47,938 [main] org.mule.processor.SedaStageLifecycleManager: Initialising service: post:/UserAccounts/addUser:application/json:qacinemas-config.stage1
+INFO  2017-06-27 13:05:48,206 [main] org.mule.lifecycle.AbstractLifecycleManager: Disposing RegistryBroker
+INFO  2017-06-27 13:05:48,219 [main] org.mule.construct.FlowConstructLifecycleManager: Disposing flow: qacinemas-main
+INFO  2017-06-27 13:05:48,219 [main] org.mule.processor.SedaStageLifecycleManager: Disposing service: qacinemas-main.stage1
+INFO  2017-06-27 13:05:48,219 [main] org.mule.construct.FlowConstructLifecycleManager: Disposing flow: qacinemas-console
+INFO  2017-06-27 13:05:48,219 [main] org.mule.processor.SedaStageLifecycleManager: Disposing service: qacinemas-console.stage1
+INFO  2017-06-27 13:05:48,219 [main] org.mule.construct.FlowConstructLifecycleManager: Disposing flow: put:/Bookings/updateBooking:application/json:qacinemas-config
+INFO  2017-06-27 13:05:48,219 [main] org.mule.processor.SedaStageLifecycleManager: Disposing service: put:/Bookings/updateBooking:application/json:qacinemas-config.stage1
+INFO  2017-06-27 13:05:48,219 [main] org.mule.construct.FlowConstructLifecycleManager: Disposing flow: put:/QACinemas/updateFilm:application/json:qacinemas-config
+INFO  2017-06-27 13:05:48,219 [main] org.mule.processor.SedaStageLifecycleManager: Disposing service: put:/QACinemas/updateFilm:application/json:qacinemas-config.stage1
+INFO  2017-06-27 13:05:48,219 [main] org.mule.construct.FlowConstructLifecycleManager: Disposing flow: put:/UserAccounts/updateUser:application/json:qacinemas-config
+INFO  2017-06-27 13:05:48,219 [main] org.mule.processor.SedaStageLifecycleManager: Disposing service: put:/UserAccounts/updateUser:application/json:qacinemas-config.stage1
+INFO  2017-06-27 13:05:48,219 [main] org.mule.construct.FlowConstructLifecycleManager: Disposing flow: delete:/Bookings/deleteBooking:qacinemas-config
+INFO  2017-06-27 13:05:48,219 [main] org.mule.processor.SedaStageLifecycleManager: Disposing service: delete:/Bookings/deleteBooking:qacinemas-config.stage1
+INFO  2017-06-27 13:05:48,219 [main] org.mule.construct.FlowConstructLifecycleManager: Disposing flow: delete:/QACinemas/removeFilm:qacinemas-config
+INFO  2017-06-27 13:05:48,219 [main] org.mule.processor.SedaStageLifecycleManager: Disposing service: delete:/QACinemas/removeFilm:qacinemas-config.stage1
+INFO  2017-06-27 13:05:48,219 [main] org.mule.construct.FlowConstructLifecycleManager: Disposing flow: delete:/UserAccounts/removeUser:qacinemas-config
+INFO  2017-06-27 13:05:48,219 [main] org.mule.processor.SedaStageLifecycleManager: Disposing service: delete:/UserAccounts/removeUser:qacinemas-config.stage1
+INFO  2017-06-27 13:05:48,219 [main] org.mule.construct.FlowConstructLifecycleManager: Disposing flow: get:/Bookings/displayBookings:qacinemas-config
+INFO  2017-06-27 13:05:48,219 [main] org.mule.processor.SedaStageLifecycleManager: Disposing service: get:/Bookings/displayBookings:qacinemas-config.stage1
+INFO  2017-06-27 13:05:48,219 [main] org.mule.construct.FlowConstructLifecycleManager: Disposing flow: get:/QACinemas/displayFilms:qacinemas-config
+INFO  2017-06-27 13:05:48,219 [main] org.mule.processor.SedaStageLifecycleManager: Disposing service: get:/QACinemas/displayFilms:qacinemas-config.stage1
+INFO  2017-06-27 13:05:48,219 [main] org.mule.construct.FlowConstructLifecycleManager: Disposing flow: get:/UserAccounts/displayUsers:qacinemas-config
+INFO  2017-06-27 13:05:48,219 [main] org.mule.processor.SedaStageLifecycleManager: Disposing service: get:/UserAccounts/displayUsers:qacinemas-config.stage1
+INFO  2017-06-27 13:05:48,219 [main] org.mule.construct.FlowConstructLifecycleManager: Disposing flow: post:/Bookings/addBooking:application/json:qacinemas-config
+INFO  2017-06-27 13:05:48,219 [main] org.mule.processor.SedaStageLifecycleManager: Disposing service: post:/Bookings/addBooking:application/json:qacinemas-config.stage1
+INFO  2017-06-27 13:05:48,219 [main] org.mule.construct.FlowConstructLifecycleManager: Disposing flow: post:/QACinemas/addFilm:application/json:qacinemas-config
+INFO  2017-06-27 13:05:48,219 [main] org.mule.processor.SedaStageLifecycleManager: Disposing service: post:/QACinemas/addFilm:application/json:qacinemas-config.stage1
+INFO  2017-06-27 13:05:48,219 [main] org.mule.construct.FlowConstructLifecycleManager: Disposing flow: post:/UserAccounts/addUser:application/json:qacinemas-config
+INFO  2017-06-27 13:05:48,219 [main] org.mule.processor.SedaStageLifecycleManager: Disposing service: post:/UserAccounts/addUser:application/json:qacinemas-config.stage1
+INFO  2017-06-27 13:05:48,219 [main] org.mule.lifecycle.AbstractLifecycleManager: Disposing model: _muleSystemModel
+INFO  2017-06-27 13:05:48,681 [main] org.mule.config.spring.MuleArtifactContext: Closing org.mule.config.spring.MuleArtifactContext@7a34f66a: startup date [Tue Jun 27 13:05:37 BST 2017]; root of context hierarchy
+ERROR 2017-06-27 13:05:48,809 [main] org.mule.module.launcher.application.DefaultMuleApplication: null
+org.mule.module.apikit.exception.ApikitRuntimeException: Invalid API descriptor -- errors found: 1
+
+RAML resource not found --  file: qacinemas.raml
+
+	at org.mule.module.apikit.parser.ParserWrapperV1.validate(ParserWrapperV1.java:68) ~[mule-module-apikit-3.8.4.jar:?]
+	at org.mule.module.apikit.ParserService.validateRaml(ParserService.java:86) ~[mule-module-apikit-3.8.4.jar:?]
+	at org.mule.module.apikit.AbstractConfiguration.initialise(AbstractConfiguration.java:112) ~[mule-module-apikit-3.8.4.jar:?]
+	at sun.reflect.GeneratedMethodAccessor17.invoke(Unknown Source) ~[?:?]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_131]
+	at org.mule.lifecycle.phases.DefaultLifecyclePhase.applyLifecycle(DefaultLifecyclePhase.java:237) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.lifecycle.phases.MuleContextInitialisePhase.applyLifecycle(MuleContextInitialisePhase.java:71) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.lifecycle.RegistryLifecycleCallback.doApplyLifecycle(RegistryLifecycleCallback.java:99) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.lifecycle.RegistryLifecycleCallback.onTransition(RegistryLifecycleCallback.java:71) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.lifecycle.RegistryLifecycleManager.invokePhase(RegistryLifecycleManager.java:155) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.lifecycle.RegistryLifecycleManager.fireLifecycle(RegistryLifecycleManager.java:126) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.registry.AbstractRegistry.fireLifecycle(AbstractRegistry.java:146) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.registry.AbstractRegistry.initialise(AbstractRegistry.java:116) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.config.spring.SpringXmlConfigurationBuilder.createSpringRegistry(SpringXmlConfigurationBuilder.java:177) ~[mule-module-spring-config-3.8.4.jar:3.8.4]
+	at org.mule.config.spring.SpringXmlConfigurationBuilder.doConfigure(SpringXmlConfigurationBuilder.java:100) ~[mule-module-spring-config-3.8.4.jar:3.8.4]
+	at org.mule.config.builders.AbstractConfigurationBuilder.configure(AbstractConfigurationBuilder.java:43) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.config.builders.AbstractResourceConfigurationBuilder.configure(AbstractResourceConfigurationBuilder.java:69) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.config.builders.AutoConfigurationBuilder.autoConfigure(AutoConfigurationBuilder.java:102) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.config.builders.AutoConfigurationBuilder.doConfigure(AutoConfigurationBuilder.java:54) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.config.builders.AbstractConfigurationBuilder.configure(AbstractConfigurationBuilder.java:43) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.config.builders.AbstractResourceConfigurationBuilder.configure(AbstractResourceConfigurationBuilder.java:69) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.context.DefaultMuleContextFactory$1.configure(DefaultMuleContextFactory.java:89) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.context.DefaultMuleContextFactory.doCreateMuleContext(DefaultMuleContextFactory.java:222) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.context.DefaultMuleContextFactory.createMuleContext(DefaultMuleContextFactory.java:81) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.application.DefaultMuleApplication.init(DefaultMuleApplication.java:203) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.artifact.ArtifactWrapper$2.execute(ArtifactWrapper.java:63) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.artifact.ArtifactWrapper.executeWithinArtifactClassLoader(ArtifactWrapper.java:136) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.artifact.ArtifactWrapper.init(ArtifactWrapper.java:58) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DefaultArtifactDeployer.deploy(DefaultArtifactDeployer.java:25) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployArtifact(DefaultArchiveDeployer.java:310) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployPackagedArtifact(DefaultArchiveDeployer.java:165) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployPackagedArtifact(DefaultArchiveDeployer.java:254) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployPackagedArtifact(DefaultArchiveDeployer.java:76) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DeploymentDirectoryWatcher.deployPackedApps(DeploymentDirectoryWatcher.java:279) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DeploymentDirectoryWatcher.start(DeploymentDirectoryWatcher.java:151) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.MuleDeploymentService.start(MuleDeploymentService.java:134) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.MuleContainer.start(MuleContainer.java:172) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.tooling.server.application.ApplicationDeployer.main(ApplicationDeployer.java:15) ~[tooling-support-3.8.4.jar:?]
+INFO  2017-06-27 13:05:48,824 [main] org.mule.module.launcher.application.DefaultMuleApplication: App 'qacinemasproject' never started, nothing to dispose of
