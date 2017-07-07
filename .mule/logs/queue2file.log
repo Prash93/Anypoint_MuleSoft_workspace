@@ -212,3 +212,489 @@ java.net.SocketException: Connection reset
 * Application "queue2file" shut down normally on: 26/05/17 12:10     *
 * Up for: 0 days, 0 hours, 2 mins, 12.827 sec                        *
 **********************************************************************
+2017-07-03 16:55:56,662 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'queue2file'                            +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-07-03 16:55:56,987 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2017-07-03 16:55:57,145 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2017-07-03 16:55:57,395 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2017-07-03 16:55:57,395 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2017-07-03 16:55:57,832 [main] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@3f9270ed: startup date [Mon Jul 03 16:55:57 BST 2017]; root of context hierarchy
+2017-07-03 16:55:59,758 [main] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-07-03 16:56:00,603 [main] WARN  org.mule.config.spring.MuleArtifactContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mulemessagejmsFlow': Cannot create inner bean '(inner bean)#4a2bf50f' of type [org.mule.config.spring.factories.FlowRefFactoryBean] while setting bean property 'messageProcessors' with key [0]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#4a2bf50f': Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mulemessagejmsFlow1': Initialization of bean failed; nested exception is org.springframework.beans.ConversionNotSupportedException: Failed to convert property value of type [java.util.ArrayList] to required type [java.util.List] for property 'messageProcessors'; nested exception is java.lang.IllegalStateException: Cannot convert value of type [queue2file.Flowstest] to required type [org.mule.api.processor.MessageProcessor] for property 'messageProcessors[0]': no matching editors or conversion strategy found
+2017-07-03 16:56:00,618 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing RegistryBroker
+2017-07-03 16:56:00,712 [main] ERROR org.mule.module.launcher.application.DefaultMuleApplication - null
+java.lang.IllegalStateException: Cannot convert value of type [queue2file.Flowstest] to required type [org.mule.api.processor.MessageProcessor] for property 'messageProcessors[0]': no matching editors or conversion strategy found
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:287) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.TypeConverterDelegate.convertToTypedCollection(TypeConverterDelegate.java:556) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:216) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.BeanWrapperImpl.convertIfNecessary(BeanWrapperImpl.java:461) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.BeanWrapperImpl.convertForProperty(BeanWrapperImpl.java:512) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.BeanWrapperImpl.convertForProperty(BeanWrapperImpl.java:506) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.convertForProperty(AbstractAutowireCapableBeanFactory.java:1521) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1480) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1220) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:963) ~[spring-context-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.mule.config.spring.factories.FlowRefFactoryBean.lookupReferencedFlowInApplicationContext(FlowRefFactoryBean.java:252) ~[mule-module-spring-config-3.8.4.jar:3.8.4]
+	at org.mule.config.spring.factories.FlowRefFactoryBean.initialise(FlowRefFactoryBean.java:129) ~[mule-module-spring-config-3.8.4.jar:3.8.4]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_131]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeCustomInitMethod(AbstractAutowireCapableBeanFactory.java:1700) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1639) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1568) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:299) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:129) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveManagedList(BeanDefinitionValueResolver.java:382) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:157) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1475) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1220) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:753) ~[mule-module-spring-config-3.8.4.jar:4.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:762) ~[spring-context-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.mule.config.spring.SpringRegistry.doInitialise(SpringRegistry.java:108) ~[mule-module-spring-config-3.8.4.jar:3.8.4]
+	at org.mule.registry.AbstractRegistry.initialise(AbstractRegistry.java:104) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.config.spring.SpringXmlConfigurationBuilder.createSpringRegistry(SpringXmlConfigurationBuilder.java:177) ~[mule-module-spring-config-3.8.4.jar:3.8.4]
+	at org.mule.config.spring.SpringXmlConfigurationBuilder.doConfigure(SpringXmlConfigurationBuilder.java:100) ~[mule-module-spring-config-3.8.4.jar:3.8.4]
+	at org.mule.config.builders.AbstractConfigurationBuilder.configure(AbstractConfigurationBuilder.java:43) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.config.builders.AbstractResourceConfigurationBuilder.configure(AbstractResourceConfigurationBuilder.java:69) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.config.builders.AutoConfigurationBuilder.autoConfigure(AutoConfigurationBuilder.java:102) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.config.builders.AutoConfigurationBuilder.doConfigure(AutoConfigurationBuilder.java:54) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.config.builders.AbstractConfigurationBuilder.configure(AbstractConfigurationBuilder.java:43) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.config.builders.AbstractResourceConfigurationBuilder.configure(AbstractResourceConfigurationBuilder.java:69) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.context.DefaultMuleContextFactory$1.configure(DefaultMuleContextFactory.java:89) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.context.DefaultMuleContextFactory.doCreateMuleContext(DefaultMuleContextFactory.java:222) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.context.DefaultMuleContextFactory.createMuleContext(DefaultMuleContextFactory.java:81) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.application.DefaultMuleApplication.init(DefaultMuleApplication.java:203) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.artifact.ArtifactWrapper$2.execute(ArtifactWrapper.java:63) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.artifact.ArtifactWrapper.executeWithinArtifactClassLoader(ArtifactWrapper.java:136) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.artifact.ArtifactWrapper.init(ArtifactWrapper.java:58) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DefaultArtifactDeployer.deploy(DefaultArtifactDeployer.java:25) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployArtifact(DefaultArchiveDeployer.java:310) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployPackagedArtifact(DefaultArchiveDeployer.java:165) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployPackagedArtifact(DefaultArchiveDeployer.java:254) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployPackagedArtifact(DefaultArchiveDeployer.java:76) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DeploymentDirectoryWatcher.deployPackedApps(DeploymentDirectoryWatcher.java:279) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DeploymentDirectoryWatcher.start(DeploymentDirectoryWatcher.java:151) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.MuleDeploymentService.start(MuleDeploymentService.java:134) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.MuleContainer.start(MuleContainer.java:172) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.tooling.server.application.ApplicationDeployer.main(ApplicationDeployer.java:15) ~[tooling-support-3.8.4.jar:?]
+2017-07-03 16:56:00,728 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - App 'queue2file' never started, nothing to dispose of
+2017-07-03 16:56:12,832 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'queue2file'                            +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-07-03 16:56:13,123 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2017-07-03 16:56:13,263 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2017-07-03 16:56:13,435 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2017-07-03 16:56:13,446 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2017-07-03 16:56:13,776 [main] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@39e43310: startup date [Mon Jul 03 16:56:13 BST 2017]; root of context hierarchy
+2017-07-03 16:56:15,620 [main] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-07-03 16:56:16,634 [main] WARN  org.mule.config.spring.MuleArtifactContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mulemessagejmsFlow': Cannot create inner bean '(inner bean)#586cc15d' of type [org.mule.config.spring.factories.FlowRefFactoryBean] while setting bean property 'messageProcessors' with key [0]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#586cc15d': Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mulemessagejmsFlow1': Initialization of bean failed; nested exception is org.springframework.beans.ConversionNotSupportedException: Failed to convert property value of type [java.util.ArrayList] to required type [java.util.List] for property 'messageProcessors'; nested exception is java.lang.IllegalStateException: Cannot convert value of type [queue2file.Flowstest] to required type [org.mule.api.processor.MessageProcessor] for property 'messageProcessors[0]': no matching editors or conversion strategy found
+2017-07-03 16:56:16,638 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing RegistryBroker
+2017-07-03 16:56:16,669 [main] ERROR org.mule.module.launcher.application.DefaultMuleApplication - null
+java.lang.IllegalStateException: Cannot convert value of type [queue2file.Flowstest] to required type [org.mule.api.processor.MessageProcessor] for property 'messageProcessors[0]': no matching editors or conversion strategy found
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:287) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.TypeConverterDelegate.convertToTypedCollection(TypeConverterDelegate.java:556) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:216) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.BeanWrapperImpl.convertIfNecessary(BeanWrapperImpl.java:461) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.BeanWrapperImpl.convertForProperty(BeanWrapperImpl.java:512) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.BeanWrapperImpl.convertForProperty(BeanWrapperImpl.java:506) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.convertForProperty(AbstractAutowireCapableBeanFactory.java:1521) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1480) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1220) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:963) ~[spring-context-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.mule.config.spring.factories.FlowRefFactoryBean.lookupReferencedFlowInApplicationContext(FlowRefFactoryBean.java:252) ~[mule-module-spring-config-3.8.4.jar:3.8.4]
+	at org.mule.config.spring.factories.FlowRefFactoryBean.initialise(FlowRefFactoryBean.java:129) ~[mule-module-spring-config-3.8.4.jar:3.8.4]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_131]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeCustomInitMethod(AbstractAutowireCapableBeanFactory.java:1700) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1639) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1568) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:299) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:129) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveManagedList(BeanDefinitionValueResolver.java:382) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:157) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1475) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1220) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:753) ~[mule-module-spring-config-3.8.4.jar:4.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:762) ~[spring-context-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.mule.config.spring.SpringRegistry.doInitialise(SpringRegistry.java:108) ~[mule-module-spring-config-3.8.4.jar:3.8.4]
+	at org.mule.registry.AbstractRegistry.initialise(AbstractRegistry.java:104) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.config.spring.SpringXmlConfigurationBuilder.createSpringRegistry(SpringXmlConfigurationBuilder.java:177) ~[mule-module-spring-config-3.8.4.jar:3.8.4]
+	at org.mule.config.spring.SpringXmlConfigurationBuilder.doConfigure(SpringXmlConfigurationBuilder.java:100) ~[mule-module-spring-config-3.8.4.jar:3.8.4]
+	at org.mule.config.builders.AbstractConfigurationBuilder.configure(AbstractConfigurationBuilder.java:43) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.config.builders.AbstractResourceConfigurationBuilder.configure(AbstractResourceConfigurationBuilder.java:69) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.config.builders.AutoConfigurationBuilder.autoConfigure(AutoConfigurationBuilder.java:102) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.config.builders.AutoConfigurationBuilder.doConfigure(AutoConfigurationBuilder.java:54) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.config.builders.AbstractConfigurationBuilder.configure(AbstractConfigurationBuilder.java:43) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.config.builders.AbstractResourceConfigurationBuilder.configure(AbstractResourceConfigurationBuilder.java:69) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.context.DefaultMuleContextFactory$1.configure(DefaultMuleContextFactory.java:89) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.context.DefaultMuleContextFactory.doCreateMuleContext(DefaultMuleContextFactory.java:222) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.context.DefaultMuleContextFactory.createMuleContext(DefaultMuleContextFactory.java:81) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.application.DefaultMuleApplication.init(DefaultMuleApplication.java:203) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.artifact.ArtifactWrapper$2.execute(ArtifactWrapper.java:63) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.artifact.ArtifactWrapper.executeWithinArtifactClassLoader(ArtifactWrapper.java:136) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.artifact.ArtifactWrapper.init(ArtifactWrapper.java:58) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DefaultArtifactDeployer.deploy(DefaultArtifactDeployer.java:25) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployArtifact(DefaultArchiveDeployer.java:310) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployPackagedArtifact(DefaultArchiveDeployer.java:165) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployPackagedArtifact(DefaultArchiveDeployer.java:254) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployPackagedArtifact(DefaultArchiveDeployer.java:76) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DeploymentDirectoryWatcher.deployPackedApps(DeploymentDirectoryWatcher.java:279) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DeploymentDirectoryWatcher.start(DeploymentDirectoryWatcher.java:151) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.MuleDeploymentService.start(MuleDeploymentService.java:134) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.MuleContainer.start(MuleContainer.java:172) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.tooling.server.application.ApplicationDeployer.main(ApplicationDeployer.java:15) ~[tooling-support-3.8.4.jar:?]
+2017-07-03 16:56:16,669 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - App 'queue2file' never started, nothing to dispose of
+2017-07-03 16:56:41,398 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'queue2file'                            +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-07-03 16:56:41,633 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2017-07-03 16:56:41,758 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2017-07-03 16:56:41,945 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2017-07-03 16:56:41,945 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2017-07-03 16:56:42,273 [main] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@76c387f9: startup date [Mon Jul 03 16:56:42 BST 2017]; root of context hierarchy
+2017-07-03 16:56:44,101 [main] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-07-03 16:56:45,447 [main] WARN  org.mule.config.spring.MuleArtifactContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mulemessagejmsFlow': Cannot create inner bean '(inner bean)#723e2d08' of type [org.mule.config.spring.factories.FlowRefFactoryBean] while setting bean property 'messageProcessors' with key [0]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#723e2d08': Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mulemessagejmsFlow1': Initialization of bean failed; nested exception is org.springframework.beans.ConversionNotSupportedException: Failed to convert property value of type [java.util.ArrayList] to required type [java.util.List] for property 'messageProcessors'; nested exception is java.lang.IllegalStateException: Cannot convert value of type [queue2file.Flowstest] to required type [org.mule.api.processor.MessageProcessor] for property 'messageProcessors[0]': no matching editors or conversion strategy found
+2017-07-03 16:56:45,457 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing RegistryBroker
+2017-07-03 16:56:45,645 [main] ERROR org.mule.module.launcher.application.DefaultMuleApplication - null
+java.lang.IllegalStateException: Cannot convert value of type [queue2file.Flowstest] to required type [org.mule.api.processor.MessageProcessor] for property 'messageProcessors[0]': no matching editors or conversion strategy found
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:287) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.TypeConverterDelegate.convertToTypedCollection(TypeConverterDelegate.java:556) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:216) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.BeanWrapperImpl.convertIfNecessary(BeanWrapperImpl.java:461) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.BeanWrapperImpl.convertForProperty(BeanWrapperImpl.java:512) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.BeanWrapperImpl.convertForProperty(BeanWrapperImpl.java:506) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.convertForProperty(AbstractAutowireCapableBeanFactory.java:1521) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1480) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1220) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:963) ~[spring-context-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.mule.config.spring.factories.FlowRefFactoryBean.lookupReferencedFlowInApplicationContext(FlowRefFactoryBean.java:252) ~[mule-module-spring-config-3.8.4.jar:3.8.4]
+	at org.mule.config.spring.factories.FlowRefFactoryBean.initialise(FlowRefFactoryBean.java:129) ~[mule-module-spring-config-3.8.4.jar:3.8.4]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_131]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeCustomInitMethod(AbstractAutowireCapableBeanFactory.java:1700) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1639) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1568) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:299) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:129) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveManagedList(BeanDefinitionValueResolver.java:382) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:157) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1475) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1220) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:753) ~[mule-module-spring-config-3.8.4.jar:4.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:762) ~[spring-context-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.9.RELEASE.jar:4.1.9.RELEASE]
+	at org.mule.config.spring.SpringRegistry.doInitialise(SpringRegistry.java:108) ~[mule-module-spring-config-3.8.4.jar:3.8.4]
+	at org.mule.registry.AbstractRegistry.initialise(AbstractRegistry.java:104) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.config.spring.SpringXmlConfigurationBuilder.createSpringRegistry(SpringXmlConfigurationBuilder.java:177) ~[mule-module-spring-config-3.8.4.jar:3.8.4]
+	at org.mule.config.spring.SpringXmlConfigurationBuilder.doConfigure(SpringXmlConfigurationBuilder.java:100) ~[mule-module-spring-config-3.8.4.jar:3.8.4]
+	at org.mule.config.builders.AbstractConfigurationBuilder.configure(AbstractConfigurationBuilder.java:43) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.config.builders.AbstractResourceConfigurationBuilder.configure(AbstractResourceConfigurationBuilder.java:69) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.config.builders.AutoConfigurationBuilder.autoConfigure(AutoConfigurationBuilder.java:102) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.config.builders.AutoConfigurationBuilder.doConfigure(AutoConfigurationBuilder.java:54) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.config.builders.AbstractConfigurationBuilder.configure(AbstractConfigurationBuilder.java:43) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.config.builders.AbstractResourceConfigurationBuilder.configure(AbstractResourceConfigurationBuilder.java:69) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.context.DefaultMuleContextFactory$1.configure(DefaultMuleContextFactory.java:89) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.context.DefaultMuleContextFactory.doCreateMuleContext(DefaultMuleContextFactory.java:222) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.context.DefaultMuleContextFactory.createMuleContext(DefaultMuleContextFactory.java:81) ~[mule-core-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.application.DefaultMuleApplication.init(DefaultMuleApplication.java:203) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.artifact.ArtifactWrapper$2.execute(ArtifactWrapper.java:63) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.artifact.ArtifactWrapper.executeWithinArtifactClassLoader(ArtifactWrapper.java:136) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.artifact.ArtifactWrapper.init(ArtifactWrapper.java:58) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DefaultArtifactDeployer.deploy(DefaultArtifactDeployer.java:25) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployArtifact(DefaultArchiveDeployer.java:310) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployPackagedArtifact(DefaultArchiveDeployer.java:165) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployPackagedArtifact(DefaultArchiveDeployer.java:254) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployPackagedArtifact(DefaultArchiveDeployer.java:76) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DeploymentDirectoryWatcher.deployPackedApps(DeploymentDirectoryWatcher.java:279) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.DeploymentDirectoryWatcher.start(DeploymentDirectoryWatcher.java:151) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.MuleDeploymentService.start(MuleDeploymentService.java:134) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.module.launcher.MuleContainer.start(MuleContainer.java:172) ~[mule-module-launcher-3.8.4.jar:3.8.4]
+	at org.mule.tooling.server.application.ApplicationDeployer.main(ApplicationDeployer.java:15) ~[tooling-support-3.8.4.jar:?]
+2017-07-03 16:56:45,645 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - App 'queue2file' never started, nothing to dispose of
+2017-07-03 16:57:55,149 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'queue2file'                            +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-07-03 16:57:55,430 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2017-07-03 16:57:55,587 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2017-07-03 16:57:55,774 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2017-07-03 16:57:55,774 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.8)
+2017-07-03 16:57:56,114 [main] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@3874b815: startup date [Mon Jul 03 16:57:55 BST 2017]; root of context hierarchy
+2017-07-03 16:57:57,847 [main] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-07-03 16:57:59,205 [main] WARN  org.mule.module.ognl.expression.OgnlExpressionEvaluator - OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+2017-07-03 16:57:59,851 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\Sa\AnypointStudio\workspace\.mule\.\.mule\queue2file\queue-tx-log\tx1.log and C:\Users\Sa\AnypointStudio\workspace\.mule\.\.mule\queue2file\queue-tx-log\tx2.log
+2017-07-03 16:57:59,867 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\Sa\AnypointStudio\workspace\.mule\.\.mule\queue2file\queue-xa-tx-log\tx1.log and C:\Users\Sa\AnypointStudio\workspace\.mule\.\.mule\queue2file\queue-xa-tx-log\tx2.log
+2017-07-03 16:57:59,883 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising connector: Active_MQ
+2017-07-03 16:57:59,945 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising connector: connector.file.mule.default
+2017-07-03 16:58:00,179 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2017-07-03 16:58:00,179 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: mulemessagejmsFlow
+2017-07-03 16:58:00,179 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@6df791a4
+2017-07-03 16:58:00,226 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: mulemessagejmsFlow.stage1
+2017-07-03 16:58:00,241 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: mulemessagejmsFlow1
+2017-07-03 16:58:00,241 [main] INFO  org.mule.exception.CatchMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.CatchMessagingExceptionStrategy@223967ea
+2017-07-03 16:58:00,257 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: mulemessagejmsFlow1.stage1
+2017-07-03 16:58:00,257 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: queue2fileFlow
+2017-07-03 16:58:00,257 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@5c9e8a67
+2017-07-03 16:58:00,257 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: queue2fileFlow.stage1
+2017-07-03 16:58:01,029 [main] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\Sa\AnypointStudio\workspace\.mule\apps\queue2file\mulemessagejms.xml'}, ConfigResource{resourceName='C:\Users\Sa\AnypointStudio\workspace\.mule\apps\queue2file\queue2file.xml'}]"
+2017-07-03 16:58:01,029 [main] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\Sa\AnypointStudio\workspace\.mule\apps\queue2file\mulemessagejms.xml'}, ConfigResource{resourceName='C:\Users\Sa\AnypointStudio\workspace\.mule\apps\queue2file\queue2file.xml'}]"
+2017-07-03 16:58:04,083 [main] WARN  org.mule.config.spring.SpringRegistry - Spring registry already contains an object named 'gateway-message-source:jms://flows'. The previous object will be overwritten.
+2017-07-03 16:58:04,089 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'queue2file'                                +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-07-03 16:58:04,089 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Starting ResourceManager
+2017-07-03 16:58:04,089 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Started ResourceManager
+2017-07-03 16:58:05,054 [main] INFO  org.mule.transport.jms.activemq.ActiveMQJmsConnector - Connected: ActiveMQJmsConnector
+{
+  name=Active_MQ
+  lifecycle=initialise
+  this=69bc9584
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[jms]
+  serviceOverrides=<none>
+}
+
+2017-07-03 16:58:05,054 [main] INFO  org.mule.transport.jms.activemq.ActiveMQJmsConnector - Starting: ActiveMQJmsConnector
+{
+  name=Active_MQ
+  lifecycle=initialise
+  this=69bc9584
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[jms]
+  serviceOverrides=<none>
+}
+
+2017-07-03 16:58:05,054 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting connector: Active_MQ
+2017-07-03 16:58:05,054 [main] INFO  org.mule.transport.file.FileConnector - Connected: FileConnector
+{
+  name=connector.file.mule.default
+  lifecycle=initialise
+  this=4ebd6fd6
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[file]
+  serviceOverrides=<none>
+}
+
+2017-07-03 16:58:05,054 [main] INFO  org.mule.transport.file.FileConnector - Starting: FileConnector
+{
+  name=connector.file.mule.default
+  lifecycle=initialise
+  this=4ebd6fd6
+  numberOfConcurrentTransactedReceivers=4
+  createMultipleTransactedReceivers=true
+  connected=true
+  supportedProtocols=[file]
+  serviceOverrides=<none>
+}
+
+2017-07-03 16:58:05,054 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting connector: connector.file.mule.default
+2017-07-03 16:58:05,069 [main] INFO  org.mule.modules.oauth2.provider.agents.DefaultSplashScreenAgent - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2017-07-03 16:58:05,069 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting model: _muleSystemModel
+2017-07-03 16:58:05,069 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: mulemessagejmsFlow
+2017-07-03 16:58:05,069 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: mulemessagejmsFlow.stage1
+2017-07-03 16:58:05,085 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: mulemessagejmsFlow1
+2017-07-03 16:58:05,085 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: mulemessagejmsFlow1.stage1
+2017-07-03 16:58:05,088 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: queue2fileFlow
+2017-07-03 16:58:05,088 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: queue2fileFlow.stage1
+2017-07-03 16:58:05,139 [main] INFO  org.mule.transport.jms.activemq.ActiveMQJmsConnector - Registering listener: mulemessagejmsFlow on endpointUri: jms://flows
+2017-07-03 16:58:05,170 [main] INFO  org.mule.transport.service.DefaultTransportServiceDescriptor - Loading default inbound transformer: org.mule.transport.jms.transformers.JMSMessageToObject
+2017-07-03 16:58:05,170 [main] INFO  org.mule.transport.service.DefaultTransportServiceDescriptor - Loading default response transformer: org.mule.transport.jms.transformers.ObjectToJMSMessage
+2017-07-03 16:58:05,186 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising: 'null'. Object is: MultiConsumerJmsMessageReceiver
+2017-07-03 16:58:05,186 [main] INFO  org.mule.transport.jms.MultiConsumerJmsMessageReceiver - Connecting clusterizable message receiver
+2017-07-03 16:58:05,264 [main] INFO  org.mule.transport.jms.MultiConsumerJmsMessageReceiver - Endpoint jms://flows has been successfully reconnected.
+2017-07-03 16:58:05,264 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting: 'null'. Object is: MultiConsumerJmsMessageReceiver
+2017-07-03 16:58:05,264 [main] INFO  org.mule.transport.jms.MultiConsumerJmsMessageReceiver - Starting clusterizable message receiver
+2017-07-03 16:58:05,264 [main] INFO  org.mule.transport.jms.activemq.ActiveMQJmsConnector - Registering listener: mulemessagejmsFlow1 on endpointUri: jms://flows
+2017-07-03 16:58:05,264 [main] INFO  org.mule.transport.service.DefaultTransportServiceDescriptor - Loading default inbound transformer: org.mule.transport.jms.transformers.JMSMessageToObject
+2017-07-03 16:58:05,264 [main] INFO  org.mule.transport.service.DefaultTransportServiceDescriptor - Loading default response transformer: org.mule.transport.jms.transformers.ObjectToJMSMessage
+2017-07-03 16:58:05,264 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising: 'null'. Object is: MultiConsumerJmsMessageReceiver
+2017-07-03 16:58:05,264 [main] INFO  org.mule.transport.jms.MultiConsumerJmsMessageReceiver - Connecting clusterizable message receiver
+2017-07-03 16:58:05,280 [main] INFO  org.mule.transport.jms.MultiConsumerJmsMessageReceiver - Endpoint jms://flows has been successfully reconnected.
+2017-07-03 16:58:05,280 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting: 'null'. Object is: MultiConsumerJmsMessageReceiver
+2017-07-03 16:58:05,280 [main] INFO  org.mule.transport.jms.MultiConsumerJmsMessageReceiver - Starting clusterizable message receiver
+2017-07-03 16:58:05,280 [main] INFO  org.mule.transport.jms.activemq.ActiveMQJmsConnector - Registering listener: queue2fileFlow on endpointUri: jms://file
+2017-07-03 16:58:05,280 [main] INFO  org.mule.transport.service.DefaultTransportServiceDescriptor - Loading default inbound transformer: org.mule.transport.jms.transformers.JMSMessageToObject
+2017-07-03 16:58:05,280 [main] INFO  org.mule.transport.service.DefaultTransportServiceDescriptor - Loading default response transformer: org.mule.transport.jms.transformers.ObjectToJMSMessage
+2017-07-03 16:58:05,280 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising: 'null'. Object is: MultiConsumerJmsMessageReceiver
+2017-07-03 16:58:05,280 [main] INFO  org.mule.transport.jms.MultiConsumerJmsMessageReceiver - Connecting clusterizable message receiver
+2017-07-03 16:58:05,280 [main] INFO  org.mule.transport.jms.MultiConsumerJmsMessageReceiver - Endpoint jms://file has been successfully reconnected.
+2017-07-03 16:58:05,295 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting: 'null'. Object is: MultiConsumerJmsMessageReceiver
+2017-07-03 16:58:05,295 [main] INFO  org.mule.transport.jms.MultiConsumerJmsMessageReceiver - Starting clusterizable message receiver
+2017-07-03 16:58:05,295 [main] INFO  org.mule.module.management.agent.WrapperManagerAgent - This JVM hasn't been launched by the wrapper, the agent will not run.
+2017-07-03 16:58:05,311 [main] INFO  org.mule.module.management.agent.AbstractJmxAgent - Attempting to register service with name: Mule.queue2file:type=Endpoint,service="mulemessagejmsFlow",connector=Active_MQ,name="endpoint.jms.flows"
+2017-07-03 16:58:05,327 [main] INFO  org.mule.module.management.agent.AbstractJmxAgent - Registered Endpoint Service with name: Mule.queue2file:type=Endpoint,service="mulemessagejmsFlow",connector=Active_MQ,name="endpoint.jms.flows"
+2017-07-03 16:58:05,327 [main] INFO  org.mule.module.management.agent.AbstractJmxAgent - Attempting to register service with name: Mule.queue2file:type=Endpoint,service="queue2fileFlow",connector=Active_MQ,name="endpoint.jms.file"
+2017-07-03 16:58:05,327 [main] INFO  org.mule.module.management.agent.AbstractJmxAgent - Registered Endpoint Service with name: Mule.queue2file:type=Endpoint,service="queue2fileFlow",connector=Active_MQ,name="endpoint.jms.file"
+2017-07-03 16:58:05,327 [main] INFO  org.mule.module.management.agent.AbstractJmxAgent - Attempting to register service with name: Mule.queue2file:type=Endpoint,service="mulemessagejmsFlow1",connector=Active_MQ,name="endpoint.jms.flows"
+2017-07-03 16:58:05,327 [main] INFO  org.mule.module.management.agent.AbstractJmxAgent - Registered Endpoint Service with name: Mule.queue2file:type=Endpoint,service="mulemessagejmsFlow1",connector=Active_MQ,name="endpoint.jms.flows"
+2017-07-03 16:58:05,327 [main] INFO  org.mule.module.management.agent.AbstractJmxAgent - Registered Connector Service with name Mule.queue2file:type=Connector,name="Active.MQ"
+2017-07-03 16:58:05,327 [main] INFO  org.mule.module.management.agent.AbstractJmxAgent - Registered Connector Service with name Mule.queue2file:type=Connector,name="connector.file.mule.default.1"
+2017-07-03 16:58:05,327 [main] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application: queue2file                                            *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   JMX Agent                                                        *
+*   DevKit Extension Information                                     *
+*   Batch module default engine                                      *
+*   Wrapper Manager                                                  *
+**********************************************************************
+2017-07-03 16:59:59,640 [[queue2file].mulemessagejmsFlow1.stage1.02] INFO  org.mule.api.processor.LoggerMessageProcessor - 
+org.mule.DefaultMuleMessage
+{
+  id=912782a0-6008-11e7-ad09-e8039ab9d98d
+  payload=java.lang.String
+  correlationId=
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+  INBOUND scoped properties:
+    JMSCorrelationID=
+    JMSDeliveryMode=1
+    JMSDestination=queue://flows
+    JMSExpiration=0
+    JMSMessageID=ID:Prash-PC-49435-1499096264983-4:1:1:1:3
+    JMSPriority=0
+    JMSRedelivered=false
+    JMSTimestamp=1499097556870
+    JMSType=
+    MULE_CORRELATION_ID=
+    MULE_MESSAGE_ID=ID:Prash-PC-49435-1499096264983-4:1:1:1:3
+    MULE_ORIGINATING_ENDPOINT=endpoint.jms.flows
+  OUTBOUND scoped properties:
+  SESSION scoped properties:
+}
+2017-07-03 17:00:09,229 [[queue2file].Active_MQ.dispatcher.01] INFO  org.mule.transport.service.DefaultTransportServiceDescriptor - Loading default outbound transformer: org.mule.transport.jms.transformers.ObjectToJMSMessage
+2017-07-03 17:00:09,229 [[queue2file].Active_MQ.dispatcher.01] INFO  org.mule.transport.service.DefaultTransportServiceDescriptor - Loading default response transformer: org.mule.transport.jms.transformers.ObjectToJMSMessage
+2017-07-03 17:00:09,229 [[queue2file].Active_MQ.dispatcher.01] WARN  com.mulesoft.mule.transport.jms.EeJmsMessageDispatcher - Starting patched JmsMessageReceiver
+2017-07-03 17:00:09,230 [[queue2file].Active_MQ.dispatcher.01] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising: 'Active_MQ.dispatcher.701392205'. Object is: EeJmsMessageDispatcher
+2017-07-03 17:00:09,230 [[queue2file].Active_MQ.dispatcher.01] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting: 'Active_MQ.dispatcher.701392205'. Object is: EeJmsMessageDispatcher
+2017-07-03 17:00:34,428 [[queue2file].mulemessagejmsFlow1.stage1.02] INFO  org.mule.api.processor.LoggerMessageProcessor - 
+org.mule.DefaultMuleMessage
+{
+  id=b0564c60-6008-11e7-ad09-e8039ab9d98d
+  payload=java.lang.String
+  correlationId=
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+  INBOUND scoped properties:
+    JMSCorrelationID=
+    JMSDeliveryMode=1
+    JMSDestination=queue://flows
+    JMSExpiration=0
+    JMSMessageID=ID:Prash-PC-49621-1499097484882-1:1:14:1:1
+    JMSPriority=4
+    JMSRedelivered=false
+    JMSTimestamp=1499097609250
+    MULE_CORRELATION_ID=
+    MULE_ENDPOINT=jms://flows
+    MULE_MESSAGE_ID=ID:Prash-PC-49621-1499097484882-1:1:14:1:1
+    MULE_ORIGINATING_ENDPOINT=endpoint.jms.flows
+    MULE_SESSION=rO0ABXNyACNvcmcubXVsZS5zZXNzaW9uLkRlZmF1bHRNdWxlU2Vzc2lvbi7rdtEW7GGKAwAFWgAFdmFsaWRMAA1mbG93Q29uc3RydWN0dAAmTG9yZy9tdWxlL2FwaS9jb25zdHJ1Y3QvRmxvd0NvbnN0cnVjdDtMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO0wACnByb3BlcnRpZXN0AA9MamF2YS91dGlsL01hcDtMAA9zZWN1cml0eUNvbnRleHR0ACdMb3JnL211bGUvYXBpL3NlY3VyaXR5L1NlY3VyaXR5Q29udGV4dDt4cAFwdAAkOTEyOGUyMzAtNjAwOC0xMWU3LWFkMDktZTgwMzlhYjlkOThkc3IAJWphdmEudXRpbC5Db2xsZWN0aW9ucyRTeW5jaHJvbml6ZWRNYXAbc/kJS0s5ewMAAkwAAW1xAH4AA0wABW11dGV4dAASTGphdmEvbGFuZy9PYmplY3Q7eHBzcgAkb3JnLm11bGUudXRpbC5DYXNlSW5zZW5zaXRpdmVIYXNoTWFwndHZ72dFzgADAAB4cHcMP0AAAAAAABAAAAAAeHEAfgAJeHB4
+  OUTBOUND scoped properties:
+  SESSION scoped properties:
+}
+2017-07-03 17:00:48,549 [[queue2file].mulemessagejmsFlow1.stage1.02] INFO  org.mule.api.processor.LoggerMessageProcessor - 
+org.mule.DefaultMuleMessage
+{
+  id=c03ede80-6008-11e7-ad09-e8039ab9d98d
+  payload=java.lang.String
+  correlationId=
+  correlationGroup=-1
+  correlationSeq=-1
+  encoding=UTF-8
+  exceptionPayload=<not set>
+
+Message properties:
+  INVOCATION scoped properties:
+  INBOUND scoped properties:
+    JMSCorrelationID=
+    JMSDeliveryMode=1
+    JMSDestination=queue://flows
+    JMSExpiration=0
+    JMSMessageID=ID:Prash-PC-49621-1499097484882-1:1:16:1:1
+    JMSPriority=4
+    JMSRedelivered=false
+    JMSTimestamp=1499097635944
+    MULE_CORRELATION_ID=
+    MULE_ENDPOINT=jms://flows
+    MULE_MESSAGE_ID=ID:Prash-PC-49621-1499097484882-1:1:16:1:1
+    MULE_ORIGINATING_ENDPOINT=endpoint.jms.flows
+    MULE_SESSION=rO0ABXNyACNvcmcubXVsZS5zZXNzaW9uLkRlZmF1bHRNdWxlU2Vzc2lvbi7rdtEW7GGKAwAFWgAFdmFsaWRMAA1mbG93Q29uc3RydWN0dAAmTG9yZy9tdWxlL2FwaS9jb25zdHJ1Y3QvRmxvd0NvbnN0cnVjdDtMAAJpZHQAEkxqYXZhL2xhbmcvU3RyaW5nO0wACnByb3BlcnRpZXN0AA9MamF2YS91dGlsL01hcDtMAA9zZWN1cml0eUNvbnRleHR0ACdMb3JnL211bGUvYXBpL3NlY3VyaXR5L1NlY3VyaXR5Q29udGV4dDt4cAFwdAAkOTEyOGUyMzAtNjAwOC0xMWU3LWFkMDktZTgwMzlhYjlkOThkc3IAJWphdmEudXRpbC5Db2xsZWN0aW9ucyRTeW5jaHJvbml6ZWRNYXAbc/kJS0s5ewMAAkwAAW1xAH4AA0wABW11dGV4dAASTGphdmEvbGFuZy9PYmplY3Q7eHBzcgAkb3JnLm11bGUudXRpbC5DYXNlSW5zZW5zaXRpdmVIYXNoTWFwndHZ72dFzgADAAB4cHcMP0AAAAAAABAAAAAAeHEAfgAJeHB4
+  OUTBOUND scoped properties:
+  SESSION scoped properties:
+}

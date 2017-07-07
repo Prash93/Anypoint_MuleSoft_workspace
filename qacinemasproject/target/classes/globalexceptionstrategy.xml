@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+<mule xmlns:jms="http://www.mulesoft.org/schema/mule/jms" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
 	xmlns:spring="http://www.springframework.org/schema/beans" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
-http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd">
 
 
     <choice-exception-strategy name="qacinemasmainChoice_Exception_Strategy">
         <catch-exception-strategy  doc:name="SQLSyntaxException-OnPost/Put" when="#[exception.causeMatches(&quot;com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException&quot;)]">
             <logger message="#[exception]" level="INFO" doc:name="Logger"/>
             <set-payload doc:name="Set Payload" value="#[&quot;Error with SQL Syntax. Please see the following for a detailed error message: \n&quot; + exception]"/>
+            <byte-array-to-string-transformer doc:name="Byte Array to String"/>
+            <jms:outbound-endpoint queue="sqlSyntaxExceptionQueue" connector-ref="Active_MQ_response" doc:name="JMS"/>
         </catch-exception-strategy>
         <catch-exception-strategy doc:name="DataTypeWeaveException-OnPost/Put" when="#[exception.causeMatches(&quot;com.mulesoft.weave.mule.exception.WeaveExecutionException&quot;)]">
             <logger message="#[exception]" level="INFO" doc:name="Logger"/>
             <set-payload value="#[&quot;Error sending data due to data entry with the wrong type and so cannot tranform the message. Please see the following for a detailed error message: \n&quot; + exception]" doc:name="Set Payload"/>
+            <byte-array-to-string-transformer doc:name="Byte Array to String"/>
+            <jms:outbound-endpoint queue="dataWeaveExceptionQueue" connector-ref="Active_MQ_response" doc:name="JMS"/>
         </catch-exception-strategy>
         <catch-exception-strategy when="#[exception.causeMatches(&quot;org.mule.module.apikit.exception.InvalidQueryParameterException&quot;)]" doc:name="InvalidQueryParamException-OnDel">
             <logger message="#[exception]" level="INFO" doc:name="Logger"/>

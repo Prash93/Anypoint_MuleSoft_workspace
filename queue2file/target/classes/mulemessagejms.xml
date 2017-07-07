@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:jms="http://www.mulesoft.org/schema/mule/jms" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd">
+    <flow name="mulemessagejmsFlow">
+        <jms:inbound-endpoint queue="flows" connector-ref="Active_MQ" doc:name="JMS"/>
+        <flow-ref name="mulemessagejmsFlow1" doc:name="mulemessagejmsFlow1"/>
+    </flow>
+    <flow name="mulemessagejmsFlow1">
+        <jms:inbound-endpoint queue="flows" connector-ref="Active_MQ" doc:name="JMS"/>
+        <logger level="INFO" doc:name="Logger"/>
+        <jms:outbound-endpoint queue="flows" connector-ref="Active_MQ" doc:name="JMS"/>
+        <catch-exception-strategy doc:name="Catch Exception Strategy">
+            <logger message="#[payload]" level="INFO" doc:name="Logger"/>
+            <jms:outbound-endpoint queue="flows" connector-ref="Active_MQ" doc:name="JMS"/>
+        </catch-exception-strategy>
+    </flow>
+</mule>

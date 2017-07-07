@@ -1,40 +1,24 @@
-INFO  2017-06-28 12:52:49,623 [main] org.mule.module.launcher.domain.DefaultMuleDomain: 
+INFO  2017-07-04 12:28:24,773 [main] org.mule.module.launcher.domain.DefaultMuleDomain: 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 + New domain 'default'                                     +
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-INFO  2017-06-28 12:52:49,624 [main] org.mule.module.launcher.domain.DefaultMuleDomain: 
+INFO  2017-07-04 12:28:24,773 [main] org.mule.module.launcher.domain.DefaultMuleDomain: 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 + Initializing domain 'default'                            +
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-INFO  2017-06-28 13:14:38,232 [main] org.mule.module.launcher.domain.DefaultMuleDomain: 
+INFO  2017-07-04 12:35:00,567 [main] org.mule.module.launcher.domain.DefaultMuleDomain: 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 + New domain 'default'                                     +
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-INFO  2017-06-28 13:14:38,232 [main] org.mule.module.launcher.domain.DefaultMuleDomain: 
+INFO  2017-07-04 12:35:00,590 [main] org.mule.module.launcher.domain.DefaultMuleDomain: 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 + Initializing domain 'default'                            +
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-INFO  2017-06-28 15:29:10,263 [main] org.mule.module.launcher.domain.DefaultMuleDomain: 
+INFO  2017-07-04 12:49:47,763 [main] org.mule.module.launcher.domain.DefaultMuleDomain: 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 + New domain 'default'                                     +
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-INFO  2017-06-28 15:29:10,263 [main] org.mule.module.launcher.domain.DefaultMuleDomain: 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-+ Initializing domain 'default'                            +
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-INFO  2017-06-28 16:02:24,711 [main] org.mule.module.launcher.domain.DefaultMuleDomain: 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-+ New domain 'default'                                     +
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-INFO  2017-06-28 16:02:24,711 [main] org.mule.module.launcher.domain.DefaultMuleDomain: 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-+ Initializing domain 'default'                            +
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-INFO  2017-06-28 16:54:56,787 [main] org.mule.module.launcher.domain.DefaultMuleDomain: 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-+ New domain 'default'                                     +
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-INFO  2017-06-28 16:54:56,809 [main] org.mule.module.launcher.domain.DefaultMuleDomain: 
+INFO  2017-07-04 12:49:47,763 [main] org.mule.module.launcher.domain.DefaultMuleDomain: 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 + Initializing domain 'default'                            +
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

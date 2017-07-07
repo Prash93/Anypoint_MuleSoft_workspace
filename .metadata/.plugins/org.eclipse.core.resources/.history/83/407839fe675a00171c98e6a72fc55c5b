@@ -1,5 +1,0 @@
-#Mon Jun 26 13:05:51 BST 2017
-encoding=UTF-8
-domain=default
-redeployment.enabled=true
-config.resources=qacinemas.xml,qacinemasproject.xml
